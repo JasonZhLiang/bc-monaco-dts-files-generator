@@ -216,6 +216,15 @@ interface IdentityServiceProxy {
 	updateUniversalIdPassword(oldPassword: string, newPassword: string): ServiceProxyResponse;
 
 	/**
+	 * Updates the password associated with the user's email identity.
+	 * 
+	 * @param  {string} oldPassword The current password associated with the user's email identity.
+	 * @param  {string} newPassword The new password to associate with the user's email identity.
+	 * @returns ServiceProxyResponse
+	 */ 
+	updateEmailIdentityPassword(oldPassword: string, newPassword: string): ServiceProxyResponse;
+
+	/**
 	 * Create a settop handoff code.
 	 * 
 	 * @param  {number} numChars The length of the code requested.

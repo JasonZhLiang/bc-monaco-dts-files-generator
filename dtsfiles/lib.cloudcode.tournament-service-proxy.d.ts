@@ -37,33 +37,7 @@ interface TournamentServiceProxy {
 	 * @param  {date} roundStartedEpoch Time the user started the match resulting in the score being posted. (date in millis.)
 	 * @returns ServiceProxyResponse
 	 */ 
-	postTournamentScore(leaderboardId: string, score: long, data: nativeObject, roundStartedEpoch: date): ServiceProxyResponse;
-
-	/**
-	 * Record the given score to the leaderboard
-	 * 
-	 * @param  {string} leaderboardId The leaderboard for the tournament.
-	 * @param  {long} score The score to post.
-	 * @param  {nativeObject} data Optional data attached to the leaderboard entry.
-	 * @param  {date} roundStartedEpoch Time the user started the match resulting in the score being posted. (date in millis.)
-	 * @returns ServiceProxyResponse
-	 */ 
 	postTournamentScoreUTC(leaderboardId: string, score: long, data: nativeObject, roundStartedEpoch: date): ServiceProxyResponse;
-
-	/**
-	 * Record the given score to the leaderboard and returns leaderboard results.  Option parameter: leaderboard version id 'versionId'.
-	 * 
-	 * @param  {string} leaderboardId The leaderboard for the tournament.
-	 * @param  {long} score A score to post.
-	 * @param  {nativeObject} data Optional data attached to the leaderboard entry.
-	 * @param  {date} roundStartedEpoch Time the user started the match resulting in the score being posted.
-	 * @param  {string} sort Sort key for sort order of page.  ("HIGH_TO_LOW" or "LOW_TO_HIGH")
-	 * @param  {long} beforeCount The count of players before the current player to include.
-	 * @param  {long} afterCount The count of players after the current player to include.
-	 * @param  {long} initialScore The initial score for players first joining a tournament. Usually 0, unless leaderboard is LOW_VALUE.
-	 * @returns ServiceProxyResponse
-	 */ 
-	postTournamentScoreWithResults(leaderboardId: string, score: long, data: nativeObject, roundStartedEpoch: date, sort: string, beforeCount: long, afterCount: long, initialScore: long): ServiceProxyResponse;
 
 	/**
 	 * Record the given score to the leaderboard and returns leaderboard results.  Option parameter: leaderboard version id 'versionId'.

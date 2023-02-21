@@ -18,6 +18,7 @@
 "lib.cloudcode.global-file-v3-service-proxy.d.ts",
 "lib.cloudcode.global-game-statistics-service-proxy.d.ts",
 "lib.cloudcode.group-service-proxy.d.ts",
+"lib.cloudcode.group-file-service-proxy.d.ts",
 "lib.cloudcode.http-client-service-proxy.d.ts",
 "lib.cloudcode.identity-service-proxy.d.ts",
 "lib.cloudcode.item-catalog-service-proxy.d.ts",

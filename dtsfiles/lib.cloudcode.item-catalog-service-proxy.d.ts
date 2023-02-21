@@ -52,6 +52,16 @@ interface ItemCatalogServiceProxy {
 	sysGetCatalogItemDefinition(defId: string): ServiceProxyResponse;
 
 	/**
+	 * Delete an existing Item catalog
+	 * 
+	 * @param  {string} defId The unique id of the item definition.
+	 * @param  {integer} version Version of catalog item to delete. For any version, specify -1.
+	 * @param  {boolean} forceDeleteAnyState false - Delete only if the item is in Revoked or Draft state. true - delete item irrespective of the state.
+	 * @returns ServiceProxyResponse
+	 */ 
+	sysDeleteCatalogItem(defId: string, version: integer, forceDeleteAnyState: boolean): ServiceProxyResponse;
+
+	/**
 	 * Create a new catalog item on the server.
 	 * 
 	 * @param  {string} defId Unique ID for new catalog item. Required.

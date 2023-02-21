@@ -15,11 +15,11 @@ interface FileServiceProxy {
 	/**
 	 * Returns a list of user files.
 	 * 
-	 * @param  {string} cloudPath The file path.
+	 * @param  {string} path The file path.
 	 * @param  {boolean} recurse Whether to recurse into sub-directories.
 	 * @returns ServiceProxyResponse
 	 */ 
-	listUserFiles(cloudPath: string, recurse: boolean): ServiceProxyResponse;
+	listUserFiles(path: string, recurse: boolean): ServiceProxyResponse;
 
 	/**
 	 * Deletes a single user file.
