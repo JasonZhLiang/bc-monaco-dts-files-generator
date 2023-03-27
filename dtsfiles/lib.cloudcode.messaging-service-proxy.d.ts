@@ -141,6 +141,14 @@ interface MessagingServiceProxy {
 	sysDeleteMessage(msgId: string, msgVer: long): ServiceProxyResponse;
 
 	/**
+	 * Deletes specified system messages on the server. Note, if a regular message, deletes all references to it.
+	 * 
+	 * @param  {nativeArray} msgIds An array of message ids.
+	 * @returns ServiceProxyResponse
+	 */ 
+	sysDeleteMessages(msgIds: nativeArray): ServiceProxyResponse;
+
+	/**
 	 * Sends a simple string-based message on behalf of the system (i.e. app) to the specified users.
 	 * 
 	 * @param  {nativeArray} toProfileIds An array of recipients.

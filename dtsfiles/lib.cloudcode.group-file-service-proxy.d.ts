@@ -120,12 +120,12 @@ interface GroupFileServiceProxy {
 	 * 
 	 * @param  {string} groupId The id of the group.
 	 * @param  {string} fileId The id of the file.
-	 * @param  {number} version The target version of the file.
+	 * @param  {integer} version The target version of the file.
 	 * @param  {string} newFilename The optional new file name.
-	 * @param  {map} newAcl The optional new acl.
+	 * @param  {nativeObject} newAcl The optional new acl.
 	 * @returns ServiceProxyResponse
 	 */ 
-	updateFileInfo(groupId: string, fileId: string, version: number, newFilename: string, newAcl: map): ServiceProxyResponse;
+	updateFileInfo(groupId: string, fileId: string, version: integer, newFilename: string, newAcl: nativeObject): ServiceProxyResponse;
 
 	/**
 	 * Returns information on a file using fileId.
@@ -226,10 +226,10 @@ interface GroupFileServiceProxy {
 	 * @param  {string} groupTreeId The id of the destination folder.
 	 * @param  {string} groupFilename The group file name.
 	 * @param  {boolean} overwriteIfPresent Whether to allow overwrite of an existing file if present.
-	 * @param  {map} groupFileAcl The acl of the new group file.
+	 * @param  {nativeObject} groupFileAcl The acl of the new group file.
 	 * @returns ServiceProxyResponse
 	 */ 
-	moveUserToGroupFile(userCloudPath: string, userCloudFilename: string, groupId: string, groupTreeId: string, groupFilename: string, overwriteIfPresent: boolean, groupFileAcl: map): ServiceProxyResponse;
+	moveUserToGroupFile(userCloudPath: string, userCloudFilename: string, groupId: string, groupTreeId: string, groupFilename: string, overwriteIfPresent: boolean, groupFileAcl: nativeObject): ServiceProxyResponse;
 
 	/**
 	 * Move a file from user space to group space.

@@ -12,6 +12,16 @@ interface EventServiceProxy {
 	sendEvent(toId: string, eventType: string, eventData: nativeObject): ServiceProxyResponse;
 
 	/**
+	 * Sends an event to the designated user ID with the attached json data. Will only deliver the event via RTT. Will not persist the event.
+	 * 
+	 * @param  {string} toId The id of the player who is being sent the event.
+	 * @param  {string} eventType The user-defined type of the event.
+	 * @param  {nativeObject} eventData The user-defined data for this event encoded in JSON.
+	 * @returns ServiceProxyResponse
+	 */ 
+	sysSendEventRTTOnly(toId: string, eventType: string, eventData: nativeObject): ServiceProxyResponse;
+
+	/**
 	 * Updates an event in the user's incoming event mailbox.
 	 * 
 	 * @param  {string} evId The event id.
