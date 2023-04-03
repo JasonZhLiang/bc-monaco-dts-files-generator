@@ -15,6 +15,10 @@ for file in files:
 # proxy_name_array.sort(key=lambda x: x)
 
 proxy_name_array.sort()
+# debug one proxy
+# print(proxy_name_array)
+# proxy_name_array = ["HttpClient"]
+# end debug
 file_name_array = []
 store_folder = "./dtsfiles"
 if not os.path.isdir(store_folder):
@@ -24,7 +28,7 @@ for proxy in proxy_name_array:
     try:
         with open(f"{json_path}{proxy}.json", "r") as output:
             data = json.load(output)
-            print(data)
+            # print(data)
     except FileNotFoundError:
         print("the proxy name your typed not exist!")
     else:
@@ -53,12 +57,16 @@ for proxy in proxy_name_array:
                 param_string = ""
                 try:
                     for param in method["paramInfo"]:
-                        file.write(
-                            f'\t * @param  {{{param["type"][0].lower() + param["type"][1:]}}} {param["name"]} {param["desc"]}\n')
+                        try:
+                            file.write(
+                                f'\t * @param  {{{param["type"][0].lower() + param["type"][1:]}}} {param["name"]} {param["desc"]}\n')
+                        except KeyError:
+                            print(f'<{proxy}.json> for method: <{method["apiMethod"]}> parameter: <{param["name"]}> missing '
+                                  f'paramInfo "desc" ')
+
                         param_string += f'{param["name"]}: {param["type"][0].lower() + param["type"][1:]}, '
                 except KeyError:
                     print(f'no paramInfo for method {method["apiMethod"]}')
-
                 file.write(f'\t * @returns ServiceProxyResponse\n')
                 file.write(f'\t */ \n')
                 method_name = method["apiMethod"][0].lower() + method["apiMethod"][1:]
