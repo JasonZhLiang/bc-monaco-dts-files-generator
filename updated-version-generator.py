@@ -1,6 +1,21 @@
 import json
 import re
 import os
+import requests # Import the requests library
+
+GITHUB_BASE_URL = "https://raw.githubusercontent.com/getbraincloud/braincloud-docs/main/docs/api/2_capi/"
+
+def fetch_md_content(service_name, method_name):
+    url = f"{GITHUB_BASE_URL}{service_name}/{method_name}.md"
+    # Removed print(f"Attempting to fetch URL: {url}")
+    try:
+        headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'}
+        response = requests.get(url, headers=headers, timeout=10)  # Removed verify=False
+        response.raise_for_status()  # Raise an exception for HTTP errors
+        return response.text
+    except requests.exceptions.RequestException as e:
+        print(f"Error fetching {url}: {e}")
+        return None
 
 
 def sanitizeMethodName(sourceMethodName):
@@ -70,6 +85,70 @@ def sanitizeParameterType(sourceParameterType):
             return multiPartString
         else:
             return sourceParameterType.lstrip().rstrip()
+
+
+def extract_json_response(markdown_content):
+    # Regex to find the JSON response block within the markdown
+    match = re.search(r'<details>\s*<summary>JSON Response</summary>\s*```json\s*(.*?)\s*```\s*</details>', markdown_content, re.DOTALL)
+    if match:
+        json_str = match.group(1)
+        try:
+            return json.loads(json_str)
+        except json.JSONDecodeError as e:
+            print(f"Error decoding JSON: {e}")
+            return None
+    return None
+
+
+def convert_json_to_typescript(json_obj, base_indent_level):
+    ts_string = ""
+    current_indent = "    " * base_indent_level
+
+    if isinstance(json_obj, dict):
+        for key, value in json_obj.items():
+            sanitized_key = re.sub(r'[^a-zA-Z0-9_]', '', key)
+            
+            if isinstance(value, dict):
+                ts_string += f"{current_indent}{sanitized_key}: {{\n"
+                ts_string += convert_json_to_typescript(value, base_indent_level + 1)
+                ts_string += f"{current_indent}}};\n"
+            elif isinstance(value, list):
+                if len(value) > 0:
+                    if isinstance(value[0], dict):
+                        ts_string += f"{current_indent}{sanitized_key}: Array<{{\n"
+                        ts_string += convert_json_to_typescript(value[0], base_indent_level + 1)
+                        ts_string += f"{current_indent}}}>;\n"
+                    else:
+                        list_element_type = "any"
+                        if isinstance(value[0], str): list_element_type = "string"
+                        elif isinstance(value[0], int) or isinstance(value[0], float): list_element_type = "number"
+                        elif isinstance(value[0], bool): list_element_type = "boolean"
+                        ts_string += f"{current_indent}{sanitized_key}: Array<{list_element_type}>;\n"
+                else:
+                    ts_string += f"{current_indent}{sanitized_key}: Array<any>;\n"
+            elif isinstance(value, str):
+                ts_string += f"{current_indent}{sanitized_key}: string;\n"
+            elif isinstance(value, int) or isinstance(value, float):
+                ts_string += f"{current_indent}{sanitized_key}: number;\n"
+            elif isinstance(value, bool):
+                ts_string += f"{current_indent}{sanitized_key}: boolean;\n"
+            elif value is None:
+                ts_string += f"{current_indent}{sanitized_key}: any | null;\n"
+            else:
+                ts_string += f"{current_indent}{sanitized_key}: any;\n"
+        return ts_string
+    elif isinstance(json_obj, list):
+        if len(json_obj) > 0:
+            if isinstance(json_obj[0], dict):
+                return f"Array<{{\n{convert_json_to_typescript(json_obj[0], base_indent_level + 1)}{current_indent}}}>"
+            else:
+                if isinstance(json_obj[0], str): return "Array<string>"
+                elif isinstance(json_obj[0], int) or isinstance(json_obj[0], float): return "Array<number>"
+                elif isinstance(json_obj[0], bool): return "Array<boolean>"
+                else: return "Array<any>"
+        else:
+            return "Array<any>"
+    return ""
 
 
 source_path = "/Users/jasonl//bitbucket/braincloud-portal/Development/Server-AppServer/src/main/webapp/js/json/"
@@ -158,6 +237,13 @@ for proxy in proxy_name_array:
                 # Append the method name for the operation to our list of processed methods.
                 processed_methods.append(method_name)
 
+                typescript_return_type_content = ""
+                md_content = fetch_md_content(service_name.lower(), method["apiMethod"].lower())
+                if md_content:
+                    json_response = extract_json_response(md_content)
+                    if json_response:
+                        typescript_return_type_content = convert_json_to_typescript(json_response, base_indent_level=1) # Start inner content with 1 indent (4 spaces)
+
                 # Process the comments/jsdoc section, this contains a method description along with parameter descriptions.
                 file.write(f'\t/**\n')
                 file.write(f'\t * {method["desc"]}\n')
@@ -176,10 +262,19 @@ for proxy in proxy_name_array:
                 file.write(f'\t * @returns ServiceProxyResponse\n')
                 file.write(f'\t */ \n')
 
+                if method_name == "createGroupWithSummaryData":
+                    method_name = "createGroup"
+
                 if param_string:
-                    file.write(f'\t{method_name}({param_string[0:-2]}): ServiceProxyResponse;\n')
+                    file.write(f'\t{method_name}({param_string[0:-2]}): {{\n')
                 else:
-                    file.write(f'\t{method_name}(): ServiceProxyResponse;\n')
+                    file.write(f'\t{method_name}(): {{\n')
+
+                if typescript_return_type_content:
+                    file.write(typescript_return_type_content)
+                
+                file.write(f'\t}};
+') # Close the object and add semicolon
 
                 count += 1
 
