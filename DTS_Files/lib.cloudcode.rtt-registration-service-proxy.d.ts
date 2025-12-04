@@ -7,4 +7,5 @@ interface RTTRegistrationServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	requestClientConnection(): ServiceProxyResponse;
+
 }

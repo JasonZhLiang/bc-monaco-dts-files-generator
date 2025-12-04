@@ -3,18 +3,17 @@ import re
 import os
 import requests # Import the requests library
 
-GITHUB_BASE_URL = "https://raw.githubusercontent.com/getbraincloud/braincloud-docs/main/docs/api/2_capi/"
+GITHUB_BASE_URL = "https://raw.githubusercontent.com/getbraincloud/braincloud-docs/develop/docs/api/2_capi/"
 
 def fetch_md_content(service_name, method_name):
     url = f"{GITHUB_BASE_URL}{service_name}/{method_name}.md"
-    # Removed print(f"Attempting to fetch URL: {url}")
     try:
         headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'}
-        response = requests.get(url, headers=headers, timeout=10)  # Removed verify=False
+        response = requests.get(url, headers=headers, timeout=10) # Removed verify=False again, it was re-added from a reverted file
         response.raise_for_status()  # Raise an exception for HTTP errors
         return response.text
     except requests.exceptions.RequestException as e:
-        print(f"Error fetching {url}: {e}")
+        # print(f"Error fetching {url}: {e}")
         return None
 
 
@@ -95,28 +94,28 @@ def extract_json_response(markdown_content):
         try:
             return json.loads(json_str)
         except json.JSONDecodeError as e:
-            print(f"Error decoding JSON: {e}")
+            print(f"Error decoding JSON: {e} in {json_str}")
             return None
     return None
 
 
-def convert_json_to_typescript(json_obj, base_indent_level):
+def convert_json_to_typescript(json_obj, base_indent_string):
     ts_string = ""
-    current_indent = "    " * base_indent_level
+    current_indent = base_indent_string
 
     if isinstance(json_obj, dict):
         for key, value in json_obj.items():
             sanitized_key = re.sub(r'[^a-zA-Z0-9_]', '', key)
-            
+
             if isinstance(value, dict):
                 ts_string += f"{current_indent}{sanitized_key}: {{\n"
-                ts_string += convert_json_to_typescript(value, base_indent_level + 1)
+                ts_string += convert_json_to_typescript(value, current_indent + "    ")
                 ts_string += f"{current_indent}}};\n"
             elif isinstance(value, list):
                 if len(value) > 0:
                     if isinstance(value[0], dict):
                         ts_string += f"{current_indent}{sanitized_key}: Array<{{\n"
-                        ts_string += convert_json_to_typescript(value[0], base_indent_level + 1)
+                        ts_string += convert_json_to_typescript(value[0], current_indent + "    ")
                         ts_string += f"{current_indent}}}>;\n"
                     else:
                         list_element_type = "any"
@@ -140,7 +139,8 @@ def convert_json_to_typescript(json_obj, base_indent_level):
     elif isinstance(json_obj, list):
         if len(json_obj) > 0:
             if isinstance(json_obj[0], dict):
-                return f"Array<{{\n{convert_json_to_typescript(json_obj[0], base_indent_level + 1)}{current_indent}}}>"
+                inner_content = convert_json_to_typescript(json_obj[0], current_indent + "    ")
+                return f"Array<{{\n{inner_content}{current_indent}}}>"
             else:
                 if isinstance(json_obj[0], str): return "Array<string>"
                 elif isinstance(json_obj[0], int) or isinstance(json_obj[0], float): return "Array<number>"
@@ -242,7 +242,7 @@ for proxy in proxy_name_array:
                 if md_content:
                     json_response = extract_json_response(md_content)
                     if json_response:
-                        typescript_return_type_content = convert_json_to_typescript(json_response, base_indent_level=1) # Start inner content with 1 indent (4 spaces)
+                        typescript_return_type_content = convert_json_to_typescript(json_response, base_indent_string='\t\t') # Start inner content with 1 tab + 2 spaces (6 spaces)
 
                 # Process the comments/jsdoc section, this contains a method description along with parameter descriptions.
                 file.write(f'\t/**\n')
@@ -253,12 +253,13 @@ for proxy in proxy_name_array:
                     for param in method["paramInfo"]:
                         try:
                             file.write(
-                                f'\t * @param  {{{param["type"]}}} {param["name"]} {param["desc"]}\n')
+                                f'\t * @param  {{{sanitizeParameterType(param["type"])}}} {param["name"]} {param["desc"]}\n')
                         except KeyError:
                             print(f'{service_name}.json - Parameter <{param["name"]}> missing "paramInfo.desc".')
                         param_string += f'{param["name"]}: {sanitizeParameterType(param["type"])}, '
                 except KeyError:
-                    print(f'{service_name}.json - Missing "paramInfo".')
+                    pass
+                    # print(f'{service_name}.json - Missing "paramInfo".')
                 file.write(f'\t * @returns ServiceProxyResponse\n')
                 file.write(f'\t */ \n')
 
@@ -266,15 +267,18 @@ for proxy in proxy_name_array:
                     method_name = "createGroup"
 
                 if param_string:
-                    file.write(f'\t{method_name}({param_string[0:-2]}): {{\n')
+                    file.write(f'\t{method_name}({param_string[0:-2]}): ')
                 else:
-                    file.write(f'\t{method_name}(): {{\n')
+                    file.write(f'\t{method_name}(): ')
 
                 if typescript_return_type_content:
+                    file.write('{\n')
                     file.write(typescript_return_type_content)
-                
-                file.write(f'\t}};
-') # Close the object and add semicolon
+                    file.write('\t};\n')
+                else:
+                    file.write('ServiceProxyResponse;\n')
+
+                file.write('\n') # Ensure a single newline separates methods
 
                 count += 1
 

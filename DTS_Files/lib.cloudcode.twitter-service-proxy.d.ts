@@ -8,6 +8,7 @@ interface TwitterServiceProxy {
 	 */ 
 	authorizeTwitter(): ServiceProxyResponse;
 
+
 	/**
 	 * NA
 	 * 
@@ -15,10 +16,12 @@ interface TwitterServiceProxy {
 	 */ 
 	verifyTwitter(): ServiceProxyResponse;
 
+
 	/**
 	 * NA
 	 * 
 	 * @returns ServiceProxyResponse
 	 */ 
 	tweet(): ServiceProxyResponse;
+
 }

@@ -7,16 +7,15 @@ interface SegmentServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	getMySegmentsLegacy(): {
-    data: 
-    {
-        segments: Array<
-        {
-            segmentId: number;
-            name: string;
-        }>;
-    };
-    status: number;
-};
+		data: {
+		    segments: Array<{
+		        segmentId: number;
+		        name: string;
+		    }>;
+		};
+		status: number;
+	};
+
 
 	/**
 	 * Refreshes the segments for the current user. Available via cloud-code only.
@@ -24,11 +23,11 @@ interface SegmentServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	refreshMySegments(): {
-    data: 
-    {
-    };
-    status: number;
-};
+		data: {
+		};
+		status: number;
+	};
+
 
 	/**
 	 * Returns a list of all segments with basic meta-data. i.e. does not include the criteria details.
@@ -36,19 +35,18 @@ interface SegmentServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	sysGetSegmentList(): {
-    data: 
-    {
-        segments: Array<
-        {
-            segmentId: number;
-            name: string;
-            description: string;
-            testersOnly: number;
-            createdAt: number;
-            updatedAt: number;
-            version: number;
-        }>;
-    };
-    status: number;
-};
+		data: {
+		    segments: Array<{
+		        segmentId: number;
+		        name: string;
+		        description: string;
+		        testersOnly: number;
+		        createdAt: number;
+		        updatedAt: number;
+		        version: number;
+		    }>;
+		};
+		status: number;
+	};
+
 }

@@ -7,4 +7,5 @@ interface DispatcherServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	processMessage(): ServiceProxyResponse;
+
 }

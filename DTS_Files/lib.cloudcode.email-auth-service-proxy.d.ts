@@ -8,10 +8,12 @@ interface EmailAuthServiceProxy {
 	 */ 
 	confirmEmail(): ServiceProxyResponse;
 
+
 	/**
 	 * Special json for email auth password reset cloud code hook.
 	 * 
 	 * @returns ServiceProxyResponse
 	 */ 
 	resetPassword(): ServiceProxyResponse;
+
 }

@@ -7,10 +7,10 @@ interface TimeServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	readServerTime(): {
-    status: number;
-    data: 
-    {
-        server_time: number;
-    };
-};
+		status: number;
+		data: {
+		    server_time: number;
+		};
+	};
+
 }

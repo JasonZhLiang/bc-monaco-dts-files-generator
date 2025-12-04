@@ -7,4 +7,5 @@ interface S2SDispatcherServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	processMessage(): ServiceProxyResponse;
+
 }
