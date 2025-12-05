@@ -9,7 +9,6 @@ interface AsyncMatchServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	createMatch(players: Array<any>, pushContent: string): {
-		status: number;
 		data: {
 		    gameId: string;
 		    ownerId: string;
@@ -29,6 +28,7 @@ interface AsyncMatchServiceProxy {
 		    createdAt: number;
 		    updatedAt: number;
 		};
+		status: number;
 	};
 
 
@@ -75,7 +75,6 @@ interface AsyncMatchServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	readMatch(ownerId: string, matchId: string): {
-		status: number;
 		data: {
 		    gameId: string;
 		    ownerId: string;
@@ -100,6 +99,7 @@ interface AsyncMatchServiceProxy {
 		    createdAt: number;
 		    updatedAt: number;
 		};
+		status: number;
 	};
 
 
@@ -201,8 +201,8 @@ interface AsyncMatchServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	completeMatchWithSummaryData(ownerId: string, matchId: string, pushContent: string, summary: Object): {
-		status: number;
 		data: any | null;
+		status: number;
 	};
 
 
@@ -214,19 +214,17 @@ interface AsyncMatchServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	readMatchHistory(ownerId: string, matchId: string): {
-		status: number;
 		data: {
 		    gameId: string;
 		    ownerId: string;
 		    matchId: string;
 		    turns: Array<{
 		        playerId: string;
-		        matchState: {
-		            color: string;
-		        };
+		        matchState: Record<string, any>;
 		        createdAt: number;
 		    }>;
 		};
+		status: number;
 	};
 
 
@@ -236,28 +234,20 @@ interface AsyncMatchServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	findMatches(): {
-		status: number;
 		data: {
 		    results: Array<{
 		        gameId: string;
 		        ownerId: string;
 		        matchId: string;
 		        version: number;
-		        players: Array<{
-		            playerId: string;
-		            playerName: string;
-		            pictureUrl: any | null;
-		            summaryFriendData: any | null;
-		        }>;
-		        status: {
-		            status: string;
-		            currentPlayer: string;
-		        };
+		        players: Array<Record<string, any>>;
+		        status: Record<string, any>;
 		        summary: any | null;
 		        createdAt: number;
 		        updatedAt: number;
 		    }>;
 		};
+		status: number;
 	};
 
 
@@ -267,28 +257,20 @@ interface AsyncMatchServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	findCompleteMatches(): {
-		status: number;
 		data: {
 		    results: Array<{
 		        gameId: string;
 		        ownerId: string;
 		        matchId: string;
 		        version: number;
-		        players: Array<{
-		            playerId: string;
-		            playerName: string;
-		            pictureUrl: any | null;
-		            summaryFriendData: any | null;
-		        }>;
-		        status: {
-		            status: string;
-		            currentPlayer: string;
-		        };
+		        players: Array<Record<string, any>>;
+		        status: Record<string, any>;
 		        summary: any | null;
 		        createdAt: number;
 		        updatedAt: number;
 		    }>;
 		};
+		status: number;
 	};
 
 
@@ -300,8 +282,8 @@ interface AsyncMatchServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	abandonMatch(ownerId: string, matchId: string): {
-		status: number;
 		data: any | null;
+		status: number;
 	};
 
 
@@ -315,8 +297,8 @@ interface AsyncMatchServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	abandonMatchWithSummaryData(ownerId: string, matchId: string, pushContent: string, summary: Object): {
-		status: number;
 		data: any | null;
+		status: number;
 	};
 
 
@@ -328,8 +310,8 @@ interface AsyncMatchServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	deleteMatch(ownerId: string, matchId: string): {
-		status: number;
 		data: any | null;
+		status: number;
 	};
 
 

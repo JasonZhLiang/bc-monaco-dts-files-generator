@@ -15,25 +15,8 @@ interface LobbyServiceProxy {
 		    rating: number;
 		    lobbyTypeDef: {
 		        lobbyTypeId: string;
-		        teams: {
-		            all: {
-		                minUsers: number;
-		                maxUsers: number;
-		                autoAssign: number;
-		                code: string;
-		            };
-		        };
-		        rules: {
-		            allowEarlyStartWithoutMax: number;
-		            forceOnTimeStartWithoutReady: number;
-		            allowJoinInProgress: number;
-		            onTimeStartSecs: number;
-		            disbandOnStart: number;
-		            everyReadyMinPercent: number;
-		            everyReadyMinNum: number;
-		            earliestStartSecs: number;
-		            tooLateSecs: number;
-		        };
+		        teams: Record<string, any>;
+		        rules: Record<string, any>;
 		        desc: string;
 		    };
 		    settings: {
@@ -60,8 +43,7 @@ interface LobbyServiceProxy {
 		        rating: number;
 		        team: string;
 		        isReady: number;
-		        extra: {
-		        };
+		        extra: Record<string, any>;
 		        cxId: string;
 		    }>;
 		};
@@ -79,26 +61,7 @@ interface LobbyServiceProxy {
 	getLobbyInstances(lobbyType: string, criteriaJson: Object): {
 		data: {
 		    lobbiesByRating: {
-		        200: Array<{
-		            id: string;
-		            lobbyType: string;
-		            state: string;
-		            rating: number;
-		            desc: string;
-		            owner: {
-		                profileId: string;
-		                name: string;
-		                rating: number;
-		                pic: any | null;
-		                cxId: string;
-		            };
-		            numMembers: number;
-		            maxMembers: number;
-		            publicSettings: {
-		                name: string;
-		                pwd: string;
-		            };
-		        }>;
+		        200: Array<Record<string, any>>;
 		    };
 		};
 		status: number;
@@ -116,22 +79,7 @@ interface LobbyServiceProxy {
 	getLobbyInstancesWithPingData(lobbyType: string, criteriaJson: Object, pingData: Object): {
 		data: {
 		    lobbiesByRating: {
-		        200: Array<{
-		            id: string;
-		            lobbyType: string;
-		            state: string;
-		            rating: number;
-		            desc: string;
-		            owner: {
-		                profileId: string;
-		                name: string;
-		                rating: number;
-		                pic: any | null;
-		                cxId: string;
-		            };
-		            numMembers: number;
-		            maxMembers: number;
-		        }>;
+		        200: Array<Record<string, any>>;
 		    };
 		};
 		status: number;
@@ -398,10 +346,7 @@ interface LobbyServiceProxy {
 		        Relay_lobbyT_v2: Array<string>;
 		    };
 		    regionPingData: {
-		        cacentral1: {
-		            type: string;
-		            target: string;
-		        };
+		        cacentral1: Record<string, any>;
 		    };
 		};
 		status: number;
@@ -465,29 +410,10 @@ interface LobbyServiceProxy {
 		    rating: number;
 		    ownerCxId: string;
 		    lobbyTypeDef: {
-		        roomConfig: {
-		            enableDisconnectButton: number;
-		        };
+		        roomConfig: Record<string, any>;
 		        lobbyTypeId: string;
-		        teams: {
-		            all: {
-		                minUsers: number;
-		                maxUsers: number;
-		                autoAssign: number;
-		                code: string;
-		            };
-		        };
-		        rules: {
-		            allowEarlyStartWithoutMax: number;
-		            forceOnTimeStartWithoutReady: number;
-		            allowJoinInProgress: number;
-		            onTimeStartSecs: number;
-		            disbandOnStart: number;
-		            everyReadyMinPercent: number;
-		            everyReadyMinNum: number;
-		            earliestStartSecs: number;
-		            tooLateSecs: number;
-		        };
+		        teams: Record<string, any>;
+		        rules: Record<string, any>;
 		        desc: string;
 		    };
 		    settings: {
@@ -518,8 +444,7 @@ interface LobbyServiceProxy {
 		        rating: number;
 		        team: string;
 		        isReady: number;
-		        extra: {
-		        };
+		        extra: Record<string, any>;
 		        passcode: string;
 		        ipAddress: string;
 		        cxId: string;

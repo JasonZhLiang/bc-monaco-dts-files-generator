@@ -5,11 +5,13 @@ import requests # Import the requests library
 
 GITHUB_BASE_URL = "https://raw.githubusercontent.com/getbraincloud/braincloud-docs/develop/docs/api/2_capi/"
 
+MAX_DEPTH_FOR_TYPE_GENERATION = 3 # Define the maximum depth for type generation in data json
+
 def fetch_md_content(service_name, method_name):
     url = f"{GITHUB_BASE_URL}{service_name}/{method_name}.md"
     try:
         headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'}
-        response = requests.get(url, headers=headers, timeout=10) # Removed verify=False again, it was re-added from a reverted file
+        response = requests.get(url, headers=headers, timeout=10) # Removed verify=False again
         response.raise_for_status()  # Raise an exception for HTTP errors
         return response.text
     except requests.exceptions.RequestException as e:
@@ -99,7 +101,7 @@ def extract_json_response(markdown_content):
     return None
 
 
-def convert_json_to_typescript(json_obj, base_indent_string):
+def convert_json_to_typescript(json_obj, base_indent_string, current_depth):
     ts_string = ""
     current_indent = base_indent_string
 
@@ -108,23 +110,28 @@ def convert_json_to_typescript(json_obj, base_indent_string):
             sanitized_key = re.sub(r'[^a-zA-Z0-9_]', '', key)
 
             if isinstance(value, dict):
-                ts_string += f"{current_indent}{sanitized_key}: {{\n"
-                ts_string += convert_json_to_typescript(value, current_indent + "    ")
-                ts_string += f"{current_indent}}};\n"
+                if current_depth >= MAX_DEPTH_FOR_TYPE_GENERATION - 1:
+                    ts_string += f"{current_indent}{sanitized_key}: Record<string, any>;\n"
+                else:
+                    ts_string += f"{current_indent}{sanitized_key}: {{\n"
+                    ts_string += convert_json_to_typescript(value, current_indent + "    ", current_depth + 1)
+                    ts_string += f"{current_indent}}};\n"
             elif isinstance(value, list):
-                if len(value) > 0:
-                    if isinstance(value[0], dict):
-                        ts_string += f"{current_indent}{sanitized_key}: Array<{{\n"
-                        ts_string += convert_json_to_typescript(value[0], current_indent + "    ")
-                        ts_string += f"{current_indent}}}>;\n"
+                if len(value) > 0 and isinstance(value[0], dict):
+                    if current_depth >= MAX_DEPTH_FOR_TYPE_GENERATION - 1:
+                        ts_string += f"{current_indent}{sanitized_key}: Array<Record<string, any>>;\n"
                     else:
-                        list_element_type = "any"
+                        ts_string += f"{current_indent}{sanitized_key}: Array<{{\n"
+                        ts_string += convert_json_to_typescript(value[0], current_indent + "    ", current_depth + 1)
+                        ts_string += f"{current_indent}}}>;\n"
+                else:
+                    # Existing logic for list of primitives or empty list
+                    list_element_type = "any"
+                    if len(value) > 0:
                         if isinstance(value[0], str): list_element_type = "string"
                         elif isinstance(value[0], int) or isinstance(value[0], float): list_element_type = "number"
                         elif isinstance(value[0], bool): list_element_type = "boolean"
-                        ts_string += f"{current_indent}{sanitized_key}: Array<{list_element_type}>;\n"
-                else:
-                    ts_string += f"{current_indent}{sanitized_key}: Array<any>;\n"
+                    ts_string += f"{current_indent}{sanitized_key}: Array<{list_element_type}>;\n"
             elif isinstance(value, str):
                 ts_string += f"{current_indent}{sanitized_key}: string;\n"
             elif isinstance(value, int) or isinstance(value, float):
@@ -139,9 +146,13 @@ def convert_json_to_typescript(json_obj, base_indent_string):
     elif isinstance(json_obj, list):
         if len(json_obj) > 0:
             if isinstance(json_obj[0], dict):
-                inner_content = convert_json_to_typescript(json_obj[0], current_indent + "    ")
-                return f"Array<{{\n{inner_content}{current_indent}}}>"
+                if current_depth >= MAX_DEPTH_FOR_TYPE_GENERATION - 1:
+                     return f"Array<Record<string, any>>"
+                else:
+                    inner_content = convert_json_to_typescript(json_obj[0], current_indent + "    ", current_depth + 1)
+                    return f"Array<{{\n{inner_content}{current_indent}}}>"
             else:
+                # Existing logic for list of primitives
                 if isinstance(json_obj[0], str): return "Array<string>"
                 elif isinstance(json_obj[0], int) or isinstance(json_obj[0], float): return "Array<number>"
                 elif isinstance(json_obj[0], bool): return "Array<boolean>"
@@ -158,7 +169,7 @@ proxy_name_array = []
 file_name_array = []
 
 for file in os.scandir(source_path):
-    if file.name.endswith(".json") and file.name != "Script.json":
+    if file.name.endswith(".json") and file.name != "Script.json" and file.name != "Authenticate.json" and file.name != "Dispatcher.json":
         proxy_name_array.append(file.name[:-5])
 
 proxy_name_array.sort()
@@ -242,7 +253,7 @@ for proxy in proxy_name_array:
                 if md_content:
                     json_response = extract_json_response(md_content)
                     if json_response:
-                        typescript_return_type_content = convert_json_to_typescript(json_response, base_indent_string='\t\t') # Start inner content with 1 tab + 2 spaces (6 spaces)
+                        typescript_return_type_content = convert_json_to_typescript(json_response, base_indent_string='\t\t', current_depth=0) # Start inner content with 1 tab + 2 spaces (6 spaces)
 
                 # Process the comments/jsdoc section, this contains a method description along with parameter descriptions.
                 file.write(f'\t/**\n')

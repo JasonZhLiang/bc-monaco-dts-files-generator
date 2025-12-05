@@ -23,28 +23,10 @@ interface TournamentServiceProxy {
 		    };
 		    tournamentConfigs: Array<{
 		        tournamentCode: string;
-		        description: {
-		            name: {
-		                en: string;
-		            };
-		            desc: {
-		                en: string;
-		            };
-		        };
-		        customJson: {
-		        };
-		        payoutRules: Array<{
-		            reward: {
-		                currency: {
-		                    credits: number;
-		                };
-		            };
-		            rank: {
-		                rankAbs: number;
-		            };
-		        }>;
-		        entryFee: {
-		        };
+		        description: Record<string, any>;
+		        customJson: Record<string, any>;
+		        payoutRules: Array<Record<string, any>>;
+		        entryFee: Record<string, any>;
 		    }>;
 		    leaderboardEnrollment: {
 		        score: number;
@@ -71,20 +53,7 @@ interface TournamentServiceProxy {
 		status: number;
 		data: {
 		    balance: {
-		        currency: {
-		            test: {
-		                purchased: number;
-		                balance: number;
-		                consumed: number;
-		                awarded: number;
-		            };
-		            credits: {
-		                purchased: number;
-		                balance: number;
-		                consumed: number;
-		                awarded: number;
-		            };
-		        };
+		        currency: Record<string, any>;
 		    };
 		    enrolled: number;
 		    entryFee: {
@@ -157,23 +126,7 @@ interface TournamentServiceProxy {
 		        data: any | null;
 		        leaderboardId: string;
 		        playerId: string;
-		        previousLeaderboard: {
-		            createdAt: number;
-		            data: any | null;
-		            index: number;
-		            name: string;
-		            pictureUrl: string;
-		            playerId: string;
-		            rank: number;
-		            score: number;
-		            summaryFriendData: {
-		                field: string;
-		            };
-		            tCode: string;
-		            tNotifiedAt: number;
-		            tRank: number;
-		            updatedAt: number;
-		        };
+		        previousLeaderboard: Record<string, any>;
 		        previousScore: number;
 		        score: number;
 		        tClaimedAt: number;
@@ -192,9 +145,7 @@ interface TournamentServiceProxy {
 		        playerId: string;
 		        rank: number;
 		        score: number;
-		        summaryFriendData: {
-		            field: string;
-		        };
+		        summaryFriendData: Record<string, any>;
 		        tCode: string;
 		        tNotifiedAt: number;
 		        tRank: number;
@@ -218,9 +169,7 @@ interface TournamentServiceProxy {
 		    tRank: number;
 		    createdAt: number;
 		    rewards: {
-		        currency: {
-		            credits: number;
-		        };
+		        currency: Record<string, any>;
 		    };
 		    tCode: string;
 		    data: any | null;
@@ -244,9 +193,7 @@ interface TournamentServiceProxy {
 		    tRank: number;
 		    createdAt: number;
 		    rewards: {
-		        currency: {
-		            credits: number;
-		        };
+		        currency: Record<string, any>;
 		    };
 		    tCode: string;
 		    data: any | null;
@@ -270,57 +217,20 @@ interface TournamentServiceProxy {
 		        experiencePoints: number;
 		        experienceLevels: Array<number>;
 		        playerAchievements: Array<string>;
-		        globalStatistics: {
-		            allWorldMissions: number;
-		        };
-		        statistics: {
-		            missions: number;
-		        };
-		        currency: {
-		            coin: number;
-		        };
+		        globalStatistics: Record<string, any>;
+		        statistics: Record<string, any>;
+		        currency: Record<string, any>;
 		    };
 		    rewardDetails: {
-		        tournaments: Array<{
-		            leaderboardId: string;
-		            leaderboardVersion: number;
-		            tCode: string;
-		            tCVersion: number;
-		            updatedAt: number;
-		            tRank: number;
-		            tClaimed: number;
-		            createdAt: number;
-		            data: {
-		            };
-		            score: number;
-		            rewards: {
-		                experiencePoints: number;
-		                achievement: string;
-		                currency: {
-		                    coins: number;
-		                };
-		                globalStatistics: {
-		                    allWorldMissions: number;
-		                };
-		                statistics: {
-		                    missions: number;
-		                };
-		            };
-		        }>;
+		        tournaments: Array<Record<string, any>>;
 		        milestones: Array<any>;
-		        xp: {
-		        };
+		        xp: Record<string, any>;
 		    };
 		    experiencePoints: number;
 		    experienceLevel: number;
 		    xpCapped: number;
 		    currency: {
-		        coin: {
-		            purchased: number;
-		            balance: number;
-		            consumed: number;
-		            awarded: number;
-		        };
+		        coin: Record<string, any>;
 		    };
 		    parentCurrency: {
 		    };
@@ -374,29 +284,10 @@ interface TournamentServiceProxy {
 		    };
 		    tournamentConfigs: Array<{
 		        tournamentCode: string;
-		        description: {
-		            name: {
-		                en: string;
-		            };
-		            desc: {
-		                en: string;
-		            };
-		        };
-		        customJson: {
-		        };
-		        payoutRules: Array<{
-		            reward: {
-		                experiencePoints: number;
-		                currency: {
-		                    coin: number;
-		                };
-		            };
-		            rank: {
-		                rankAbs: number;
-		            };
-		        }>;
-		        entryFee: {
-		        };
+		        description: Record<string, any>;
+		        customJson: Record<string, any>;
+		        payoutRules: Array<Record<string, any>>;
+		        entryFee: Record<string, any>;
 		    }>;
 		    enrolled: number;
 		};
@@ -418,14 +309,7 @@ interface TournamentServiceProxy {
 		    };
 		    createdAt: number;
 		    balance: {
-		        currency: {
-		            coin: {
-		                consumed: number;
-		                balance: number;
-		                purchased: number;
-		                awarded: number;
-		            };
-		        };
+		        currency: Record<string, any>;
 		    };
 		    leaderboardId: string;
 		    enrolled: number;
@@ -489,66 +373,13 @@ interface TournamentServiceProxy {
 		    tournamentTemplates: Array<{
 		        tournamentCode: string;
 		        version: number;
-		        description: {
-		            name: {
-		                en: string;
-		            };
-		            desc: {
-		                en: string;
-		            };
-		        };
-		        notifications: {
-		            startingSoon: {
-		                enabled: number;
-		                pushId: number;
-		                mail: {
-		                    en: string;
-		                };
-		            };
-		            start: {
-		                enabled: number;
-		                pushId: number;
-		                mail: {
-		                    en: string;
-		                };
-		            };
-		            scorePassed: {
-		                enabled: number;
-		                pushId: number;
-		                mail: {
-		                };
-		            };
-		            endingSoon: {
-		                enabled: number;
-		                pushId: number;
-		                mail: {
-		                    en: string;
-		                };
-		            };
-		            complete: {
-		                enabled: number;
-		                pushId: number;
-		                mail: {
-		                    en: string;
-		                };
-		            };
-		        };
+		        description: Record<string, any>;
+		        notifications: Record<string, any>;
 		        calcScript: string;
 		        postScript: string;
-		        customJson: {
-		        };
-		        payoutRules: Array<{
-		            rank: {
-		                rankAbs: number;
-		            };
-		            reward: {
-		                currency: {
-		                    gems: number;
-		                };
-		            };
-		        }>;
-		        entryFee: {
-		        };
+		        customJson: Record<string, any>;
+		        payoutRules: Array<Record<string, any>>;
+		        entryFee: Record<string, any>;
 		        createdAt: number;
 		        updatedAt: number;
 		    }>;
@@ -570,59 +401,23 @@ interface TournamentServiceProxy {
 		    tournamentCode: string;
 		    version: number;
 		    description: {
-		        name: {
-		            en: string;
-		        };
-		        desc: {
-		            en: string;
-		        };
+		        name: Record<string, any>;
+		        desc: Record<string, any>;
 		    };
 		    notifications: {
-		        startingSoon: {
-		            enabled: number;
-		            pushId: any | null;
-		            mail: {
-		            };
-		        };
-		        start: {
-		            enabled: number;
-		            pushId: number;
-		            mail: {
-		            };
-		        };
-		        scorePassed: {
-		            enabled: number;
-		            pushId: any | null;
-		            mail: {
-		            };
-		        };
-		        endingSoon: {
-		            enabled: number;
-		            pushId: any | null;
-		            mail: {
-		            };
-		        };
-		        complete: {
-		            enabled: number;
-		            pushId: number;
-		            mail: {
-		            };
-		        };
+		        startingSoon: Record<string, any>;
+		        start: Record<string, any>;
+		        scorePassed: Record<string, any>;
+		        endingSoon: Record<string, any>;
+		        complete: Record<string, any>;
 		    };
 		    calcScript: string;
 		    postScript: string;
 		    customJson: {
 		    };
 		    payoutRules: Array<{
-		        rank: {
-		            rankAbs: number;
-		        };
-		        reward: {
-		            experiencePoints: number;
-		            currency: {
-		                coins: number;
-		            };
-		        };
+		        rank: Record<string, any>;
+		        reward: Record<string, any>;
 		    }>;
 		    entryFee: {
 		    };
@@ -646,59 +441,23 @@ interface TournamentServiceProxy {
 		    tournamentCode: string;
 		    version: number;
 		    description: {
-		        name: {
-		            en: string;
-		        };
-		        desc: {
-		            en: string;
-		        };
+		        name: Record<string, any>;
+		        desc: Record<string, any>;
 		    };
 		    notifications: {
-		        startingSoon: {
-		            enabled: number;
-		            pushId: any | null;
-		            mail: {
-		            };
-		        };
-		        start: {
-		            enabled: number;
-		            pushId: number;
-		            mail: {
-		            };
-		        };
-		        scorePassed: {
-		            enabled: number;
-		            pushId: any | null;
-		            mail: {
-		            };
-		        };
-		        endingSoon: {
-		            enabled: number;
-		            pushId: any | null;
-		            mail: {
-		            };
-		        };
-		        complete: {
-		            enabled: number;
-		            pushId: number;
-		            mail: {
-		            };
-		        };
+		        startingSoon: Record<string, any>;
+		        start: Record<string, any>;
+		        scorePassed: Record<string, any>;
+		        endingSoon: Record<string, any>;
+		        complete: Record<string, any>;
 		    };
 		    calcScript: string;
 		    postScript: string;
 		    customJson: {
 		    };
 		    payoutRules: Array<{
-		        rank: {
-		            rankAbs: number;
-		        };
-		        reward: {
-		            experiencePoints: number;
-		            currency: {
-		                coins: number;
-		            };
-		        };
+		        rank: Record<string, any>;
+		        reward: Record<string, any>;
 		    }>;
 		    entryFee: {
 		    };
@@ -724,59 +483,23 @@ interface TournamentServiceProxy {
 		    tournamentCode: string;
 		    version: number;
 		    description: {
-		        name: {
-		            en: string;
-		        };
-		        desc: {
-		            en: string;
-		        };
+		        name: Record<string, any>;
+		        desc: Record<string, any>;
 		    };
 		    notifications: {
-		        startingSoon: {
-		            enabled: number;
-		            pushId: any | null;
-		            mail: {
-		            };
-		        };
-		        start: {
-		            enabled: number;
-		            pushId: number;
-		            mail: {
-		            };
-		        };
-		        scorePassed: {
-		            enabled: number;
-		            pushId: any | null;
-		            mail: {
-		            };
-		        };
-		        endingSoon: {
-		            enabled: number;
-		            pushId: any | null;
-		            mail: {
-		            };
-		        };
-		        complete: {
-		            enabled: number;
-		            pushId: number;
-		            mail: {
-		            };
-		        };
+		        startingSoon: Record<string, any>;
+		        start: Record<string, any>;
+		        scorePassed: Record<string, any>;
+		        endingSoon: Record<string, any>;
+		        complete: Record<string, any>;
 		    };
 		    calcScript: string;
 		    postScript: string;
 		    customJson: {
 		    };
 		    payoutRules: Array<{
-		        rank: {
-		            rankAbs: number;
-		        };
-		        reward: {
-		            experiencePoints: number;
-		            currency: {
-		                coins: number;
-		            };
-		        };
+		        rank: Record<string, any>;
+		        reward: Record<string, any>;
 		    }>;
 		    entryFee: {
 		    };

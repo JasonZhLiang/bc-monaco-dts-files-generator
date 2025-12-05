@@ -11,35 +11,13 @@ interface VirtualCurrencyServiceProxy {
 		status: number;
 		data: {
 		    currencyMap: {
-		        gems: {
-		            purchased: number;
-		            balance: number;
-		            consumed: number;
-		            awarded: number;
-		            revoked: number;
-		        };
+		        gems: Record<string, any>;
 		    };
 		    parentCurrency: {
-		        Master: {
-		            credits: {
-		                purchased: number;
-		                balance: number;
-		                consumed: number;
-		                awarded: number;
-		                revoked: number;
-		            };
-		        };
+		        Master: Record<string, any>;
 		    };
 		    peerCurrency: {
-		        gameLootPeer: {
-		            tickets: {
-		                purchased: number;
-		                balance: number;
-		                consumed: number;
-		                awarded: number;
-		                revoked: number;
-		            };
-		        };
+		        gameLootPeer: Record<string, any>;
 		    };
 		};
 	};
@@ -56,13 +34,7 @@ interface VirtualCurrencyServiceProxy {
 		status: number;
 		data: {
 		    currencyMap: {
-		        credits: {
-		            consumed: number;
-		            balance: number;
-		            purchased: number;
-		            awarded: number;
-		            revoked: number;
-		        };
+		        credits: Record<string, any>;
 		    };
 		};
 	};
@@ -79,13 +51,7 @@ interface VirtualCurrencyServiceProxy {
 		status: number;
 		data: {
 		    currencyMap: {
-		        credits: {
-		            consumed: number;
-		            balance: number;
-		            purchased: number;
-		            awarded: number;
-		            revoked: number;
-		        };
+		        credits: Record<string, any>;
 		    };
 		};
 	};
@@ -133,20 +99,8 @@ interface VirtualCurrencyServiceProxy {
 	awardCurrency(vcId: string, vcAmount: number): {
 		data: {
 		    currencyMap: {
-		        gems: {
-		            purchased: number;
-		            balance: number;
-		            consumed: number;
-		            awarded: number;
-		            revoked: number;
-		        };
-		        gold: {
-		            purchased: number;
-		            balance: number;
-		            consumed: number;
-		            awarded: number;
-		            revoked: number;
-		        };
+		        gems: Record<string, any>;
+		        gold: Record<string, any>;
 		    };
 		};
 		status: number;
@@ -165,20 +119,8 @@ interface VirtualCurrencyServiceProxy {
 		status: number;
 		data: {
 		    currencyMap: {
-		        gems: {
-		            purchased: number;
-		            balance: number;
-		            consumed: number;
-		            awarded: number;
-		            revoked: number;
-		        };
-		        gold: {
-		            purchased: number;
-		            balance: number;
-		            consumed: number;
-		            awarded: number;
-		            revoked: number;
-		        };
+		        gems: Record<string, any>;
+		        gold: Record<string, any>;
 		    };
 		};
 	};
@@ -196,20 +138,8 @@ interface VirtualCurrencyServiceProxy {
 		status: number;
 		data: {
 		    currencyMap: {
-		        gems: {
-		            purchased: number;
-		            balance: number;
-		            consumed: number;
-		            awarded: number;
-		            revoked: number;
-		        };
-		        gold: {
-		            purchased: number;
-		            balance: number;
-		            consumed: number;
-		            awarded: number;
-		            revoked: number;
-		        };
+		        gems: Record<string, any>;
+		        gold: Record<string, any>;
 		    };
 		};
 	};
@@ -225,20 +155,8 @@ interface VirtualCurrencyServiceProxy {
 	consumeCurrency(vcId: string, vcAmount: number): {
 		data: {
 		    currencyMap: {
-		        gems: {
-		            purchased: number;
-		            balance: number;
-		            consumed: number;
-		            awarded: number;
-		            revoked: number;
-		        };
-		        gold: {
-		            purchased: number;
-		            balance: number;
-		            consumed: number;
-		            awarded: number;
-		            revoked: number;
-		        };
+		        gems: Record<string, any>;
+		        gold: Record<string, any>;
 		    };
 		};
 		status: number;
@@ -257,20 +175,8 @@ interface VirtualCurrencyServiceProxy {
 		status: number;
 		data: {
 		    currencyMap: {
-		        gems: {
-		            purchased: number;
-		            balance: number;
-		            consumed: number;
-		            awarded: number;
-		            revoked: number;
-		        };
-		        gold: {
-		            purchased: number;
-		            balance: number;
-		            consumed: number;
-		            awarded: number;
-		            revoked: number;
-		        };
+		        gems: Record<string, any>;
+		        gold: Record<string, any>;
 		    };
 		};
 	};
@@ -288,20 +194,8 @@ interface VirtualCurrencyServiceProxy {
 		status: number;
 		data: {
 		    currencyMap: {
-		        gems: {
-		            purchased: number;
-		            balance: number;
-		            consumed: number;
-		            awarded: number;
-		            revoked: number;
-		        };
-		        gold: {
-		            purchased: number;
-		            balance: number;
-		            consumed: number;
-		            awarded: number;
-		            revoked: number;
-		        };
+		        gems: Record<string, any>;
+		        gold: Record<string, any>;
 		    };
 		};
 	};
@@ -317,20 +211,8 @@ interface VirtualCurrencyServiceProxy {
 	revokeCurrency(vcId: string, vcAmount: number): {
 		data: {
 		    currencyMap: {
-		        bar: {
-		            consumed: number;
-		            balance: number;
-		            purchased: number;
-		            awarded: number;
-		            revoked: number;
-		        };
-		        coins: {
-		            consumed: number;
-		            balance: number;
-		            purchased: number;
-		            awarded: number;
-		            revoked: number;
-		        };
+		        bar: Record<string, any>;
+		        coins: Record<string, any>;
 		    };
 		};
 		status: number;
@@ -348,20 +230,8 @@ interface VirtualCurrencyServiceProxy {
 	revokeParentCurrency(vcId: string, vcAmount: number, levelName: string): {
 		data: {
 		    currencyMap: {
-		        parent2VC1: {
-		            consumed: number;
-		            balance: number;
-		            purchased: number;
-		            awarded: number;
-		            revoked: number;
-		        };
-		        parent2VC2: {
-		            consumed: number;
-		            balance: number;
-		            purchased: number;
-		            awarded: number;
-		            revoked: number;
-		        };
+		        parent2VC1: Record<string, any>;
+		        parent2VC2: Record<string, any>;
 		    };
 		};
 		status: number;
@@ -379,20 +249,8 @@ interface VirtualCurrencyServiceProxy {
 	revokePeerCurrency(vcId: string, vcAmount: number, peerCode: string): {
 		data: {
 		    currencyMap: {
-		        peerVC1: {
-		            consumed: number;
-		            balance: number;
-		            purchased: number;
-		            awarded: number;
-		            revoked: number;
-		        };
-		        peerVC2: {
-		            consumed: number;
-		            balance: number;
-		            purchased: number;
-		            awarded: number;
-		            revoked: number;
-		        };
+		        peerVC1: Record<string, any>;
+		        peerVC2: Record<string, any>;
 		    };
 		};
 		status: number;

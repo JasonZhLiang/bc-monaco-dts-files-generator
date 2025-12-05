@@ -13,7 +13,6 @@ interface FileServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	prepareUserUpload(cloudPath: string, cloudFilename: string, shareable: boolean, replaceIfExists: boolean, fileSize: number, localPath: string): {
-		status: number;
 		data: {
 		    fileDetails: {
 		        updatedAt: number;
@@ -31,6 +30,7 @@ interface FileServiceProxy {
 		        cloudPath: string;
 		    };
 		};
+		status: number;
 	};
 
 
@@ -42,7 +42,6 @@ interface FileServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	listUserFiles(path: string, recurse: boolean): {
-		status: number;
 		data: {
 		    fileList: Array<{
 		        updatedAt: number;
@@ -58,6 +57,7 @@ interface FileServiceProxy {
 		        cloudLocation: string;
 		    }>;
 		};
+		status: number;
 	};
 
 
@@ -69,7 +69,6 @@ interface FileServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	deleteUserFile(cloudPath: string, cloudFilename: string): {
-		status: number;
 		data: {
 		    fileDetails: {
 		        updatedAt: number;
@@ -87,6 +86,7 @@ interface FileServiceProxy {
 		        cloudPath: string;
 		    };
 		};
+		status: number;
 	};
 
 
@@ -98,7 +98,6 @@ interface FileServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	deleteUserFiles(path: string, recurse: boolean): {
-		status: number;
 		data: {
 		    fileList: Array<{
 		        updatedAt: number;
@@ -114,6 +113,7 @@ interface FileServiceProxy {
 		        cloudLocation: string;
 		    }>;
 		};
+		status: number;
 	};
 
 
@@ -125,11 +125,11 @@ interface FileServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	getCDNUrl(cloudPath: string, cloudFilename: string): {
-		status: number;
 		data: {
 		    appServerUrl: string;
 		    cdnUrl: string;
 		};
+		status: number;
 	};
 
 }

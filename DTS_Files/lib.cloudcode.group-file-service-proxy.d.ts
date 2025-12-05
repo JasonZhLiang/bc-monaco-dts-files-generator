@@ -17,10 +17,7 @@ interface GroupFileServiceProxy {
 		        fileSize: number;
 		        dateUploaded: number;
 		        etag: string;
-		        acl: {
-		            member: number;
-		            other: number;
-		        };
+		        acl: Record<string, any>;
 		        version: number;
 		        url: string;
 		        fileId: string;
@@ -48,10 +45,7 @@ interface GroupFileServiceProxy {
 		        fileSize: number;
 		        dateUploaded: number;
 		        etag: string;
-		        acl: {
-		            member: number;
-		            other: number;
-		        };
+		        acl: Record<string, any>;
 		        version: number;
 		        url: string;
 		        fileId: string;
@@ -78,10 +72,7 @@ interface GroupFileServiceProxy {
 		        fileSize: number;
 		        dateUploaded: number;
 		        etag: string;
-		        acl: {
-		            member: number;
-		            other: number;
-		        };
+		        acl: Record<string, any>;
 		        version: number;
 		        url: string;
 		        fileId: string;
@@ -108,10 +99,7 @@ interface GroupFileServiceProxy {
 		        fileSize: number;
 		        dateUploaded: number;
 		        etag: string;
-		        acl: {
-		            member: number;
-		            other: number;
-		        };
+		        acl: Record<string, any>;
 		        version: number;
 		        url: string;
 		        fileId: string;
@@ -138,10 +126,7 @@ interface GroupFileServiceProxy {
 		        fileSize: number;
 		        dateUploaded: number;
 		        etag: string;
-		        acl: {
-		            member: number;
-		            other: number;
-		        };
+		        acl: Record<string, any>;
 		        version: number;
 		        url: string;
 		        fileId: string;
@@ -167,10 +152,7 @@ interface GroupFileServiceProxy {
 		        fileSize: number;
 		        dateUploaded: number;
 		        etag: string;
-		        acl: {
-		            member: number;
-		            other: number;
-		        };
+		        acl: Record<string, any>;
 		        version: number;
 		        url: string;
 		        fileId: string;
@@ -197,10 +179,7 @@ interface GroupFileServiceProxy {
 		        fileSize: number;
 		        dateUploaded: number;
 		        etag: string;
-		        acl: {
-		            member: number;
-		            other: number;
-		        };
+		        acl: Record<string, any>;
 		        version: number;
 		        url: string;
 		        fileId: string;
@@ -227,10 +206,7 @@ interface GroupFileServiceProxy {
 		        fileSize: number;
 		        dateUploaded: number;
 		        etag: string;
-		        acl: {
-		            member: number;
-		            other: number;
-		        };
+		        acl: Record<string, any>;
 		        version: number;
 		        url: string;
 		        fileId: string;
@@ -256,172 +232,11 @@ interface GroupFileServiceProxy {
 		    fileList: {
 		        folderPath: string;
 		        treeId: string;
-		        folders: {
-		            gpathcopy: {
-		                folderPath: string;
-		                treeId: string;
-		                folders: {
-		                    gpathcopy: {
-		                        folderPath: string;
-		                        treeId: string;
-		                        folders: {
-		                        };
-		                        name: string;
-		                        files: {
-		                            glogcopyjson: {
-		                                fileName: string;
-		                                fileSize: number;
-		                                dateUploaded: number;
-		                                acl: {
-		                                    member: number;
-		                                    other: number;
-		                                };
-		                                version: number;
-		                                url: string;
-		                                fileId: string;
-		                            };
-		                            glogcopy1json: {
-		                                fileName: string;
-		                                fileSize: number;
-		                                dateUploaded: number;
-		                                acl: {
-		                                    member: number;
-		                                    other: number;
-		                                };
-		                                version: number;
-		                                url: string;
-		                                fileId: string;
-		                            };
-		                        };
-		                        totalFileSize: number;
-		                        acl: {
-		                            member: number;
-		                            other: number;
-		                        };
-		                        totalFileCount: number;
-		                        desc: string;
-		                    };
-		                };
-		                name: string;
-		                files: {
-		                    glog1newnamejson: {
-		                        fileName: string;
-		                        fileSize: number;
-		                        dateUploaded: number;
-		                        acl: {
-		                            member: number;
-		                            other: number;
-		                        };
-		                        version: number;
-		                        url: string;
-		                        fileId: string;
-		                    };
-		                };
-		                totalFileSize: number;
-		                acl: {
-		                    member: number;
-		                    other: number;
-		                };
-		                totalFileCount: number;
-		                desc: string;
-		            };
-		            gpath: {
-		                folderPath: string;
-		                treeId: string;
-		                folders: {
-		                    gpath: {
-		                        folderPath: string;
-		                        treeId: string;
-		                        folders: {
-		                        };
-		                        name: string;
-		                        files: {
-		                        };
-		                        totalFileSize: number;
-		                        acl: {
-		                            member: number;
-		                            other: number;
-		                        };
-		                        totalFileCount: number;
-		                        desc: string;
-		                    };
-		                };
-		                name: string;
-		                files: {
-		                };
-		                totalFileSize: number;
-		                acl: {
-		                    member: number;
-		                    other: number;
-		                };
-		                totalFileCount: number;
-		                desc: string;
-		            };
-		            foldername: {
-		                folderPath: string;
-		                treeId: string;
-		                folders: {
-		                    subfoldername: {
-		                        folderPath: string;
-		                        treeId: string;
-		                        folders: {
-		                        };
-		                        name: string;
-		                        files: {
-		                            glogcopy1subjson: {
-		                                fileName: string;
-		                                fileSize: number;
-		                                dateUploaded: number;
-		                                acl: {
-		                                    member: number;
-		                                    other: number;
-		                                };
-		                                version: number;
-		                                url: string;
-		                                fileId: string;
-		                            };
-		                        };
-		                        totalFileSize: number;
-		                        acl: {
-		                            member: number;
-		                            other: number;
-		                        };
-		                        totalFileCount: number;
-		                        desc: string;
-		                    };
-		                };
-		                name: string;
-		                files: {
-		                };
-		                totalFileSize: number;
-		                acl: {
-		                    member: number;
-		                    other: number;
-		                };
-		                totalFileCount: number;
-		                desc: string;
-		            };
-		        };
+		        folders: Record<string, any>;
 		        name: string;
-		        files: {
-		            glogrootjson: {
-		                fileName: string;
-		                fileSize: number;
-		                dateUploaded: number;
-		                acl: {
-		                    member: number;
-		                    other: number;
-		                };
-		                version: number;
-		                url: string;
-		                fileId: string;
-		            };
-		        };
+		        files: Record<string, any>;
 		        totalFileSize: number;
-		        acl: {
-		            member: number;
-		            other: number;
-		        };
+		        acl: Record<string, any>;
 		        totalFileCount: number;
 		        desc: any | null;
 		    };
@@ -445,172 +260,11 @@ interface GroupFileServiceProxy {
 		    fileList: {
 		        folderPath: string;
 		        treeId: string;
-		        folders: {
-		            gpathcopy: {
-		                folderPath: string;
-		                treeId: string;
-		                folders: {
-		                    gpathcopy: {
-		                        folderPath: string;
-		                        treeId: string;
-		                        folders: {
-		                        };
-		                        name: string;
-		                        files: {
-		                            glogcopyjson: {
-		                                fileName: string;
-		                                fileSize: number;
-		                                dateUploaded: number;
-		                                acl: {
-		                                    member: number;
-		                                    other: number;
-		                                };
-		                                version: number;
-		                                url: string;
-		                                fileId: string;
-		                            };
-		                            glogcopy1json: {
-		                                fileName: string;
-		                                fileSize: number;
-		                                dateUploaded: number;
-		                                acl: {
-		                                    member: number;
-		                                    other: number;
-		                                };
-		                                version: number;
-		                                url: string;
-		                                fileId: string;
-		                            };
-		                        };
-		                        totalFileSize: number;
-		                        acl: {
-		                            member: number;
-		                            other: number;
-		                        };
-		                        totalFileCount: number;
-		                        desc: string;
-		                    };
-		                };
-		                name: string;
-		                files: {
-		                    glog1newnamejson: {
-		                        fileName: string;
-		                        fileSize: number;
-		                        dateUploaded: number;
-		                        acl: {
-		                            member: number;
-		                            other: number;
-		                        };
-		                        version: number;
-		                        url: string;
-		                        fileId: string;
-		                    };
-		                };
-		                totalFileSize: number;
-		                acl: {
-		                    member: number;
-		                    other: number;
-		                };
-		                totalFileCount: number;
-		                desc: string;
-		            };
-		            gpath: {
-		                folderPath: string;
-		                treeId: string;
-		                folders: {
-		                    gpath: {
-		                        folderPath: string;
-		                        treeId: string;
-		                        folders: {
-		                        };
-		                        name: string;
-		                        files: {
-		                        };
-		                        totalFileSize: number;
-		                        acl: {
-		                            member: number;
-		                            other: number;
-		                        };
-		                        totalFileCount: number;
-		                        desc: string;
-		                    };
-		                };
-		                name: string;
-		                files: {
-		                };
-		                totalFileSize: number;
-		                acl: {
-		                    member: number;
-		                    other: number;
-		                };
-		                totalFileCount: number;
-		                desc: string;
-		            };
-		            foldername: {
-		                folderPath: string;
-		                treeId: string;
-		                folders: {
-		                    subfoldername: {
-		                        folderPath: string;
-		                        treeId: string;
-		                        folders: {
-		                        };
-		                        name: string;
-		                        files: {
-		                            glogcopy1subjson: {
-		                                fileName: string;
-		                                fileSize: number;
-		                                dateUploaded: number;
-		                                acl: {
-		                                    member: number;
-		                                    other: number;
-		                                };
-		                                version: number;
-		                                url: string;
-		                                fileId: string;
-		                            };
-		                        };
-		                        totalFileSize: number;
-		                        acl: {
-		                            member: number;
-		                            other: number;
-		                        };
-		                        totalFileCount: number;
-		                        desc: string;
-		                    };
-		                };
-		                name: string;
-		                files: {
-		                };
-		                totalFileSize: number;
-		                acl: {
-		                    member: number;
-		                    other: number;
-		                };
-		                totalFileCount: number;
-		                desc: string;
-		            };
-		        };
+		        folders: Record<string, any>;
 		        name: string;
-		        files: {
-		            glogrootjson: {
-		                fileName: string;
-		                fileSize: number;
-		                dateUploaded: number;
-		                acl: {
-		                    member: number;
-		                    other: number;
-		                };
-		                version: number;
-		                url: string;
-		                fileId: string;
-		            };
-		        };
+		        files: Record<string, any>;
 		        totalFileSize: number;
-		        acl: {
-		            member: number;
-		            other: number;
-		        };
+		        acl: Record<string, any>;
 		        totalFileCount: number;
 		        desc: any | null;
 		    };
@@ -671,10 +325,7 @@ interface GroupFileServiceProxy {
 		        fileSize: number;
 		        dateUploaded: number;
 		        etag: string;
-		        acl: {
-		            member: number;
-		            other: number;
-		        };
+		        acl: Record<string, any>;
 		        version: number;
 		        url: string;
 		        fileId: string;
@@ -703,10 +354,7 @@ interface GroupFileServiceProxy {
 		        fileSize: number;
 		        dateUploaded: number;
 		        etag: string;
-		        acl: {
-		            member: number;
-		            other: number;
-		        };
+		        acl: Record<string, any>;
 		        version: number;
 		        url: string;
 		        fileId: string;
@@ -737,10 +385,7 @@ interface GroupFileServiceProxy {
 		        fileSize: number;
 		        dateUploaded: number;
 		        etag: string;
-		        acl: {
-		            member: number;
-		            other: number;
-		        };
+		        acl: Record<string, any>;
 		        version: number;
 		        url: string;
 		        fileId: string;
@@ -771,10 +416,7 @@ interface GroupFileServiceProxy {
 		        fileSize: number;
 		        dateUploaded: number;
 		        etag: string;
-		        acl: {
-		            member: number;
-		            other: number;
-		        };
+		        acl: Record<string, any>;
 		        version: number;
 		        url: string;
 		        fileId: string;
@@ -805,10 +447,7 @@ interface GroupFileServiceProxy {
 		        fileSize: number;
 		        dateUploaded: number;
 		        etag: string;
-		        acl: {
-		            member: number;
-		            other: number;
-		        };
+		        acl: Record<string, any>;
 		        version: number;
 		        url: string;
 		        fileId: string;
@@ -839,10 +478,7 @@ interface GroupFileServiceProxy {
 		        fileSize: number;
 		        dateUploaded: number;
 		        etag: string;
-		        acl: {
-		            member: number;
-		            other: number;
-		        };
+		        acl: Record<string, any>;
 		        version: number;
 		        url: string;
 		        fileId: string;
@@ -919,10 +555,7 @@ interface GroupFileServiceProxy {
 		        fileSize: number;
 		        dateUploaded: number;
 		        etag: string;
-		        acl: {
-		            member: number;
-		            other: number;
-		        };
+		        acl: Record<string, any>;
 		        version: number;
 		        url: string;
 		        fileId: string;
@@ -955,10 +588,7 @@ interface GroupFileServiceProxy {
 		        fileSize: number;
 		        dateUploaded: number;
 		        etag: string;
-		        acl: {
-		            member: number;
-		            other: number;
-		        };
+		        acl: Record<string, any>;
 		        version: number;
 		        url: string;
 		        fileId: string;
@@ -987,33 +617,8 @@ interface GroupFileServiceProxy {
 		    groupId: string;
 		    groupFileTree: {
 		        treeVersion: number;
-		        tree: Array<{
-		            treeId: string;
-		            children: Array<{
-		                treeId: string;
-		                children: any | null;
-		                name: string;
-		                acl: {
-		                    member: number;
-		                    other: number;
-		                };
-		                type: string;
-		                ownerId: any | null;
-		                desc: string;
-		            }>;
-		            name: string;
-		            acl: {
-		                member: number;
-		                other: number;
-		            };
-		            type: string;
-		            ownerId: any | null;
-		            desc: string;
-		        }>;
-		        acl: {
-		            member: number;
-		            other: number;
-		        };
+		        tree: Array<Record<string, any>>;
+		        acl: Record<string, any>;
 		    };
 		    createdTreeId: string;
 		};
@@ -1037,33 +642,8 @@ interface GroupFileServiceProxy {
 		    groupId: string;
 		    groupFileTree: {
 		        treeVersion: number;
-		        tree: Array<{
-		            treeId: string;
-		            children: Array<{
-		                treeId: string;
-		                children: any | null;
-		                name: string;
-		                acl: {
-		                    member: number;
-		                    other: number;
-		                };
-		                type: string;
-		                ownerId: any | null;
-		                desc: string;
-		            }>;
-		            name: string;
-		            acl: {
-		                member: number;
-		                other: number;
-		            };
-		            type: string;
-		            ownerId: any | null;
-		            desc: string;
-		        }>;
-		        acl: {
-		            member: number;
-		            other: number;
-		        };
+		        tree: Array<Record<string, any>>;
+		        acl: Record<string, any>;
 		    };
 		};
 		status: number;
@@ -1087,33 +667,8 @@ interface GroupFileServiceProxy {
 		    groupId: string;
 		    groupFileTree: {
 		        treeVersion: number;
-		        tree: Array<{
-		            treeId: string;
-		            children: Array<{
-		                treeId: string;
-		                children: any | null;
-		                name: string;
-		                acl: {
-		                    member: number;
-		                    other: number;
-		                };
-		                type: string;
-		                ownerId: any | null;
-		                desc: string;
-		            }>;
-		            name: string;
-		            acl: {
-		                member: number;
-		                other: number;
-		            };
-		            type: string;
-		            ownerId: any | null;
-		            desc: string;
-		        }>;
-		        acl: {
-		            member: number;
-		            other: number;
-		        };
+		        tree: Array<Record<string, any>>;
+		        acl: Record<string, any>;
 		    };
 		};
 		status: number;
@@ -1159,33 +714,8 @@ interface GroupFileServiceProxy {
 		    groupId: string;
 		    groupFileTree: {
 		        treeVersion: number;
-		        tree: Array<{
-		            treeId: string;
-		            children: Array<{
-		                treeId: string;
-		                children: any | null;
-		                name: string;
-		                acl: {
-		                    member: number;
-		                    other: number;
-		                };
-		                type: string;
-		                ownerId: any | null;
-		                desc: string;
-		            }>;
-		            name: string;
-		            acl: {
-		                member: number;
-		                other: number;
-		            };
-		            type: string;
-		            ownerId: any | null;
-		            desc: string;
-		        }>;
-		        acl: {
-		            member: number;
-		            other: number;
-		        };
+		        tree: Array<Record<string, any>>;
+		        acl: Record<string, any>;
 		    };
 		};
 		status: number;

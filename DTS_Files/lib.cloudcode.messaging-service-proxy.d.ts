@@ -46,29 +46,7 @@ interface MessagingServiceProxy {
 		    results: {
 		        count: number;
 		        page: number;
-		        items: Array<{
-		            mbVer: number;
-		            mbUp: number;
-		            read: number;
-		            msgCr: number;
-		            msgVer: number;
-		            mbCr: number;
-		            msgId: string;
-		            msgUp: number;
-		            message: {
-		                from: {
-		                    id: string;
-		                    name: string;
-		                };
-		                sentAt: number;
-		                to: Array<string>;
-		                content: {
-		                    subject: string;
-		                    text: string;
-		                };
-		            };
-		            msgbox: string;
-		        }>;
+		        items: Array<Record<string, any>>;
 		        moreAfter: number;
 		        moreBefore: number;
 		    };
@@ -90,29 +68,7 @@ interface MessagingServiceProxy {
 		    results: {
 		        count: number;
 		        page: number;
-		        items: Array<{
-		            mbVer: number;
-		            mbUp: number;
-		            read: number;
-		            msgCr: number;
-		            msgVer: number;
-		            mbCr: number;
-		            msgId: string;
-		            msgUp: number;
-		            message: {
-		                from: {
-		                    id: string;
-		                    name: string;
-		                };
-		                sentAt: number;
-		                to: Array<string>;
-		                content: {
-		                    subject: string;
-		                    text: string;
-		                };
-		            };
-		            msgbox: string;
-		        }>;
+		        items: Array<Record<string, any>>;
 		        moreAfter: number;
 		        moreBefore: number;
 		    };
@@ -174,18 +130,7 @@ interface MessagingServiceProxy {
 		        mbCr: number;
 		        mbUp: number;
 		        read: number;
-		        message: {
-		            from: {
-		                id: string;
-		                name: string;
-		            };
-		            to: Array<string>;
-		            sentAt: number;
-		            content: {
-		                subject: string;
-		                text: string;
-		            };
-		        };
+		        message: Record<string, any>;
 		    }>;
 		};
 		status: number;
@@ -236,29 +181,7 @@ interface MessagingServiceProxy {
 		    results: {
 		        count: number;
 		        page: number;
-		        items: Array<{
-		            mbVer: number;
-		            mbUp: number;
-		            read: number;
-		            msgCr: number;
-		            msgVer: number;
-		            mbCr: number;
-		            msgId: string;
-		            msgUp: number;
-		            message: {
-		                from: {
-		                    id: string;
-		                    name: string;
-		                };
-		                sentAt: number;
-		                to: Array<string>;
-		                content: {
-		                    subject: string;
-		                    text: string;
-		                };
-		            };
-		            msgbox: string;
-		        }>;
+		        items: Array<Record<string, any>>;
 		        moreAfter: number;
 		        moreBefore: number;
 		    };
@@ -280,29 +203,7 @@ interface MessagingServiceProxy {
 		    results: {
 		        count: number;
 		        page: number;
-		        items: Array<{
-		            mbVer: number;
-		            mbUp: number;
-		            read: number;
-		            msgCr: number;
-		            msgVer: number;
-		            mbCr: number;
-		            msgId: string;
-		            msgUp: number;
-		            message: {
-		                from: {
-		                    id: string;
-		                    name: string;
-		                };
-		                sentAt: number;
-		                to: Array<string>;
-		                content: {
-		                    subject: string;
-		                    text: string;
-		                };
-		            };
-		            msgbox: string;
-		        }>;
+		        items: Array<Record<string, any>>;
 		        moreAfter: number;
 		        moreBefore: number;
 		    };
@@ -324,29 +225,7 @@ interface MessagingServiceProxy {
 		    results: {
 		        count: number;
 		        page: number;
-		        items: Array<{
-		            mbVer: number;
-		            mbUp: number;
-		            read: number;
-		            msgCr: number;
-		            msgVer: number;
-		            mbCr: number;
-		            msgId: string;
-		            msgUp: number;
-		            message: {
-		                from: {
-		                    id: string;
-		                    name: string;
-		                };
-		                sentAt: number;
-		                to: Array<string>;
-		                content: {
-		                    subject: string;
-		                    text: string;
-		                };
-		            };
-		            msgbox: string;
-		        }>;
+		        items: Array<Record<string, any>>;
 		        moreAfter: number;
 		        moreBefore: number;
 		    };
@@ -369,29 +248,7 @@ interface MessagingServiceProxy {
 		    results: {
 		        count: number;
 		        page: number;
-		        items: Array<{
-		            mbVer: number;
-		            mbUp: number;
-		            read: number;
-		            msgCr: number;
-		            msgVer: number;
-		            mbCr: number;
-		            msgId: string;
-		            msgUp: number;
-		            message: {
-		                from: {
-		                    id: string;
-		                    name: string;
-		                };
-		                sentAt: number;
-		                to: Array<string>;
-		                content: {
-		                    subject: string;
-		                    text: string;
-		                };
-		            };
-		            msgbox: string;
-		        }>;
+		        items: Array<Record<string, any>>;
 		        moreAfter: number;
 		        moreBefore: number;
 		    };

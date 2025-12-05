@@ -171,16 +171,7 @@ interface UserServiceProxy {
 		    results: {
 		        count: number;
 		        page: number;
-		        items: Array<{
-		            profileId: string;
-		            playerName: string;
-		            countryCode: string;
-		            timeZoneOffset: number;
-		            summaryFriendData: {
-		                favColor: string;
-		            };
-		            emailAddress: string;
-		        }>;
+		        items: Array<Record<string, any>>;
 		        moreAfter: number;
 		        moreBefore: number;
 		    };
@@ -202,16 +193,7 @@ interface UserServiceProxy {
 		    results: {
 		        count: number;
 		        page: number;
-		        items: Array<{
-		            profileId: string;
-		            playerName: string;
-		            countryCode: string;
-		            timeZoneOffset: number;
-		            summaryFriendData: {
-		                favColor: string;
-		            };
-		            emailAddress: string;
-		        }>;
+		        items: Array<Record<string, any>>;
 		        moreAfter: number;
 		        moreBefore: number;
 		    };
@@ -261,95 +243,14 @@ interface UserServiceProxy {
 	sysGetUserExport(profileId: string, optionsJson: Object): {
 		data: {
 		    82cbbbf2ee444279b5a03e9bf04edf25: Array<{
-		        appEmailAccounts: Array<{
-		            emailAddress: string;
-		        }>;
-		        childEntities: Array<{
-		            entityId: string;
-		            entityType: string;
-		            version: number;
-		            data: {
-		                street: string;
-		            };
-		            acl: {
-		                other: number;
-		            };
-		            createdAt: number;
-		            updatedAt: number;
-		        }>;
-		        credentials: Array<{
-		            externalId: string;
-		            authenticationType: string;
-		            authSubType: string;
-		        }>;
-		        groups: {
-		            requested: Array<any>;
-		            invited: Array<any>;
-		            groups: Array<any>;
-		        };
-		        leaderboardScores: Array<{
-		            leaderboardId: string;
-		            versionId: number;
-		            score: number;
-		            data: {
-		                nickname: string;
-		            };
-		            createdAt: number;
-		            updatedAt: number;
-		        }>;
-		        playerCurrency: {
-		            createdAt: number;
-		            updatedAt: number;
-		            syncTimestamp: number;
-		            items: {
-		            };
-		        };
-		        playerProfile: Array<{
-		            playerName: string;
-		            pictureUrl: any | null;
-		            platforms: Array<string>;
-		            home: any | null;
-		            countryCode: string;
-		            languageCode: string;
-		            timeZoneOffset: number;
-		            createdAt: number;
-		            updatedAt: number;
-		            amountSpent: number;
-		            refundCount: number;
-		            vcClaimed: number;
-		            vcPurchased: number;
-		            summaryFriendData: any | null;
-		            isTester: number;
-		            ab_testing_id: number;
-		            loginCount: number;
-		            lastLogin: number;
-		            previousLogin: any | null;
-		            randomAttribute: number;
-		            playerRating: number;
-		            shieldExpiry: number;
-		            matchesPlayed: number;
-		            lastMatch: number;
-		            activeSessions: Array<string>;
-		            matchAttackExpiry: any | null;
-		            matchEnabled: number;
-		            attributes: {
-		            };
-		            automatedPromotions: Array<any>;
-		            friendProfileIds: Array<any>;
-		            emailAddress: string;
-		        }>;
-		        playerStatistics: {
-		            syncTimestamp: number;
-		            statistics: {
-		            };
-		            experienceLevel: number;
-		            experiencePoints: number;
-		            milestonesStatus: {
-		            };
-		            questsStatus: {
-		            };
-		            playerAchievements: Array<any>;
-		        };
+		        appEmailAccounts: Array<Record<string, any>>;
+		        childEntities: Array<Record<string, any>>;
+		        credentials: Array<Record<string, any>>;
+		        groups: Record<string, any>;
+		        leaderboardScores: Array<Record<string, any>>;
+		        playerCurrency: Record<string, any>;
+		        playerProfile: Array<Record<string, any>>;
+		        playerStatistics: Record<string, any>;
 		    }>;
 		};
 		status: number;

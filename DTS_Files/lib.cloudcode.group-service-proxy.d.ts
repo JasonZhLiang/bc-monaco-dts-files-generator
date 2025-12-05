@@ -37,18 +37,7 @@ interface GroupServiceProxy {
 		    results: {
 		        count: number;
 		        page: number;
-		        items: Array<{
-		            groupType: string;
-		            groupId: string;
-		            memberCount: number;
-		            name: string;
-		            invitedPendingMemberCount: number;
-		            requestingPendingMemberCount: number;
-		            ownerId: string;
-		            summaryData: {
-		            };
-		            isOpenGroup: number;
-		        }>;
+		        items: Array<Record<string, any>>;
 		        moreAfter: number;
 		        moreBefore: number;
 		    };
@@ -70,16 +59,7 @@ interface GroupServiceProxy {
 		    results: {
 		        moreBefore: number;
 		        count: number;
-		        items: Array<{
-		            groupType: string;
-		            groupId: string;
-		            isOpenGroup: number;
-		            requestingPendingMemberCount: number;
-		            invitedPendingMemberCount: number;
-		            ownerId: string;
-		            name: string;
-		            memberCount: number;
-		        }>;
+		        items: Array<Record<string, any>>;
 		        page: number;
 		        moreAfter: number;
 		    };
@@ -153,30 +133,17 @@ interface GroupServiceProxy {
 		        groupType: string;
 		        createdAt: number;
 		        updatedAt: number;
-		        members: {
-		            77ce888920b74d01b248e0beb747f1b4: {
-		                role: string;
-		                attributes: {
-		                };
-		            };
-		        };
-		        pendingMembers: {
-		        };
+		        members: Record<string, any>;
+		        pendingMembers: Record<string, any>;
 		        version: number;
-		        data: {
-		        };
-		        summaryData: {
-		        };
+		        data: Record<string, any>;
+		        summaryData: Record<string, any>;
 		        isOpenGroup: number;
-		        defaultMemberAttributes: {
-		        };
+		        defaultMemberAttributes: Record<string, any>;
 		        memberCount: number;
 		        invitedPendingMemberCount: number;
 		        requestingPendingMemberCount: number;
-		        acl: {
-		            member: number;
-		            other: number;
-		        };
+		        acl: Record<string, any>;
 		    }>;
 		};
 		status: number;
@@ -199,16 +166,8 @@ interface GroupServiceProxy {
 		    createdAt: number;
 		    updatedAt: number;
 		    members: {
-		        8bd564a73f914a98a4b343cd7d266133: {
-		            role: string;
-		            attributes: {
-		            };
-		        };
-		        790874655ca541a19d4685ad23bc6efd: {
-		            role: string;
-		            attributes: {
-		            };
-		        };
+		        8bd564a73f914a98a4b343cd7d266133: Record<string, any>;
+		        790874655ca541a19d4685ad23bc6efd: Record<string, any>;
 		    };
 		    pendingMembers: {
 		    };
@@ -256,11 +215,7 @@ interface GroupServiceProxy {
 		    createdAt: number;
 		    updatedAt: number;
 		    members: {
-		        ee8cad2616f24ef890453aab84ce6362: {
-		            role: string;
-		            attributes: {
-		            };
-		        };
+		        ee8cad2616f24ef890453aab84ce6362: Record<string, any>;
 		    };
 		    pendingMembers: {
 		    };
@@ -304,11 +259,7 @@ interface GroupServiceProxy {
 		    createdAt: number;
 		    updatedAt: number;
 		    members: {
-		        77ce888920b74d01b248e0beb747f1b4: {
-		            role: string;
-		            attributes: {
-		            };
-		        };
+		        77ce888920b74d01b248e0beb747f1b4: Record<string, any>;
 		    };
 		    pendingMembers: {
 		    };
@@ -377,47 +328,14 @@ interface GroupServiceProxy {
 		    createdAt: number;
 		    updatedAt: number;
 		    members: {
-		        79ab573d459e42ceac65c2fe8e81a3ae: {
-		            role: string;
-		            attributes: {
-		                groupatt: string;
-		            };
-		        };
-		        3290282537a143e289b747e849b1ec4b: {
-		            role: string;
-		            attributes: {
-		            };
-		        };
-		        ec52d98835154032a8fdacc48e985792: {
-		            role: string;
-		            attributes: {
-		            };
-		        };
-		        cd0356bdab7f4fd7bc589422cd3a2a59: {
-		            role: string;
-		            attributes: {
-		            };
-		        };
-		        8f9f8269ad3e4e3dbc2a3dd31afb0b17: {
-		            role: string;
-		            attributes: {
-		            };
-		        };
-		        8bd564a73f914a98a4b343cd7d266133: {
-		            role: string;
-		            attributes: {
-		            };
-		        };
-		        336f36beda114457bda6ccecd47b63e3: {
-		            role: string;
-		            attributes: {
-		            };
-		        };
-		        1e8c17bfede94976b147b44bd2da6817: {
-		            role: string;
-		            attributes: {
-		            };
-		        };
+		        79ab573d459e42ceac65c2fe8e81a3ae: Record<string, any>;
+		        3290282537a143e289b747e849b1ec4b: Record<string, any>;
+		        ec52d98835154032a8fdacc48e985792: Record<string, any>;
+		        cd0356bdab7f4fd7bc589422cd3a2a59: Record<string, any>;
+		        8f9f8269ad3e4e3dbc2a3dd31afb0b17: Record<string, any>;
+		        8bd564a73f914a98a4b343cd7d266133: Record<string, any>;
+		        336f36beda114457bda6ccecd47b63e3: Record<string, any>;
+		        1e8c17bfede94976b147b44bd2da6817: Record<string, any>;
 		    };
 		    pendingMembers: {
 		    };
@@ -457,11 +375,7 @@ interface GroupServiceProxy {
 		    createdAt: number;
 		    updatedAt: number;
 		    members: {
-		        77ce888920b74d01b248e0beb747f1b4: {
-		            role: string;
-		            attributes: {
-		            };
-		        };
+		        77ce888920b74d01b248e0beb747f1b4: Record<string, any>;
 		    };
 		    pendingMembers: {
 		    };
@@ -521,20 +435,15 @@ interface GroupServiceProxy {
 		data: {
 		    ee8cad2616f24ef890453aab84ce6362: {
 		        role: string;
-		        attributes: {
-		        };
+		        attributes: Record<string, any>;
 		        playerName: string;
 		        emailAddress: string;
 		        pic: string;
-		        summaryFriendData: {
-		            xp: number;
-		            attributeName: string;
-		        };
+		        summaryFriendData: Record<string, any>;
 		    };
 		    295c510f507f4bcf80e1ebc73708ec3c: {
 		        role: string;
-		        attributes: {
-		        };
+		        attributes: Record<string, any>;
 		        playerName: string;
 		        emailAddress: string;
 		        pic: any | null;
@@ -710,16 +619,8 @@ interface GroupServiceProxy {
 		    createdAt: number;
 		    updatedAt: number;
 		    members: {
-		        ee8cad2616f24ef890453aab84ce6362: {
-		            role: string;
-		            attributes: {
-		            };
-		        };
-		        295c510f507f4bcf80e1ebc73708ec3c: {
-		            role: string;
-		            attributes: {
-		            };
-		        };
+		        ee8cad2616f24ef890453aab84ce6362: Record<string, any>;
+		        295c510f507f4bcf80e1ebc73708ec3c: Record<string, any>;
 		    };
 		    pendingMembers: {
 		    };
@@ -782,21 +683,9 @@ interface GroupServiceProxy {
 		    createdAt: number;
 		    updatedAt: number;
 		    members: {
-		        8bd564a73f914a98a4b343cd7d266133: {
-		            role: string;
-		            attributes: {
-		            };
-		        };
-		        a50a9aae65fc4171b3f9c0054b7e2d6b: {
-		            role: string;
-		            attributes: {
-		            };
-		        };
-		        07ba7ab235054342b91f6500fa8f5585: {
-		            role: string;
-		            attributes: {
-		            };
-		        };
+		        8bd564a73f914a98a4b343cd7d266133: Record<string, any>;
+		        a50a9aae65fc4171b3f9c0054b7e2d6b: Record<string, any>;
+		        07ba7ab235054342b91f6500fa8f5585: Record<string, any>;
 		    };
 		    pendingMembers: {
 		    };
@@ -814,33 +703,8 @@ interface GroupServiceProxy {
 		        other: number;
 		    };
 		    groupFileTree: {
-		        tree: Array<{
-		            treeId: string;
-		            children: Array<{
-		                treeId: string;
-		                children: any | null;
-		                name: string;
-		                acl: {
-		                    member: number;
-		                    other: number;
-		                };
-		                type: string;
-		                ownerId: any | null;
-		                desc: string;
-		            }>;
-		            name: string;
-		            acl: {
-		                member: number;
-		                other: number;
-		            };
-		            type: string;
-		            ownerId: any | null;
-		            desc: string;
-		        }>;
-		        acl: {
-		            member: number;
-		            other: number;
-		        };
+		        tree: Array<Record<string, any>>;
+		        acl: Record<string, any>;
 		        version: number;
 		    };
 		};
@@ -887,22 +751,7 @@ interface GroupServiceProxy {
 		    results: {
 		        moreBefore: number;
 		        count: number;
-		        items: Array<{
-		            gameId: string;
-		            groupId: string;
-		            entityId: string;
-		            ownerId: any | null;
-		            entityType: string;
-		            createdAt: number;
-		            updatedAt: number;
-		            version: number;
-		            data: {
-		            };
-		            acl: {
-		                member: number;
-		                other: number;
-		            };
-		        }>;
+		        items: Array<Record<string, any>>;
 		        page: number;
 		        moreAfter: number;
 		    };
@@ -925,23 +774,7 @@ interface GroupServiceProxy {
 		    results: {
 		        moreBefore: number;
 		        count: number;
-		        items: Array<{
-		            gameId: string;
-		            groupId: string;
-		            entityId: string;
-		            ownerId: any | null;
-		            entityType: string;
-		            createdAt: number;
-		            updatedAt: number;
-		            version: number;
-		            data: {
-		                third: number;
-		            };
-		            acl: {
-		                member: number;
-		                other: number;
-		            };
-		        }>;
+		        items: Array<Record<string, any>>;
 		        page: number;
 		        moreAfter: number;
 		    };
@@ -1091,16 +924,7 @@ interface GroupServiceProxy {
 		    results: {
 		        moreBefore: number;
 		        count: number;
-		        items: Array<{
-		            groupType: string;
-		            groupId: string;
-		            isOpenGroup: number;
-		            requestingPendingMemberCount: number;
-		            invitedPendingMemberCount: number;
-		            ownerId: string;
-		            name: string;
-		            memberCount: number;
-		        }>;
+		        items: Array<Record<string, any>>;
 		        page: number;
 		        moreAfter: number;
 		    };
@@ -1122,16 +946,7 @@ interface GroupServiceProxy {
 		    results: {
 		        moreBefore: number;
 		        count: number;
-		        items: Array<{
-		            groupType: string;
-		            groupId: string;
-		            isOpenGroup: number;
-		            requestingPendingMemberCount: number;
-		            invitedPendingMemberCount: number;
-		            ownerId: string;
-		            name: string;
-		            memberCount: number;
-		        }>;
+		        items: Array<Record<string, any>>;
 		        page: number;
 		        moreAfter: number;
 		    };
@@ -1157,11 +972,7 @@ interface GroupServiceProxy {
 		    createdAt: number;
 		    updatedAt: number;
 		    members: {
-		        b67b2d731e8c42e99be59c1879a48555: {
-		            role: string;
-		            attributes: {
-		            };
-		        };
+		        b67b2d731e8c42e99be59c1879a48555: Record<string, any>;
 		    };
 		    pendingMembers: {
 		    };
@@ -1206,11 +1017,7 @@ interface GroupServiceProxy {
 		    createdAt: number;
 		    updatedAt: number;
 		    members: {
-		        7f06ee4dbc4048eaaa27d3b73059491b: {
-		            role: string;
-		            attributes: {
-		            };
-		        };
+		        7f06ee4dbc4048eaaa27d3b73059491b: Record<string, any>;
 		    };
 		    pendingMembers: {
 		    };
@@ -1250,41 +1057,17 @@ interface GroupServiceProxy {
 		        groupType: string;
 		        createdAt: number;
 		        updatedAt: number;
-		        members: {
-		            10b6d6fa0aa643b0a7b348aff2d13312: {
-		                role: string;
-		                attributes: {
-		                };
-		            };
-		            7f06ee4dbc4048eaaa27d3b73059491b: {
-		                role: string;
-		                attributes: {
-		                };
-		            };
-		        };
-		        pendingMembers: {
-		            10b6d6fa0aa643b0a7b348aff2d13312: {
-		                role: string;
-		                attributes: {
-		                };
-		                pendingReason: string;
-		            };
-		        };
+		        members: Record<string, any>;
+		        pendingMembers: Record<string, any>;
 		        version: number;
-		        data: {
-		        };
-		        summaryData: {
-		        };
+		        data: Record<string, any>;
+		        summaryData: Record<string, any>;
 		        isOpenGroup: number;
-		        defaultMemberAttributes: {
-		        };
+		        defaultMemberAttributes: Record<string, any>;
 		        memberCount: number;
 		        invitedPendingMemberCount: number;
 		        requestingPendingMemberCount: number;
-		        acl: {
-		            member: number;
-		            other: number;
-		        };
+		        acl: Record<string, any>;
 		    }>;
 		};
 		status: number;
@@ -1338,47 +1121,14 @@ interface GroupServiceProxy {
 		    createdAt: number;
 		    updatedAt: number;
 		    members: {
-		        79ab573d459e42ceac65c2fe8e81a3ae: {
-		            role: string;
-		            attributes: {
-		                groupatt: string;
-		            };
-		        };
-		        3290282537a143e289b747e849b1ec4b: {
-		            role: string;
-		            attributes: {
-		            };
-		        };
-		        ec52d98835154032a8fdacc48e985792: {
-		            role: string;
-		            attributes: {
-		            };
-		        };
-		        cd0356bdab7f4fd7bc589422cd3a2a59: {
-		            role: string;
-		            attributes: {
-		            };
-		        };
-		        8f9f8269ad3e4e3dbc2a3dd31afb0b17: {
-		            role: string;
-		            attributes: {
-		            };
-		        };
-		        8bd564a73f914a98a4b343cd7d266133: {
-		            role: string;
-		            attributes: {
-		            };
-		        };
-		        336f36beda114457bda6ccecd47b63e3: {
-		            role: string;
-		            attributes: {
-		            };
-		        };
-		        1e8c17bfede94976b147b44bd2da6817: {
-		            role: string;
-		            attributes: {
-		            };
-		        };
+		        79ab573d459e42ceac65c2fe8e81a3ae: Record<string, any>;
+		        3290282537a143e289b747e849b1ec4b: Record<string, any>;
+		        ec52d98835154032a8fdacc48e985792: Record<string, any>;
+		        cd0356bdab7f4fd7bc589422cd3a2a59: Record<string, any>;
+		        8f9f8269ad3e4e3dbc2a3dd31afb0b17: Record<string, any>;
+		        8bd564a73f914a98a4b343cd7d266133: Record<string, any>;
+		        336f36beda114457bda6ccecd47b63e3: Record<string, any>;
+		        1e8c17bfede94976b147b44bd2da6817: Record<string, any>;
 		    };
 		    pendingMembers: {
 		    };
@@ -1418,11 +1168,7 @@ interface GroupServiceProxy {
 		    createdAt: number;
 		    updatedAt: number;
 		    members: {
-		        77ce888920b74d01b248e0beb747f1b4: {
-		            role: string;
-		            attributes: {
-		            };
-		        };
+		        77ce888920b74d01b248e0beb747f1b4: Record<string, any>;
 		    };
 		    pendingMembers: {
 		    };
@@ -1482,20 +1228,15 @@ interface GroupServiceProxy {
 		data: {
 		    ee8cad2616f24ef890453aab84ce6362: {
 		        role: string;
-		        attributes: {
-		        };
+		        attributes: Record<string, any>;
 		        playerName: string;
 		        emailAddress: string;
 		        pic: string;
-		        summaryFriendData: {
-		            xp: number;
-		            attributeName: string;
-		        };
+		        summaryFriendData: Record<string, any>;
 		    };
 		    295c510f507f4bcf80e1ebc73708ec3c: {
 		        role: string;
-		        attributes: {
-		        };
+		        attributes: Record<string, any>;
 		        playerName: string;
 		        emailAddress: string;
 		        pic: any | null;
@@ -1569,21 +1310,9 @@ interface GroupServiceProxy {
 		    createdAt: number;
 		    updatedAt: number;
 		    members: {
-		        8bd564a73f914a98a4b343cd7d266133: {
-		            role: string;
-		            attributes: {
-		            };
-		        };
-		        a50a9aae65fc4171b3f9c0054b7e2d6b: {
-		            role: string;
-		            attributes: {
-		            };
-		        };
-		        07ba7ab235054342b91f6500fa8f5585: {
-		            role: string;
-		            attributes: {
-		            };
-		        };
+		        8bd564a73f914a98a4b343cd7d266133: Record<string, any>;
+		        a50a9aae65fc4171b3f9c0054b7e2d6b: Record<string, any>;
+		        07ba7ab235054342b91f6500fa8f5585: Record<string, any>;
 		    };
 		    pendingMembers: {
 		    };
@@ -1601,33 +1330,8 @@ interface GroupServiceProxy {
 		        other: number;
 		    };
 		    groupFileTree: {
-		        tree: Array<{
-		            treeId: string;
-		            children: Array<{
-		                treeId: string;
-		                children: any | null;
-		                name: string;
-		                acl: {
-		                    member: number;
-		                    other: number;
-		                };
-		                type: string;
-		                ownerId: any | null;
-		                desc: string;
-		            }>;
-		            name: string;
-		            acl: {
-		                member: number;
-		                other: number;
-		            };
-		            type: string;
-		            ownerId: any | null;
-		            desc: string;
-		        }>;
-		        acl: {
-		            member: number;
-		            other: number;
-		        };
+		        tree: Array<Record<string, any>>;
+		        acl: Record<string, any>;
 		        version: number;
 		    };
 		};
@@ -1661,22 +1365,7 @@ interface GroupServiceProxy {
 		    results: {
 		        moreBefore: number;
 		        count: number;
-		        items: Array<{
-		            gameId: string;
-		            groupId: string;
-		            entityId: string;
-		            ownerId: any | null;
-		            entityType: string;
-		            createdAt: number;
-		            updatedAt: number;
-		            version: number;
-		            data: {
-		            };
-		            acl: {
-		                member: number;
-		                other: number;
-		            };
-		        }>;
+		        items: Array<Record<string, any>>;
 		        page: number;
 		        moreAfter: number;
 		    };
@@ -1699,23 +1388,7 @@ interface GroupServiceProxy {
 		    results: {
 		        moreBefore: number;
 		        count: number;
-		        items: Array<{
-		            gameId: string;
-		            groupId: string;
-		            entityId: string;
-		            ownerId: any | null;
-		            entityType: string;
-		            createdAt: number;
-		            updatedAt: number;
-		            version: number;
-		            data: {
-		                third: number;
-		            };
-		            acl: {
-		                member: number;
-		                other: number;
-		            };
-		        }>;
+		        items: Array<Record<string, any>>;
 		        page: number;
 		        moreAfter: number;
 		    };

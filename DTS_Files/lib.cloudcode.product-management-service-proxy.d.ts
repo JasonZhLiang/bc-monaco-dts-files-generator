@@ -18,34 +18,11 @@ interface ProductManagementServiceProxy {
 		        title: string;
 		        description: string;
 		        imageUrl: any | null;
-		        currency: {
-		        };
-		        parentCurrency: {
-		        };
-		        peerCurrency: {
-		            deploypeer: {
-		                gems: number;
-		            };
-		        };
+		        currency: Record<string, any>;
+		        parentCurrency: Record<string, any>;
+		        peerCurrency: Record<string, any>;
 		        defaultPriceId: number;
-		        prices: Array<{
-		            priceId: number;
-		            referencePrice: number;
-		            storeData: {
-		                amazon: {
-		                    id: string;
-		                };
-		                facebook: {
-		                    currencyList: Array<{
-		                        currency: string;
-		                        price: number;
-		                    }>;
-		                };
-		                googlePlay: {
-		                    id: string;
-		                };
-		            };
-		        }>;
+		        prices: Array<Record<string, any>>;
 		        data: any | null;
 		        createdAt: number;
 		        updatedAt: number;
@@ -79,9 +56,7 @@ interface ProductManagementServiceProxy {
 		    parentCurrency: {
 		    };
 		    peerCurrency: {
-		        deploypeer: {
-		            gems: number;
-		        };
+		        deploypeer: Record<string, any>;
 		    };
 		    defaultPriceId: number;
 		    prices: Array<any>;
@@ -161,9 +136,7 @@ interface ProductManagementServiceProxy {
 		        itemId: string;
 		        defaultReferencePrice: number;
 		        iTunesSubscriptionType: string;
-		        data: {
-		            customAttr: string;
-		        };
+		        data: Record<string, any>;
 		        imageUrl: string;
 		        description: string;
 		        title: string;
@@ -199,34 +172,13 @@ interface ProductManagementServiceProxy {
 		    parentCurrency: {
 		    };
 		    peerCurrency: {
-		        deploypeer: {
-		            gems: number;
-		        };
+		        deploypeer: Record<string, any>;
 		    };
 		    defaultPriceId: number;
 		    prices: Array<{
 		        priceId: number;
 		        referencePrice: number;
-		        storeData: {
-		            amazon: {
-		                id: string;
-		            };
-		            itunes: {
-		                ids: Array<{
-		                    appId: string;
-		                    itunesId: string;
-		                }>;
-		            };
-		            facebook: {
-		                currencyList: Array<{
-		                    currency: string;
-		                    price: number;
-		                }>;
-		            };
-		            googlePlay: {
-		                id: string;
-		            };
-		        };
+		        storeData: Record<string, any>;
 		    }>;
 		    data: {
 		        customAttr: string;
@@ -266,34 +218,13 @@ interface ProductManagementServiceProxy {
 		    parentCurrency: {
 		    };
 		    peerCurrency: {
-		        deploypeer: {
-		            gems: number;
-		        };
+		        deploypeer: Record<string, any>;
 		    };
 		    defaultPriceId: number;
 		    prices: Array<{
 		        priceId: number;
 		        referencePrice: number;
-		        storeData: {
-		            amazon: {
-		                id: string;
-		            };
-		            itunes: {
-		                ids: Array<{
-		                    appId: string;
-		                    itunesId: string;
-		                }>;
-		            };
-		            facebook: {
-		                currencyList: Array<{
-		                    currency: string;
-		                    price: number;
-		                }>;
-		            };
-		            googlePlay: {
-		                id: string;
-		            };
-		        };
+		        storeData: Record<string, any>;
 		    }>;
 		    data: {
 		        customAttr: string;
@@ -331,34 +262,13 @@ interface ProductManagementServiceProxy {
 		    parentCurrency: {
 		    };
 		    peerCurrency: {
-		        deploypeer: {
-		            gems: number;
-		        };
+		        deploypeer: Record<string, any>;
 		    };
 		    defaultPriceId: number;
 		    prices: Array<{
 		        priceId: number;
 		        referencePrice: number;
-		        storeData: {
-		            amazon: {
-		                id: string;
-		            };
-		            itunes: {
-		                ids: Array<{
-		                    appId: string;
-		                    itunesId: string;
-		                }>;
-		            };
-		            facebook: {
-		                currencyList: Array<{
-		                    currency: string;
-		                    price: number;
-		                }>;
-		            };
-		            googlePlay: {
-		                id: string;
-		            };
-		        };
+		        storeData: Record<string, any>;
 		    }>;
 		    data: {
 		        customAttr: string;
@@ -396,34 +306,13 @@ interface ProductManagementServiceProxy {
 		    parentCurrency: {
 		    };
 		    peerCurrency: {
-		        deploypeer: {
-		            gems: number;
-		        };
+		        deploypeer: Record<string, any>;
 		    };
 		    defaultPriceId: number;
 		    prices: Array<{
 		        priceId: number;
 		        referencePrice: number;
-		        storeData: {
-		            amazon: {
-		                id: string;
-		            };
-		            itunes: {
-		                ids: Array<{
-		                    appId: string;
-		                    itunesId: string;
-		                }>;
-		            };
-		            facebook: {
-		                currencyList: Array<{
-		                    currency: string;
-		                    price: number;
-		                }>;
-		            };
-		            googlePlay: {
-		                id: string;
-		            };
-		        };
+		        storeData: Record<string, any>;
 		    }>;
 		    data: {
 		        customAttr: string;

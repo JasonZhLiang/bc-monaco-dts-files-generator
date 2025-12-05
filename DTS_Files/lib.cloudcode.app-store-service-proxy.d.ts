@@ -16,73 +16,22 @@ interface AppStoreServiceProxy {
 		    transactionSummary: {
 		        processedCount: number;
 		        unprocessedCount: number;
-		        transactionDetails: Array<{
-		            transactionId: string;
-		            itemId: string;
-		            transactionResultCode: number;
-		            processed: number;
-		            originalTransactionId: string;
-		            referencePrice: number;
-		            quantity: number;
-		            payload: string;
-		            sandbox: number;
-		            purchaseDateMs: number;
-		            productId: string;
-		            purchaseDate: string;
-		            rewards: {
-		                extra: any | null;
-		                currency: {
-		                    bar: number;
-		                    coinMultiplier: number;
-		                };
-		            };
-		        }>;
-		        extra: {
-		            appleReceipt: string;
-		        };
+		        transactionDetails: Array<Record<string, any>>;
+		        extra: Record<string, any>;
 		    };
 		    rewards: {
-		        currency: {
-		            coins: number;
-		        };
-		        parentCurrency: {
-		            awesomeMaster: {
-		                rubies: number;
-		            };
-		        };
-		        peerCurrency: {
-		            peerApp: {
-		                rogerCurrency: number;
-		            };
-		        };
+		        currency: Record<string, any>;
+		        parentCurrency: Record<string, any>;
+		        peerCurrency: Record<string, any>;
 		    };
 		    currency: {
-		        coins: {
-		            balance: number;
-		            purchased: number;
-		            awarded: number;
-		            consumed: number;
-		        };
+		        coins: Record<string, any>;
 		    };
 		    parentCurrency: {
-		        awesomeMaster: {
-		            rubies: {
-		                balance: number;
-		                purchased: number;
-		                awarded: number;
-		                consumed: number;
-		            };
-		        };
+		        awesomeMaster: Record<string, any>;
 		    };
 		    peerCurrency: {
-		        peerApp: {
-		            rogerCurrency: {
-		                balance: number;
-		                purchased: number;
-		                awarded: number;
-		                consumed: number;
-		            };
-		        };
+		        peerApp: Record<string, any>;
 		    };
 		    server_time: number;
 		};
@@ -104,10 +53,7 @@ interface AppStoreServiceProxy {
 		    store: string;
 		    transactionSummary: {
 		        result: string;
-		        params: {
-		            orderid: number;
-		            transid: number;
-		        };
+		        params: Record<string, any>;
 		        rawStringResp: string;
 		        currencyOverride: string;
 		    };
@@ -133,51 +79,19 @@ interface AppStoreServiceProxy {
 		    promotions: any | null;
 		    resultCode: number;
 		    currency: {
-		        goldWings: {
-		            consumed: number;
-		            balance: number;
-		            purchased: number;
-		            awarded: number;
-		        };
+		        goldWings: Record<string, any>;
 		    };
 		    serverTime: number;
 		    store: string;
 		    transactionSummary: {
 		        result: string;
-		        params: {
-		            orderid: number;
-		            transid: number;
-		        };
+		        params: Record<string, any>;
 		        rawStringResp: string;
-		        queryTxn: {
-		            response: {
-		                result: string;
-		                params: {
-		                    orderid: string;
-		                    transid: string;
-		                    steamid: string;
-		                    status: string;
-		                    currency: string;
-		                    time: string;
-		                    country: string;
-		                    usstate: string;
-		                    timecreated: string;
-		                    items: Array<{
-		                        itemid: number;
-		                        qty: number;
-		                        amount: number;
-		                        vat: number;
-		                        itemstatus: string;
-		                    }>;
-		                };
-		            };
-		        };
+		        queryTxn: Record<string, any>;
 		    };
 		    rewards: {
 		        extra: any | null;
-		        currency: {
-		            goldWings: number;
-		        };
+		        currency: Record<string, any>;
 		    };
 		};
 		status: number;
@@ -194,20 +108,13 @@ interface AppStoreServiceProxy {
 	getSalesInventory(storeId: string, priceInfoCriteria: Object): {
 		data: {
 		    productInventory: Array<{
-		        currency: {
-		            bar: number;
-		        };
+		        currency: Record<string, any>;
 		        description: string;
 		        fbUrl: string;
 		        gameId: string;
 		        imageUrl: string;
 		        itemId: string;
-		        priceData: {
-		            ids: Array<{
-		                appId: string;
-		                itunesId: string;
-		            }>;
-		        };
+		        priceData: Record<string, any>;
 		        payload: string;
 		        title: string;
 		    }>;
@@ -228,20 +135,13 @@ interface AppStoreServiceProxy {
 	getSalesInventoryByCategory(storeId: string, category: string, priceInfoCriteria: Object): {
 		data: {
 		    productInventory: Array<{
-		        currency: {
-		            bar: number;
-		        };
+		        currency: Record<string, any>;
 		        description: string;
 		        fbUrl: string;
 		        gameId: string;
 		        imageUrl: string;
 		        itemId: string;
-		        priceData: {
-		            ids: Array<{
-		                appId: string;
-		                itunesId: string;
-		            }>;
-		        };
+		        priceData: Record<string, any>;
 		        payload: string;
 		        title: string;
 		    }>;
@@ -260,9 +160,9 @@ interface AppStoreServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	cachePurchasePayloadContext(storeId: string, iapId: string, payload: string): {
-		status: number;
 		data: {
 		};
+		status: number;
 	};
 
 
@@ -272,7 +172,6 @@ interface AppStoreServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	getEligiblePromotions(): {
-		status: number;
 		data: {
 		    promotions: Array<{
 		        gameId: string;
@@ -283,23 +182,16 @@ interface AppStoreServiceProxy {
 		        enabled: number;
 		        targetAllUsers: number;
 		        segments: Array<number>;
-		        prices: Array<{
-		            itemId: string;
-		            priceId: number;
-		        }>;
-		        notifications: Array<{
-		            trigger: string;
-		            notificationTemplateId: number;
-		        }>;
-		        customJson: {
-		            key: string;
-		        };
+		        prices: Array<Record<string, any>>;
+		        notifications: Array<Record<string, any>>;
+		        customJson: Record<string, any>;
 		        startAt: number;
 		        endAt: number;
 		        createdAt: number;
 		        updatedAt: number;
 		    }>;
 		};
+		status: number;
 	};
 
 
@@ -319,14 +211,8 @@ interface AppStoreServiceProxy {
 		        message: string;
 		        enabled: number;
 		        segments: Array<number>;
-		        prices: Array<{
-		            itemId: string;
-		            priceId: number;
-		        }>;
-		        notifications: Array<{
-		            trigger: string;
-		            notificationTemplateId: number;
-		        }>;
+		        prices: Array<Record<string, any>>;
+		        notifications: Array<Record<string, any>>;
 		        duration: number;
 		        customJson: any | null;
 		        isRetriggerable: number;
@@ -364,22 +250,7 @@ interface AppStoreServiceProxy {
 		    results: {
 		        count: number;
 		        page: number;
-		        items: Array<{
-		            regularPrice: number;
-		            pending: number;
-		            sandbox: number;
-		            type: string;
-		            title: string;
-		            sequenceId: string;
-		            transactionId: string;
-		            refPrice: number;
-		            itemId: string;
-		            createdAt: number;
-		            pendingPromotionId: any | null;
-		            profileId: string;
-		            pendingPriceId: any | null;
-		            updatedAt: number;
-		        }>;
+		        items: Array<Record<string, any>>;
 		        moreAfter: number;
 		        moreBefore: number;
 		    };
@@ -402,20 +273,7 @@ interface AppStoreServiceProxy {
 		    results: {
 		        count: number;
 		        page: number;
-		        items: Array<{
-		            pending: number;
-		            sandbox: number;
-		            type: string;
-		            sequenceId: string;
-		            transactionId: string;
-		            refPrice: number;
-		            itemId: string;
-		            createdAt: number;
-		            pendingPromotionId: any | null;
-		            profileId: string;
-		            pendingPriceId: number;
-		            updatedAt: number;
-		        }>;
+		        items: Array<Record<string, any>>;
 		        moreAfter: number;
 		        moreBefore: number;
 		    };
@@ -442,24 +300,12 @@ interface AppStoreServiceProxy {
 		    updatedAt: number;
 		    transactionId: string;
 		    dataJson: {
-		        pending: {
-		            itemId: string;
-		            transactionId: string;
-		        };
-		        final: {
-		            purchaseData: {
-		                transId: string;
-		            };
-		            transactionSummary: {
-		                transId: string;
-		            };
-		        };
+		        pending: Record<string, any>;
+		        final: Record<string, any>;
 		    };
 		    rewards: {
 		        extra: any | null;
-		        currency: {
-		            coins: number;
-		        };
+		        currency: Record<string, any>;
 		    };
 		    userItemRewards: any | null;
 		    sandbox: number;
@@ -484,46 +330,20 @@ interface AppStoreServiceProxy {
 	sysAwardProduct(itemId: string, quantity: number): {
 		data: {
 		    userItemRewards: {
-		        sword001: {
-		            17311754f6104a2099343c9d255874e3: {
-		                itemId: string;
-		                quantity: number;
-		            };
-		        };
+		        sword001: Record<string, any>;
 		    };
 		    extra: {
 		        customAttr: string;
 		    };
 		    currency: {
-		        bar: {
-		            consumed: number;
-		            balance: number;
-		            purchased: number;
-		            awarded: number;
-		            revoked: number;
-		        };
-		        coins: {
-		            consumed: number;
-		            balance: number;
-		            purchased: number;
-		            awarded: number;
-		            revoked: number;
-		        };
+		        bar: Record<string, any>;
+		        coins: Record<string, any>;
 		    };
 		    serverTime: number;
 		    rewards: {
-		        extra: {
-		            customAttr: string;
-		        };
-		        currency: {
-		            bar: number;
-		        };
-		        items: {
-		            sword001: {
-		                defId: string;
-		                quantity: number;
-		            };
-		        };
+		        extra: Record<string, any>;
+		        currency: Record<string, any>;
+		        items: Record<string, any>;
 		    };
 		};
 		status: number;
@@ -541,46 +361,20 @@ interface AppStoreServiceProxy {
 	sysAwardProductToUser(profileId: string, itemId: string, quantity: number): {
 		data: {
 		    userItemRewards: {
-		        sword001: {
-		            17311754f6104a2099343c9d255874e3: {
-		                itemId: string;
-		                quantity: number;
-		            };
-		        };
+		        sword001: Record<string, any>;
 		    };
 		    extra: {
 		        customAttr: string;
 		    };
 		    currency: {
-		        bar: {
-		            consumed: number;
-		            balance: number;
-		            purchased: number;
-		            awarded: number;
-		            revoked: number;
-		        };
-		        coins: {
-		            consumed: number;
-		            balance: number;
-		            purchased: number;
-		            awarded: number;
-		            revoked: number;
-		        };
+		        bar: Record<string, any>;
+		        coins: Record<string, any>;
 		    };
 		    serverTime: number;
 		    rewards: {
-		        extra: {
-		            customAttr: string;
-		        };
-		        currency: {
-		            bar: number;
-		        };
-		        items: {
-		            sword001: {
-		                defId: string;
-		                quantity: number;
-		            };
-		        };
+		        extra: Record<string, any>;
+		        currency: Record<string, any>;
+		        items: Record<string, any>;
 		    };
 		};
 		status: number;
@@ -606,47 +400,18 @@ interface AppStoreServiceProxy {
 	sysRecordTransaction(profileId: string, storeId: string, itemId: string, dataJson: Map<any, any>, receiptData: Map<any, any>, promotionId: number, processAwards: boolean, transactionId: string, price: number, sandbox: boolean, platform: string): {
 		data: {
 		    userItemRewards: {
-		        sword001: {
-		            fac9e483c95846b9a47806c97a85e74a: {
-		                itemId: string;
-		                quantity: number;
-		            };
-		        };
+		        sword001: Record<string, any>;
 		    };
 		    extra: {
 		        customAttr: string;
 		    };
 		    rewards: {
-		        extra: {
-		            customAttr: string;
-		        };
-		        currency: {
-		            bar: number;
-		        };
-		        items: {
-		            sword001: {
-		                defId: string;
-		                quantity: number;
-		            };
-		        };
+		        extra: Record<string, any>;
+		        currency: Record<string, any>;
+		        items: Record<string, any>;
 		    };
 		    currencies: {
-		        currency: {
-		            bar: {
-		                consumed: number;
-		                balance: number;
-		                purchased: number;
-		                awarded: number;
-		                revoked: number;
-		            };
-		            coins: {
-		                consumed: number;
-		                balance: number;
-		                purchased: number;
-		                awarded: number;
-		                revoked: number;
-		            };
-		        };
+		        currency: Record<string, any>;
 		    };
 		};
 		status: number;

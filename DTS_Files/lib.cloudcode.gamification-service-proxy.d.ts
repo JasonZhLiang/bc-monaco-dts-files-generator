@@ -8,7 +8,6 @@ interface GamificationServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	readAllGamification(includeMetaData: boolean): {
-		status: number;
 		data: {
 		    milestones: Array<{
 		        id: string;
@@ -17,11 +16,7 @@ interface GamificationServiceProxy {
 		        status: string;
 		        description: string;
 		        gameId: string;
-		        rewards: {
-		            currency: {
-		                gold: number;
-		            };
-		        };
+		        rewards: Record<string, any>;
 		        extraData: any | null;
 		        questId: any | null;
 		    }>;
@@ -46,16 +41,11 @@ interface GamificationServiceProxy {
 		    xp: {
 		        xpCapped: number;
 		        experiencePoints: number;
-		        xpLevel: {
-		            gameId: string;
-		            level: number;
-		            statusTitle: string;
-		            experience: number;
-		            fbAction: string;
-		        };
+		        xpLevel: Record<string, any>;
 		        experienceLevel: number;
 		    };
 		};
+		status: number;
 	};
 
 
@@ -65,7 +55,6 @@ interface GamificationServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	readXpLevelsMetadata(): {
-		status: number;
 		data: {
 		    xp_levels: Array<{
 		        level: number;
@@ -74,6 +63,7 @@ interface GamificationServiceProxy {
 		        fbAction: string;
 		    }>;
 		};
+		status: number;
 	};
 
 
@@ -99,10 +89,10 @@ interface GamificationServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	readQuestsByCategory(category: string, includeMetaData: boolean): {
-		status: number;
 		data: {
 		    quests: Array<any>;
 		};
+		status: number;
 	};
 
 
@@ -113,10 +103,10 @@ interface GamificationServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	readCompletedQuests(includeMetaData: boolean): {
-		status: number;
 		data: {
 		    quests: Array<any>;
 		};
+		status: number;
 	};
 
 
@@ -141,10 +131,10 @@ interface GamificationServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	readInProgressQuests(includeMetaData: boolean): {
-		status: number;
 		data: {
 		    quests: Array<any>;
 		};
+		status: number;
 	};
 
 
@@ -169,10 +159,10 @@ interface GamificationServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	readQuestsWithBasicPercentage(includeMetaData: boolean): {
-		status: number;
 		data: {
 		    quests: Array<any>;
 		};
+		status: number;
 	};
 
 
@@ -183,10 +173,10 @@ interface GamificationServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	readQuestsWithComplexPercentage(includeMetaData: boolean): {
-		status: number;
 		data: {
 		    quests: Array<any>;
 		};
+		status: number;
 	};
 
 
@@ -197,7 +187,6 @@ interface GamificationServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	readAchievements(includeMetaData: boolean): {
-		status: number;
 		data: {
 		    achievements: Array<{
 		        fbEnabled: number;
@@ -217,6 +206,7 @@ interface GamificationServiceProxy {
 		        appleAchievementId: any | null;
 		    }>;
 		};
+		status: number;
 	};
 
 
@@ -227,10 +217,10 @@ interface GamificationServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	readAchievedAchievements(includeMetaData: boolean): {
-		status: number;
 		data: {
 		    achievements: Array<any>;
 		};
+		status: number;
 	};
 
 
@@ -257,28 +247,14 @@ interface GamificationServiceProxy {
 		    milestones: Array<{
 		        gameId: string;
 		        questId: any | null;
-		        thresholds: {
-		            playerStatistics: {
-		                experienceLevel: number;
-		            };
-		        };
+		        thresholds: Record<string, any>;
 		        extraData: any | null;
-		        unlockThresholds: {
-		            playerStatistics: {
-		                statistics: {
-		                    Levels_Completed: number;
-		                };
-		            };
-		        };
+		        unlockThresholds: Record<string, any>;
 		        description: string;
 		        id: string;
 		        title: string;
 		        category: string;
-		        rewards: {
-		            currency: {
-		                Gems: number;
-		            };
-		        };
+		        rewards: Record<string, any>;
 		        status: string;
 		    }>;
 		};
@@ -293,10 +269,10 @@ interface GamificationServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	readCompletedMilestones(includeMetaData: boolean): {
-		status: number;
 		data: {
 		    milestones: Array<any>;
 		};
+		status: number;
 	};
 
 
@@ -311,13 +287,7 @@ interface GamificationServiceProxy {
 		    milestones: Array<{
 		        gameId: string;
 		        questId: any | null;
-		        thresholds: {
-		            playerStatistics: {
-		                statistics: {
-		                    Plane_Shot_Down: number;
-		                };
-		            };
-		        };
+		        thresholds: Record<string, any>;
 		        extraData: any | null;
 		        description: string;
 		        id: string;
@@ -338,10 +308,10 @@ interface GamificationServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	readMilestonesByCategory(category: string, includeMetaData: boolean): {
-		status: number;
 		data: {
 		    milestones: Array<any>;
 		};
+		status: number;
 	};
 
 
@@ -375,8 +345,8 @@ interface GamificationServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	resetAllQuestsAndMilestones(): {
-		status: number;
 		data: any | null;
+		status: number;
 	};
 
 
@@ -404,55 +374,7 @@ interface GamificationServiceProxy {
 		    results: {
 		        count: number;
 		        page: number;
-		        items: Array<{
-		            milestoneId: string;
-		            questId: any | null;
-		            title: string;
-		            description: string;
-		            category: string;
-		            extraData: {
-		                secretMission: number;
-		                actionIndex: number;
-		            };
-		            rewards: {
-		                experiencePoints: number;
-		                achievement: string;
-		                currency: {
-		                    coins: number;
-		                };
-		                globalStatistics: {
-		                    globalxp: number;
-		                };
-		                statistics: {
-		                    a3: number;
-		                    secretMissions: number;
-		                };
-		            };
-		            thresholds: {
-		                playerStatistics: {
-		                    experienceLevel: number;
-		                    experiencePoints: number;
-		                    statistics: {
-		                        returningDay: number;
-		                    };
-		                };
-		            };
-		            unlockThresholds: {
-		                playerStatistics: {
-		                    experienceLevel: number;
-		                    experiencePoints: number;
-		                    statistics: {
-		                        foodc: number;
-		                    };
-		                };
-		                globalStatistics: {
-		                    food_unlock: number;
-		                };
-		            };
-		            createdAt: number;
-		            updatedAt: number;
-		            version: number;
-		        }>;
+		        items: Array<Record<string, any>>;
 		        moreAfter: number;
 		        moreBefore: number;
 		    };
@@ -474,54 +396,7 @@ interface GamificationServiceProxy {
 		    results: {
 		        count: number;
 		        page: number;
-		        items: Array<{
-		            milestoneId: string;
-		            questId: any | null;
-		            title: string;
-		            description: string;
-		            category: string;
-		            extraData: {
-		                batmanIs: string;
-		            };
-		            rewards: {
-		                experiencePoints: number;
-		                achievement: string;
-		                currency: {
-		                    coins: number;
-		                };
-		                globalStatistics: {
-		                    globalxp: number;
-		                };
-		                statistics: {
-		                    a3: number;
-		                    secretMissions: number;
-		                };
-		            };
-		            thresholds: {
-		                playerStatistics: {
-		                    experienceLevel: number;
-		                    experiencePoints: number;
-		                    statistics: {
-		                        returningDay: number;
-		                    };
-		                };
-		            };
-		            unlockThresholds: {
-		                playerStatistics: {
-		                    experienceLevel: number;
-		                    experiencePoints: number;
-		                    statistics: {
-		                        foodc: number;
-		                    };
-		                };
-		                globalStatistics: {
-		                    food_unlock: number;
-		                };
-		            };
-		            createdAt: number;
-		            updatedAt: number;
-		            version: number;
-		        }>;
+		        items: Array<Record<string, any>>;
 		        moreAfter: number;
 		        moreBefore: number;
 		    };
@@ -552,11 +427,7 @@ interface GamificationServiceProxy {
 		        experiencePoints: number;
 		    };
 		    thresholds: {
-		        playerStatistics: {
-		            statistics: {
-		                wins: number;
-		            };
-		        };
+		        playerStatistics: Record<string, any>;
 		    };
 		    createdAt: number;
 		    updatedAt: number;
@@ -587,11 +458,7 @@ interface GamificationServiceProxy {
 		        experiencePoints: number;
 		    };
 		    thresholds: {
-		        playerStatistics: {
-		            statistics: {
-		                wins: number;
-		            };
-		        };
+		        playerStatistics: Record<string, any>;
 		    };
 		    createdAt: number;
 		    updatedAt: number;
@@ -624,11 +491,7 @@ interface GamificationServiceProxy {
 		        experiencePoints: number;
 		    };
 		    thresholds: {
-		        playerStatistics: {
-		            statistics: {
-		                wins: number;
-		            };
-		        };
+		        playerStatistics: Record<string, any>;
 		    };
 		    createdAt: number;
 		    updatedAt: number;
@@ -662,47 +525,7 @@ interface GamificationServiceProxy {
 		    results: {
 		        count: number;
 		        page: number;
-		        items: Array<{
-		            questId: string;
-		            questType: string;
-		            questData: string;
-		            title: string;
-		            description: string;
-		            category: string;
-		            extraData: {
-		                difficulty: number;
-		            };
-		            rewards: {
-		                experiencePoints: number;
-		                achievement: string;
-		                currency: {
-		                    coins: number;
-		                };
-		                globalStatistics: {
-		                    globalxp: number;
-		                };
-		                statistics: {
-		                    a3: number;
-		                    secretMissions: number;
-		                };
-		            };
-		            unlockThresholds: {
-		                playerStatistics: {
-		                    experienceLevel: number;
-		                    experiencePoints: number;
-		                    statistics: {
-		                        levelC: number;
-		                    };
-		                };
-		                globalStatistics: {
-		                    level_unlock: number;
-		                };
-		            };
-		            createdAt: number;
-		            updatedAt: number;
-		            version: number;
-		            tasks: Array<string>;
-		        }>;
+		        items: Array<Record<string, any>>;
 		        moreAfter: number;
 		        moreBefore: number;
 		    };
@@ -724,24 +547,7 @@ interface GamificationServiceProxy {
 		    results: {
 		        count: number;
 		        page: number;
-		        items: Array<{
-		            questId: string;
-		            questType: string;
-		            questData: string;
-		            title: string;
-		            description: string;
-		            category: string;
-		            extraData: {
-		                difficulty: number;
-		            };
-		            rewards: {
-		                experiencePoints: number;
-		            };
-		            createdAt: number;
-		            updatedAt: number;
-		            version: number;
-		            tasks: Array<any>;
-		        }>;
+		        items: Array<Record<string, any>>;
 		        moreAfter: number;
 		        moreBefore: number;
 		    };
@@ -766,12 +572,8 @@ interface GamificationServiceProxy {
 		        title: string;
 		        description: string;
 		        category: string;
-		        extraData: {
-		            difficulty: number;
-		        };
-		        rewards: {
-		            experiencePoints: number;
-		        };
+		        extraData: Record<string, any>;
+		        rewards: Record<string, any>;
 		        createdAt: number;
 		        updatedAt: number;
 		        version: number;
@@ -831,12 +633,8 @@ interface GamificationServiceProxy {
 		        title: string;
 		        description: string;
 		        category: string;
-		        extraData: {
-		            difficulty: number;
-		        };
-		        rewards: {
-		            experiencePoints: number;
-		        };
+		        extraData: Record<string, any>;
+		        rewards: Record<string, any>;
 		        createdAt: number;
 		        updatedAt: number;
 		        version: number;
@@ -879,12 +677,8 @@ interface GamificationServiceProxy {
 		        title: string;
 		        description: string;
 		        category: string;
-		        extraData: {
-		            difficulty: number;
-		        };
-		        rewards: {
-		            experiencePoints: number;
-		        };
+		        extraData: Record<string, any>;
+		        rewards: Record<string, any>;
 		        createdAt: number;
 		        updatedAt: number;
 		        version: number;
@@ -892,30 +686,7 @@ interface GamificationServiceProxy {
 		    };
 		    newTask: string;
 		    tasks: {
-		        17: {
-		            questId: string;
-		            title: string;
-		            description: string;
-		            category: string;
-		            extraData: {
-		                secretMission: number;
-		                actionIndex: number;
-		            };
-		            rewards: {
-		                experiencePoints: number;
-		            };
-		            thresholds: {
-		                playerStatistics: {
-		                    statistics: {
-		                        wins: number;
-		                    };
-		                };
-		            };
-		            createdAt: number;
-		            updatedAt: number;
-		            version: number;
-		            taskId: string;
-		        };
+		        17: Record<string, any>;
 		    };
 		};
 	};
@@ -940,12 +711,8 @@ interface GamificationServiceProxy {
 		        title: string;
 		        description: string;
 		        category: string;
-		        extraData: {
-		            difficulty: number;
-		        };
-		        rewards: {
-		            experiencePoints: number;
-		        };
+		        extraData: Record<string, any>;
+		        rewards: Record<string, any>;
 		        createdAt: number;
 		        updatedAt: number;
 		        version: number;
@@ -953,29 +720,7 @@ interface GamificationServiceProxy {
 		    };
 		    updatedTask: string;
 		    tasks: {
-		        17: {
-		            title: string;
-		            description: string;
-		            category: string;
-		            extraData: {
-		                secretMission: number;
-		                actionIndex: number;
-		            };
-		            rewards: {
-		                experiencePoints: number;
-		            };
-		            thresholds: {
-		                playerStatistics: {
-		                    statistics: {
-		                        wins: number;
-		                    };
-		                };
-		            };
-		            createdAt: number;
-		            updatedAt: number;
-		            version: number;
-		            taskId: string;
-		        };
+		        17: Record<string, any>;
 		    };
 		};
 	};
@@ -999,12 +744,8 @@ interface GamificationServiceProxy {
 		        title: string;
 		        description: string;
 		        category: string;
-		        extraData: {
-		            difficulty: number;
-		        };
-		        rewards: {
-		            experiencePoints: number;
-		        };
+		        extraData: Record<string, any>;
+		        rewards: Record<string, any>;
 		        createdAt: number;
 		        updatedAt: number;
 		        version: number;
@@ -1012,29 +753,7 @@ interface GamificationServiceProxy {
 		    };
 		    deletedTask: string;
 		    tasks: {
-		        17: {
-		            title: string;
-		            description: string;
-		            category: string;
-		            extraData: {
-		                secretMission: number;
-		                actionIndex: number;
-		            };
-		            rewards: {
-		                experiencePoints: number;
-		            };
-		            thresholds: {
-		                playerStatistics: {
-		                    statistics: {
-		                        wins: number;
-		                    };
-		                };
-		            };
-		            createdAt: number;
-		            updatedAt: number;
-		            version: number;
-		            taskId: string;
-		        };
+		        17: Record<string, any>;
 		    };
 		};
 	};
@@ -1058,12 +777,8 @@ interface GamificationServiceProxy {
 		        title: string;
 		        description: string;
 		        category: string;
-		        extraData: {
-		            difficulty: number;
-		        };
-		        rewards: {
-		            experiencePoints: number;
-		        };
+		        extraData: Record<string, any>;
+		        rewards: Record<string, any>;
 		        createdAt: number;
 		        updatedAt: number;
 		        version: number;
@@ -1071,52 +786,8 @@ interface GamificationServiceProxy {
 		    };
 		    deletedTasks: Array<any>;
 		    tasks: {
-		        17: {
-		            questId: string;
-		            title: string;
-		            description: string;
-		            category: string;
-		            extraData: {
-		                secretMission: number;
-		                actionIndex: number;
-		            };
-		            rewards: {
-		                experiencePoints: number;
-		            };
-		            thresholds: {
-		                playerStatistics: {
-		                    statistics: {
-		                        wins: number;
-		                    };
-		                };
-		            };
-		            createdAt: number;
-		            updatedAt: number;
-		            version: number;
-		            taskId: string;
-		        };
-		        19: {
-		            questId: string;
-		            title: string;
-		            description: string;
-		            category: string;
-		            extraData: {
-		            };
-		            rewards: {
-		                experiencePoints: number;
-		            };
-		            thresholds: {
-		                playerStatistics: {
-		                    statistics: {
-		                        returningDay: number;
-		                    };
-		                };
-		            };
-		            createdAt: number;
-		            updatedAt: number;
-		            version: number;
-		            taskId: string;
-		        };
+		        17: Record<string, any>;
+		        19: Record<string, any>;
 		    };
 		};
 	};

@@ -102,112 +102,41 @@ interface GlobalAppServiceProxy {
 		    apiCallCountDay: number;
 		    heartbeatCountDay: number;
 		    apiCallCount: {
-		        authenticationV2: {
-		            AUTHENTICATEEmail: number;
-		        };
-		        user: {
-		            SYS_CREATE_USER_EMAIL_PASSWORD: number;
-		            SYS_CREATE_USER_EXTERNAL_AUTH: number;
-		            SYS_CREATE_USER_UNIVERSAL_ID: number;
-		            SYS_GET_PAGE: number;
-		        };
-		        group: {
-		            GET_MY_GROUPS: number;
-		        };
-		        leaderboard: {
-		            POST_GROUP_SCORE_DYNAMIC: number;
-		        };
-		        playerState: {
-		            UPDATE_SUMMARY: number;
-		            READ: number;
-		        };
-		        customEntity: {
-		            SYS_LIST_COLLECTIONS: number;
-		            SYS_LIST_INDEXES: number;
-		        };
-		        log: {
-		            LOG_DEBUG: number;
-		        };
-		        script: {
-		            RUNCreateSettopHandoffCode: number;
-		            RUNResetAllQuestsAndMilestones: number;
-		            RUNSysGetDailyCounts: number;
-		        };
-		        identity: {
-		            CREATE_SETTOP_HANDOFF_CODE: number;
-		        };
-		        gamification: {
-		            RESET_ALL_QUESTS_AND_MILESTONES: number;
-		            RESET_QUESTS: number;
-		        };
-		        globalApp: {
-		            SYS_GET_DAILY_COUNTS: number;
-		        };
+		        authenticationV2: Record<string, any>;
+		        user: Record<string, any>;
+		        group: Record<string, any>;
+		        leaderboard: Record<string, any>;
+		        playerState: Record<string, any>;
+		        customEntity: Record<string, any>;
+		        log: Record<string, any>;
+		        script: Record<string, any>;
+		        identity: Record<string, any>;
+		        gamification: Record<string, any>;
+		        globalApp: Record<string, any>;
 		    };
 		    apiCallTime: {
-		        group: {
-		            GET_MY_GROUPS: number;
-		        };
-		        leaderboard: {
-		            POST_GROUP_SCORE_DYNAMIC: number;
-		        };
-		        authenticationV2: {
-		            AUTHENTICATEEmail: number;
-		        };
-		        user: {
-		            SYS_CREATE_USER_EMAIL_PASSWORD: number;
-		            SYS_CREATE_USER_UNIVERSAL_ID: number;
-		            SYS_CREATE_USER_EXTERNAL_AUTH: number;
-		            SYS_GET_PAGE: number;
-		        };
-		        playerState: {
-		            UPDATE_SUMMARY: number;
-		            READ: number;
-		        };
-		        customEntity: {
-		            SYS_LIST_COLLECTIONS: number;
-		            SYS_LIST_INDEXES: number;
-		        };
-		        script: {
-		            RUNCreateSettopHandoffCode: number;
-		            RUNResetAllQuestsAndMilestones: number;
-		            RUNSysGetDailyCounts: number;
-		        };
-		        identity: {
-		            CREATE_SETTOP_HANDOFF_CODE: number;
-		        };
-		        gamification: {
-		            RESET_ALL_QUESTS_AND_MILESTONES: number;
-		            RESET_QUESTS: number;
-		        };
-		        log: {
-		            LOG_DEBUG: number;
-		        };
-		        globalApp: {
-		            SYS_GET_DAILY_COUNTS: number;
-		        };
+		        group: Record<string, any>;
+		        leaderboard: Record<string, any>;
+		        authenticationV2: Record<string, any>;
+		        user: Record<string, any>;
+		        playerState: Record<string, any>;
+		        customEntity: Record<string, any>;
+		        script: Record<string, any>;
+		        identity: Record<string, any>;
+		        gamification: Record<string, any>;
+		        log: Record<string, any>;
+		        globalApp: Record<string, any>;
 		    };
 		    apiAppErrors: {
-		        leaderboard: {
-		            POST_GROUP_SCORE_DYNAMIC: number;
-		        };
-		        user: {
-		            SYS_CREATE_USER_EMAIL_PASSWORD: number;
-		        };
-		        customEntity: {
-		            SYS_LIST_INDEXES: number;
-		        };
-		        script: {
-		            RUNCreateSettopHandoffCode: number;
-		            RUNResetAllQuestsAndMilestones: number;
-		        };
+		        leaderboard: Record<string, any>;
+		        user: Record<string, any>;
+		        customEntity: Record<string, any>;
+		        script: Record<string, any>;
 		    };
 		    apiAppWarnings: {
 		    };
 		    apiSysErrors: {
-		        globalApp: {
-		            SYS_GET_DAILY_COUNTS: number;
-		        };
+		        globalApp: Record<string, any>;
 		    };
 		    s2sCallCountDay: number;
 		    s2sCallAppErrors: number;
@@ -253,11 +182,9 @@ interface GlobalAppServiceProxy {
 		        sends: number;
 		        entries: number;
 		        deliveries: number;
-		        ccxHourly: {
-		        };
+		        ccxHourly: Record<string, any>;
 		        ccxTotal: number;
-		        ccxOverageHourly: {
-		        };
+		        ccxOverageHourly: Record<string, any>;
 		        ccxOveragesTotal: number;
 		    };
 		    createdAt: number;

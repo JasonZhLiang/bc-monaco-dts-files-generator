@@ -11,32 +11,13 @@ interface ProductServiceProxy {
 		data: {
 		    updatedAt: number;
 		    currencyMap: {
-		        gems: {
-		            purchased: number;
-		            balance: number;
-		            consumed: number;
-		            awarded: number;
-		        };
+		        gems: Record<string, any>;
 		    };
 		    parentCurrency: {
-		        Master: {
-		            credits: {
-		                purchased: number;
-		                balance: number;
-		                consumed: number;
-		                awarded: number;
-		            };
-		        };
+		        Master: Record<string, any>;
 		    };
 		    peerCurrency: {
-		        gameLootPeer: {
-		            tickets: {
-		                purchased: number;
-		                balance: number;
-		                consumed: number;
-		                awarded: number;
-		            };
-		        };
+		        gameLootPeer: Record<string, any>;
 		    };
 		    playerId: string;
 		    createdAt: number;
@@ -57,12 +38,7 @@ interface ProductServiceProxy {
 		data: {
 		    createdAt: number;
 		    currencyMap: {
-		        credits: {
-		            consumed: number;
-		            balance: number;
-		            purchased: number;
-		            awarded: number;
-		        };
+		        credits: Record<string, any>;
 		    };
 		    playerId: string;
 		    updatedAt: number;
@@ -104,18 +80,8 @@ interface ProductServiceProxy {
 		data: {
 		    updatedAt: number;
 		    currencyMap: {
-		        gems: {
-		            purchased: number;
-		            balance: number;
-		            consumed: number;
-		            awarded: number;
-		        };
-		        gold: {
-		            purchased: number;
-		            balance: number;
-		            consumed: number;
-		            awarded: number;
-		        };
+		        gems: Record<string, any>;
+		        gold: Record<string, any>;
 		    };
 		    playerId: string;
 		    createdAt: number;
@@ -137,18 +103,8 @@ interface ProductServiceProxy {
 		data: {
 		    updatedAt: number;
 		    currencyMap: {
-		        gems: {
-		            purchased: number;
-		            balance: number;
-		            consumed: number;
-		            awarded: number;
-		        };
-		        gold: {
-		            purchased: number;
-		            balance: number;
-		            consumed: number;
-		            awarded: number;
-		        };
+		        gems: Record<string, any>;
+		        gold: Record<string, any>;
 		    };
 		    playerId: string;
 		    createdAt: number;
@@ -167,18 +123,8 @@ interface ProductServiceProxy {
 		data: {
 		    updatedAt: number;
 		    currencyMap: {
-		        gems: {
-		            purchased: number;
-		            balance: number;
-		            consumed: number;
-		            awarded: number;
-		        };
-		        gold: {
-		            purchased: number;
-		            balance: number;
-		            consumed: number;
-		            awarded: number;
-		        };
+		        gems: Record<string, any>;
+		        gold: Record<string, any>;
 		    };
 		    playerId: string;
 		    createdAt: number;
@@ -200,18 +146,8 @@ interface ProductServiceProxy {
 		data: {
 		    updatedAt: number;
 		    currencyMap: {
-		        gems: {
-		            purchased: number;
-		            balance: number;
-		            consumed: number;
-		            awarded: number;
-		        };
-		        gold: {
-		            purchased: number;
-		            balance: number;
-		            consumed: number;
-		            awarded: number;
-		        };
+		        gems: Record<string, any>;
+		        gold: Record<string, any>;
 		    };
 		    playerId: string;
 		    createdAt: number;
@@ -229,20 +165,13 @@ interface ProductServiceProxy {
 	getSalesInventory(platform: string, user_currency: string): {
 		data: {
 		    product_inventory: Array<{
-		        currency: {
-		            bar: number;
-		        };
+		        currency: Record<string, any>;
 		        description: string;
 		        fbUrl: string;
 		        gameId: string;
 		        imageUrl: string;
 		        itemId: string;
-		        priceData: {
-		            ids: Array<{
-		                appId: string;
-		                itunesId: string;
-		            }>;
-		        };
+		        priceData: Record<string, any>;
 		        title: string;
 		    }>;
 		    server_time: number;
@@ -262,20 +191,13 @@ interface ProductServiceProxy {
 	getSalesInventoryByCategory(platform: string, user_currency: string, category: string): {
 		data: {
 		    product_inventory: Array<{
-		        currency: {
-		            bar: number;
-		        };
+		        currency: Record<string, any>;
 		        description: string;
 		        fbUrl: string;
 		        gameId: string;
 		        imageUrl: string;
 		        itemId: string;
-		        priceData: {
-		            ids: Array<{
-		                appId: string;
-		                itunesId: string;
-		            }>;
-		        };
+		        priceData: Record<string, any>;
 		        title: string;
 		    }>;
 		    server_time: number;
@@ -300,14 +222,8 @@ interface ProductServiceProxy {
 		        enabled: number;
 		        targetAllUsers: number;
 		        segments: Array<number>;
-		        prices: Array<{
-		            itemId: string;
-		            priceId: number;
-		        }>;
-		        notifications: Array<{
-		            trigger: string;
-		            notificationTemplateId: number;
-		        }>;
+		        prices: Array<Record<string, any>>;
+		        notifications: Array<Record<string, any>>;
 		        startAt: number;
 		        endAt: number;
 		        createdAt: number;
@@ -329,14 +245,7 @@ interface ProductServiceProxy {
 		    status: number;
 		    playerCurrency: {
 		        updatedAt: number;
-		        currencyMap: {
-		            Coin: {
-		                purchased: number;
-		                balance: number;
-		                consumed: number;
-		                awarded: number;
-		            };
-		        };
+		        currencyMap: Record<string, any>;
 		        playerId: string;
 		        createdAt: number;
 		    };
@@ -344,15 +253,7 @@ interface ProductServiceProxy {
 		    transactionSummary: {
 		        processedCount: number;
 		        unprocessedCount: number;
-		        transactionDetails: Array<{
-		            original_transaction_id: string;
-		            product_id: string;
-		            purchase_date_ms: number;
-		            quantity: number;
-		            purchase_date: string;
-		            transactionStatus: number;
-		            transaction_id: string;
-		        }>;
+		        transactionDetails: Array<Record<string, any>>;
 		    };
 		    server_time: number;
 		};
@@ -458,20 +359,7 @@ interface ProductServiceProxy {
 		    };
 		    playerCurrency: {
 		        updatedAt: number;
-		        currencyMap: {
-		            gems: {
-		                purchased: number;
-		                balance: number;
-		                consumed: number;
-		                awarded: number;
-		            };
-		            gold: {
-		                purchased: number;
-		                balance: number;
-		                consumed: number;
-		                awarded: number;
-		            };
-		        };
+		        currencyMap: Record<string, any>;
 		        playerId: string;
 		        createdAt: number;
 		    };

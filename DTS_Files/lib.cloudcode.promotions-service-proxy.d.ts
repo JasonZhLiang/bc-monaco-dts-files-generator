@@ -38,22 +38,12 @@ interface PromotionsServiceProxy {
 		        promotionId: number;
 		        type: string;
 		        name: string;
-		        message: {
-		            en: string;
-		        };
+		        message: Record<string, any>;
 		        enabled: number;
 		        segments: Array<any>;
-		        prices: Array<{
-		            itemId: string;
-		            priceId: number;
-		        }>;
-		        notifications: Array<{
-		            trigger: string;
-		            notificationTemplateId: number;
-		        }>;
-		        customJson: {
-		            key: string;
-		        };
+		        prices: Array<Record<string, any>>;
+		        notifications: Array<Record<string, any>>;
+		        customJson: Record<string, any>;
 		        startAt: number;
 		        endAt: number;
 		        createdAt: number;
@@ -112,19 +102,11 @@ interface PromotionsServiceProxy {
 		        promotionId: number;
 		        type: string;
 		        name: string;
-		        message: {
-		            en: string;
-		        };
+		        message: Record<string, any>;
 		        enabled: number;
 		        segments: Array<any>;
-		        prices: Array<{
-		            itemId: string;
-		            priceId: number;
-		        }>;
-		        notifications: Array<{
-		            trigger: string;
-		            notificationTemplateId: number;
-		        }>;
+		        prices: Array<Record<string, any>>;
+		        notifications: Array<Record<string, any>>;
 		        startAt: number;
 		        endAt: number;
 		        createdAt: number;

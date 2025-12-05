@@ -31,7 +31,6 @@ interface EntityServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	getEntity(entityId: string): {
-		status: number;
 		data: {
 		    entityId: string;
 		    entityType: string;
@@ -47,6 +46,7 @@ interface EntityServiceProxy {
 		    updatedAt: number;
 		    _serverTime: number;
 		};
+		status: number;
 	};
 
 
@@ -57,25 +57,20 @@ interface EntityServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	getSharedEntitiesForProfileId(targetProfileId: string): {
-		status: number;
 		data: {
 		    entities: Array<{
 		        entityId: string;
 		        entityType: string;
 		        version: number;
-		        data: {
-		            name: string;
-		            age: number;
-		        };
-		        acl: {
-		            other: number;
-		        };
+		        data: Record<string, any>;
+		        acl: Record<string, any>;
 		        createdAt: number;
 		        updatedAt: number;
 		    }>;
 		    _serverTime: number;
 		    entityListCount: number;
 		};
+		status: number;
 	};
 
 
@@ -89,25 +84,20 @@ interface EntityServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	getSharedEntitiesListForProfileId(targetProfileId: string, where: Object, orderBy: Object, maxReturn: number): {
-		status: number;
 		data: {
 		    entities: Array<{
 		        entityId: string;
 		        entityType: string;
 		        version: number;
-		        data: {
-		            name: string;
-		            age: number;
-		        };
-		        acl: {
-		            other: number;
-		        };
+		        data: Record<string, any>;
+		        acl: Record<string, any>;
 		        createdAt: number;
 		        updatedAt: number;
 		    }>;
 		    _serverTime: number;
 		    entityListCount: number;
 		};
+		status: number;
 	};
 
 
@@ -119,7 +109,6 @@ interface EntityServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	getSharedEntityForProfileId(targetProfileId: string, entityId: string): {
-		status: number;
 		data: {
 		    entityId: string;
 		    entityType: string;
@@ -135,6 +124,7 @@ interface EntityServiceProxy {
 		    createdAt: number;
 		    updatedAt: number;
 		};
+		status: number;
 	};
 
 
@@ -171,23 +161,19 @@ interface EntityServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	getEntitiesByType(entityType: string): {
-		status: number;
 		data: {
 		    entities: Array<{
 		        entityId: string;
 		        entityType: string;
 		        version: number;
-		        data: {
-		            street: string;
-		        };
-		        acl: {
-		            other: number;
-		        };
+		        data: Record<string, any>;
+		        acl: Record<string, any>;
 		        createdAt: number;
 		        updatedAt: number;
 		    }>;
 		    _serverTime: number;
 		};
+		status: number;
 	};
 
 
@@ -202,7 +188,6 @@ interface EntityServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	updateEntity(entityId: string, entityType: string, data: Object, acl: Object, version: number): {
-		status: number;
 		data: {
 		    entityId: string;
 		    entityType: string;
@@ -217,6 +202,7 @@ interface EntityServiceProxy {
 		    createdAt: number;
 		    updatedAt: number;
 		};
+		status: number;
 	};
 
 
@@ -228,7 +214,6 @@ interface EntityServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	incrementUserEntityData(entityId: string, data: Object): {
-		status: number;
 		data: {
 		    acl: {
 		        other: number;
@@ -244,6 +229,7 @@ interface EntityServiceProxy {
 		    updatedAt: number;
 		    version: number;
 		};
+		status: number;
 	};
 
 
@@ -256,7 +242,6 @@ interface EntityServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	incrementSharedUserEntityData(entityId: string, targetProfileId: string, data: Object): {
-		status: number;
 		data: {
 		    acl: {
 		        other: number;
@@ -272,6 +257,7 @@ interface EntityServiceProxy {
 		    updatedAt: number;
 		    version: number;
 		};
+		status: number;
 	};
 
 
@@ -286,7 +272,6 @@ interface EntityServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	updateSharedEntity(entityId: string, targetProfileId: string, entityType: string, data: Object, version: number): {
-		status: number;
 		data: {
 		    entityId: string;
 		    entityType: string;
@@ -301,6 +286,7 @@ interface EntityServiceProxy {
 		    createdAt: number;
 		    updatedAt: number;
 		};
+		status: number;
 	};
 
 
@@ -330,8 +316,8 @@ interface EntityServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	deleteEntity(entityId: string, version: number): {
-		status: number;
 		data: any | null;
+		status: number;
 	};
 
 
@@ -343,8 +329,8 @@ interface EntityServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	deleteSingleton(entityType: string, version: number): {
-		status: number;
 		data: any | null;
+		status: number;
 	};
 
 
@@ -360,19 +346,7 @@ interface EntityServiceProxy {
 		    results: {
 		        moreBefore: number;
 		        count: number;
-		        items: Array<{
-		            entityId: string;
-		            entityType: string;
-		            version: number;
-		            data: {
-		                testName: string;
-		            };
-		            acl: {
-		                other: number;
-		            };
-		            createdAt: number;
-		            updatedAt: number;
-		        }>;
+		        items: Array<Record<string, any>>;
 		        page: number;
 		        moreAfter: number;
 		    };
@@ -395,19 +369,7 @@ interface EntityServiceProxy {
 		    results: {
 		        moreBefore: number;
 		        count: number;
-		        items: Array<{
-		            entityId: string;
-		            entityType: string;
-		            version: number;
-		            data: {
-		                testName: string;
-		            };
-		            acl: {
-		                other: number;
-		            };
-		            createdAt: number;
-		            updatedAt: number;
-		        }>;
+		        items: Array<Record<string, any>>;
 		        page: number;
 		        moreAfter: number;
 		    };
@@ -426,7 +388,6 @@ interface EntityServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	getList(where: Object, orderBy: Object, maxReturn: number): {
-		status: number;
 		data: {
 		    _serverTime: number;
 		    entityListCount: number;
@@ -436,16 +397,13 @@ interface EntityServiceProxy {
 		        ownerId: string;
 		        entityType: string;
 		        version: number;
-		        data: {
-		            street: string;
-		        };
-		        acl: {
-		            other: number;
-		        };
+		        data: Record<string, any>;
+		        acl: Record<string, any>;
 		        createdAt: number;
 		        updatedAt: number;
 		    }>;
 		};
+		status: number;
 	};
 
 
@@ -456,10 +414,10 @@ interface EntityServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	getListCount(where: Object): {
-		status: number;
 		data: {
 		    entityListCount: number;
 		};
+		status: number;
 	};
 
 }

@@ -126,8 +126,7 @@ interface LeaderboardServiceProxy {
 		        currentVersionId: number;
 		        maxRetainedCount: number;
 		        retainedVersionsCount: number;
-		        data: {
-		        };
+		        data: Record<string, any>;
 		    }>;
 		};
 	};
@@ -261,35 +260,8 @@ interface LeaderboardServiceProxy {
 		    server_time: number;
 		    leaderboards: Array<{
 		        leaderboardId: string;
-		        leaderboard: Array<{
-		            externalId: string;
-		            name: string;
-		            pictureUrl: string;
-		            playerId: string;
-		            authenticationType: any | null;
-		            score: number;
-		            data: {
-		                pacerTag: any | null;
-		                pacerLeaderboardTag: {
-		                };
-		            };
-		            createdAt: any | null;
-		            updatedAt: any | null;
-		        }>;
-		        self: {
-		            externalId: any | null;
-		            name: any | null;
-		            pictureUrl: any | null;
-		            playerId: string;
-		            authenticationType: any | null;
-		            score: number;
-		            data: {
-		                nickname: string;
-		            };
-		            createdAt: number;
-		            updatedAt: number;
-		            summaryFriendData: any | null;
-		        };
+		        leaderboard: Array<Record<string, any>>;
+		        self: Record<string, any>;
 		        selfIndex: number;
 		    }>;
 		};
@@ -314,9 +286,7 @@ interface LeaderboardServiceProxy {
 		        playerName: string;
 		        playerId: string;
 		        createdAt: number;
-		        data: {
-		            nickname: string;
-		        };
+		        data: Record<string, any>;
 		        score: number;
 		        summaryFriendData: any | null;
 		    }>;
@@ -344,9 +314,7 @@ interface LeaderboardServiceProxy {
 		        playerName: string;
 		        playerId: string;
 		        createdAt: number;
-		        data: {
-		            nickname: string;
-		        };
+		        data: Record<string, any>;
 		        score: number;
 		        summaryFriendData: any | null;
 		    }>;
@@ -373,9 +341,7 @@ interface LeaderboardServiceProxy {
 		        playerName: string;
 		        playerId: string;
 		        createdAt: number;
-		        data: {
-		            nickname: string;
-		        };
+		        data: Record<string, any>;
 		        score: number;
 		        summaryFriendData: any | null;
 		    }>;
@@ -404,9 +370,7 @@ interface LeaderboardServiceProxy {
 		        playerName: string;
 		        playerId: string;
 		        createdAt: number;
-		        data: {
-		            nickname: string;
-		        };
+		        data: Record<string, any>;
 		        score: number;
 		        summaryFriendData: any | null;
 		    }>;
@@ -433,9 +397,7 @@ interface LeaderboardServiceProxy {
 		        playerName: string;
 		        playerId: string;
 		        createdAt: number;
-		        data: {
-		            nickname: string;
-		        };
+		        data: Record<string, any>;
 		        score: number;
 		        summaryFriendData: any | null;
 		    }>;
@@ -462,9 +424,7 @@ interface LeaderboardServiceProxy {
 		        playerName: string;
 		        playerId: string;
 		        createdAt: number;
-		        data: {
-		            nickname: string;
-		        };
+		        data: Record<string, any>;
 		        score: number;
 		        summaryFriendData: any | null;
 		    }>;
@@ -622,18 +582,13 @@ interface LeaderboardServiceProxy {
 		    leaderboard: Array<{
 		        playerId: string;
 		        score: number;
-		        data: {
-		            nickname: string;
-		        };
+		        data: Record<string, any>;
 		        createdAt: number;
 		        updatedAt: number;
 		        index: number;
 		        rank: number;
 		        name: string;
-		        summaryFriendData: {
-		            xp: number;
-		            favColour: string;
-		        };
+		        summaryFriendData: Record<string, any>;
 		        pictureUrl: any | null;
 		    }>;
 		    server_time: number;
@@ -660,18 +615,13 @@ interface LeaderboardServiceProxy {
 		    leaderboard: Array<{
 		        playerId: string;
 		        score: number;
-		        data: {
-		            nickname: string;
-		        };
+		        data: Record<string, any>;
 		        createdAt: number;
 		        updatedAt: number;
 		        index: number;
 		        rank: number;
 		        name: string;
-		        summaryFriendData: {
-		            xp: number;
-		            favColour: string;
-		        };
+		        summaryFriendData: Record<string, any>;
 		        pictureUrl: any | null;
 		    }>;
 		    server_time: number;
@@ -699,18 +649,13 @@ interface LeaderboardServiceProxy {
 		    leaderboard: Array<{
 		        playerId: string;
 		        score: number;
-		        data: {
-		            nickname: string;
-		        };
+		        data: Record<string, any>;
 		        createdAt: number;
 		        updatedAt: number;
 		        index: number;
 		        rank: number;
 		        name: string;
-		        summaryFriendData: {
-		            xp: number;
-		            favColour: string;
-		        };
+		        summaryFriendData: Record<string, any>;
 		        pictureUrl: any | null;
 		    }>;
 		    server_time: number;
@@ -738,18 +683,13 @@ interface LeaderboardServiceProxy {
 		    leaderboard: Array<{
 		        playerId: string;
 		        score: number;
-		        data: {
-		            nickname: string;
-		        };
+		        data: Record<string, any>;
 		        createdAt: number;
 		        updatedAt: number;
 		        index: number;
 		        rank: number;
 		        name: string;
-		        summaryFriendData: {
-		            xp: number;
-		            favColour: string;
-		        };
+		        summaryFriendData: Record<string, any>;
 		        pictureUrl: any | null;
 		    }>;
 		    server_time: number;
@@ -932,9 +872,7 @@ interface LeaderboardServiceProxy {
 		data: {
 		    score: {
 		        score: number;
-		        data: {
-		            test: string;
-		        };
+		        data: Record<string, any>;
 		        createdAt: number;
 		        updatedAt: number;
 		        leaderboardId: string;
@@ -957,9 +895,7 @@ interface LeaderboardServiceProxy {
 		    versionId: number;
 		    scores: Array<{
 		        score: number;
-		        data: {
-		            nickname: string;
-		        };
+		        data: Record<string, any>;
 		        createdAt: number;
 		        updatedAt: number;
 		    }>;
@@ -1006,9 +942,7 @@ interface LeaderboardServiceProxy {
 		data: {
 		    scores: Array<{
 		        score: number;
-		        data: {
-		            test: string;
-		        };
+		        data: Record<string, any>;
 		        createdAt: number;
 		        updatedAt: number;
 		        leaderboardId: string;
@@ -1142,9 +1076,7 @@ interface LeaderboardServiceProxy {
 		    leaderboardList: Array<{
 		        entryType: string;
 		        numDaysToRotate: number;
-		        data: {
-		            street: string;
-		        };
+		        data: Record<string, any>;
 		        resetAt: number;
 		        currentVersionId: number;
 		        rotationType: string;
@@ -1172,28 +1104,11 @@ interface LeaderboardServiceProxy {
 		        leaderboardType: string;
 		        rotationType: string;
 		        retainedCount: number;
-		        data: {
-		        };
+		        data: Record<string, any>;
 		        numDaysToRotate: number;
 		        entryType: string;
-		        tConfigs: {
-		            tcode1: {
-		                activeUpUntil: number;
-		                tConfigCode: string;
-		            };
-		            testTournamentId: {
-		                activeUpUntil: number;
-		                tConfigCode: string;
-		            };
-		        };
-		        tStates: {
-		            enrolMins: number;
-		            disallowMins: number;
-		            minMins: number;
-		            compMins: number;
-		            bufferMins: number;
-		            announcementMins: number;
-		        };
+		        tConfigs: Record<string, any>;
+		        tStates: Record<string, any>;
 		        tAutoJoin: number;
 		        tAutoClaim: number;
 		        tEnabled: number;
@@ -1201,37 +1116,7 @@ interface LeaderboardServiceProxy {
 		        tTemplateOnly: number;
 		        expiry: number;
 		        currentVersionId: number;
-		        currentPeriod: {
-		            versionId: number;
-		            startingAt: number;
-		            endingAt: number;
-		            rotationType: string;
-		            numDaysToRotate: number;
-		            tConfigVers: {
-		                tcode1: number;
-		                testTournamentId: number;
-		            };
-		            tState: string;
-		            tAutoJoin: number;
-		            tAutoClaim: number;
-		            tRegistrationStart: number;
-		            tRegistrationEnd: number;
-		            tPlayStart: number;
-		            tPlayEnd: number;
-		            tProcessingStartAt: number;
-		            tProcessingJobId: string;
-		            tRegistrationStartJobId: any | null;
-		            tPlayStartJobId: string;
-		            tPlayEndJobId: string;
-		            tStates: {
-		                enrolMins: number;
-		                disallowMins: number;
-		                minMins: number;
-		                compMins: number;
-		                bufferMins: number;
-		                announcementMins: number;
-		            };
-		        };
+		        currentPeriod: Record<string, any>;
 		        createdAt: number;
 		    };
 		};
@@ -1255,22 +1140,14 @@ interface LeaderboardServiceProxy {
 		        leaderboardType: string;
 		        rotationType: string;
 		        retainedCount: number;
-		        data: {
-		            info: string;
-		        };
+		        data: Record<string, any>;
 		        numDaysToRotate: number;
 		        entryType: string;
 		        tEnabled: number;
 		        tTemplateOnly: number;
 		        expiry: any | null;
 		        currentVersionId: number;
-		        currentPeriod: {
-		            versionId: number;
-		            startingAt: number;
-		            endingAt: number;
-		            rotationType: string;
-		            numDaysToRotate: number;
-		        };
+		        currentPeriod: Record<string, any>;
 		    };
 		};
 		status: number;
@@ -1294,21 +1171,13 @@ interface LeaderboardServiceProxy {
 		        leaderboardType: string;
 		        rotationType: string;
 		        retainedCount: number;
-		        data: {
-		            info: string;
-		        };
+		        data: Record<string, any>;
 		        numDaysToRotate: number;
 		        entryType: string;
 		        tEnabled: number;
 		        tTemplateOnly: number;
 		        currentVersionId: number;
-		        currentPeriod: {
-		            versionId: number;
-		            startingAt: number;
-		            endingAt: number;
-		            rotationType: string;
-		            numDaysToRotate: number;
-		        };
+		        currentPeriod: Record<string, any>;
 		    };
 		};
 		status: number;
@@ -1332,70 +1201,17 @@ interface LeaderboardServiceProxy {
 		        leaderboardType: string;
 		        rotationType: string;
 		        retainedCount: number;
-		        data: {
-		            info: string;
-		        };
+		        data: Record<string, any>;
 		        numDaysToRotate: number;
 		        entryType: string;
-		        tConfigs: {
-		            bronzeLevel: {
-		                activeUpUntil: number;
-		                tConfigCode: string;
-		            };
-		            silverLevel: {
-		                activeUpUntil: number;
-		                tConfigCode: string;
-		            };
-		            goldLevel: {
-		                activeUpUntil: number;
-		                tConfigCode: string;
-		            };
-		        };
-		        tStates: {
-		            enrolMins: number;
-		            disallowMins: number;
-		            minMins: number;
-		            compMins: number;
-		            bufferMins: number;
-		            announcementMins: number;
-		        };
+		        tConfigs: Record<string, any>;
+		        tStates: Record<string, any>;
 		        tAutoJoin: number;
 		        tAutoClaim: number;
 		        tEnabled: number;
 		        tTemplateOnly: number;
 		        currentVersionId: number;
-		        currentPeriod: {
-		            versionId: number;
-		            startingAt: number;
-		            endingAt: number;
-		            rotationType: string;
-		            numDaysToRotate: number;
-		            tConfigVers: {
-		                bronzeLevel: number;
-		                silverLevel: number;
-		                goldLevel: number;
-		            };
-		            tState: string;
-		            tAutoJoin: number;
-		            tAutoClaim: number;
-		            tRegistrationStart: number;
-		            tRegistrationEnd: number;
-		            tPlayStart: number;
-		            tPlayEnd: number;
-		            tProcessingStartAt: number;
-		            tProcessingJobId: string;
-		            tRegistrationStartJobId: string;
-		            tPlayStartJobId: string;
-		            tPlayEndJobId: string;
-		            tStates: {
-		                enrolMins: number;
-		                disallowMins: number;
-		                minMins: number;
-		                compMins: number;
-		                bufferMins: number;
-		                announcementMins: number;
-		            };
-		        };
+		        currentPeriod: Record<string, any>;
 		    };
 		};
 		status: number;
@@ -1419,70 +1235,17 @@ interface LeaderboardServiceProxy {
 		        leaderboardType: string;
 		        rotationType: string;
 		        retainedCount: number;
-		        data: {
-		            info: string;
-		        };
+		        data: Record<string, any>;
 		        numDaysToRotate: number;
 		        entryType: string;
-		        tConfigs: {
-		            bronzeLevel: {
-		                activeUpUntil: number;
-		                tConfigCode: string;
-		            };
-		            silverLevel: {
-		                activeUpUntil: number;
-		                tConfigCode: string;
-		            };
-		            goldLevel: {
-		                activeUpUntil: number;
-		                tConfigCode: string;
-		            };
-		        };
-		        tStates: {
-		            enrolMins: number;
-		            disallowMins: number;
-		            minMins: number;
-		            compMins: number;
-		            bufferMins: number;
-		            announcementMins: number;
-		        };
+		        tConfigs: Record<string, any>;
+		        tStates: Record<string, any>;
 		        tAutoJoin: number;
 		        tAutoClaim: number;
 		        tEnabled: number;
 		        tTemplateOnly: number;
 		        currentVersionId: number;
-		        currentPeriod: {
-		            versionId: number;
-		            startingAt: number;
-		            endingAt: number;
-		            rotationType: string;
-		            numDaysToRotate: number;
-		            tConfigVers: {
-		                bronzeLevel: number;
-		                silverLevel: number;
-		                goldLevel: number;
-		            };
-		            tState: string;
-		            tAutoJoin: number;
-		            tAutoClaim: number;
-		            tRegistrationStart: number;
-		            tRegistrationEnd: number;
-		            tPlayStart: number;
-		            tPlayEnd: number;
-		            tProcessingStartAt: number;
-		            tProcessingJobId: string;
-		            tRegistrationStartJobId: string;
-		            tPlayStartJobId: string;
-		            tPlayEndJobId: string;
-		            tStates: {
-		                enrolMins: number;
-		                disallowMins: number;
-		                minMins: number;
-		                compMins: number;
-		                bufferMins: number;
-		                announcementMins: number;
-		            };
-		        };
+		        currentPeriod: Record<string, any>;
 		    };
 		};
 		status: number;
@@ -1506,44 +1269,14 @@ interface LeaderboardServiceProxy {
 		        leaderboardType: string;
 		        rotationType: string;
 		        retainedCount: number;
-		        data: {
-		        };
+		        data: Record<string, any>;
 		        numDaysToRotate: number;
 		        entryType: string;
 		        tEnabled: number;
-		        tScheduled: Array<{
-		            startingAt: number;
-		            endingAt: number;
-		            tConfigs: {
-		                silverLevel: {
-		                    activeUpUntil: number;
-		                    tConfigCode: string;
-		                };
-		                goldLevel: {
-		                    activeUpUntil: number;
-		                    tConfigCode: string;
-		                };
-		            };
-		            tStates: {
-		                enrolMins: number;
-		                disallowMins: number;
-		                minMins: number;
-		                compMins: number;
-		                bufferMins: number;
-		                announcementMins: number;
-		            };
-		            tAutoJoin: number;
-		            tAutoClaim: number;
-		        }>;
+		        tScheduled: Array<Record<string, any>>;
 		        tTemplateOnly: number;
 		        currentVersionId: number;
-		        currentPeriod: {
-		            versionId: number;
-		            startingAt: number;
-		            endingAt: number;
-		            rotationType: string;
-		            numDaysToRotate: number;
-		        };
+		        currentPeriod: Record<string, any>;
 		    };
 		};
 		status: number;
@@ -1568,48 +1301,14 @@ interface LeaderboardServiceProxy {
 		        leaderboardType: string;
 		        rotationType: string;
 		        retainedCount: number;
-		        data: {
-		        };
+		        data: Record<string, any>;
 		        numDaysToRotate: number;
 		        entryType: string;
 		        tEnabled: number;
-		        tScheduled: Array<{
-		            startingAt: number;
-		            endingAt: number;
-		            tConfigs: {
-		                bronzeLevel: {
-		                    activeUpUntil: number;
-		                    tConfigCode: string;
-		                };
-		                silverLevel: {
-		                    activeUpUntil: number;
-		                    tConfigCode: string;
-		                };
-		                goldLevel: {
-		                    activeUpUntil: number;
-		                    tConfigCode: string;
-		                };
-		            };
-		            tStates: {
-		                enrolMins: number;
-		                disallowMins: number;
-		                minMins: number;
-		                compMins: number;
-		                bufferMins: number;
-		                announcementMins: number;
-		            };
-		            tAutoJoin: number;
-		            tAutoClaim: number;
-		        }>;
+		        tScheduled: Array<Record<string, any>>;
 		        tTemplateOnly: number;
 		        currentVersionId: number;
-		        currentPeriod: {
-		            versionId: number;
-		            startingAt: number;
-		            endingAt: number;
-		            rotationType: string;
-		            numDaysToRotate: number;
-		        };
+		        currentPeriod: Record<string, any>;
 		    };
 		};
 		status: number;
@@ -1633,20 +1332,13 @@ interface LeaderboardServiceProxy {
 		        leaderboardType: string;
 		        rotationType: string;
 		        retainedCount: number;
-		        data: {
-		        };
+		        data: Record<string, any>;
 		        numDaysToRotate: number;
 		        entryType: string;
 		        tEnabled: number;
 		        tTemplateOnly: number;
 		        currentVersionId: number;
-		        currentPeriod: {
-		            versionId: number;
-		            startingAt: number;
-		            endingAt: any | null;
-		            rotationType: string;
-		            numDaysToRotate: number;
-		        };
+		        currentPeriod: Record<string, any>;
 		    };
 		};
 		status: number;
@@ -1665,18 +1357,7 @@ interface LeaderboardServiceProxy {
 		    results: {
 		        count: number;
 		        page: number;
-		        items: Array<{
-		            entryType: string;
-		            tTemplateOnly: number;
-		            numDaysToRotate: number;
-		            data: {
-		            };
-		            currentVersionId: number;
-		            rotationType: string;
-		            leaderboardType: string;
-		            leaderboardId: string;
-		            tEnabled: number;
-		        }>;
+		        items: Array<Record<string, any>>;
 		        moreAfter: number;
 		        moreBefore: number;
 		    };
@@ -1698,18 +1379,7 @@ interface LeaderboardServiceProxy {
 		    results: {
 		        count: number;
 		        page: number;
-		        items: Array<{
-		            entryType: string;
-		            tTemplateOnly: number;
-		            numDaysToRotate: number;
-		            data: {
-		            };
-		            currentVersionId: number;
-		            rotationType: string;
-		            leaderboardType: string;
-		            leaderboardId: string;
-		            tEnabled: number;
-		        }>;
+		        items: Array<Record<string, any>>;
 		        moreAfter: number;
 		        moreBefore: number;
 		    };

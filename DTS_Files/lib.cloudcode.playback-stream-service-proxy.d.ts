@@ -19,8 +19,7 @@ interface PlaybackStreamServiceProxy {
 		    };
 		    initialSharedData: {
 		        entities: Array<any>;
-		        statistics: {
-		        };
+		        statistics: Record<string, any>;
 		    };
 		    events: Array<any>;
 		    createdAt: number;
@@ -47,8 +46,7 @@ interface PlaybackStreamServiceProxy {
 		    };
 		    initialSharedData: {
 		        entities: Array<any>;
-		        statistics: {
-		        };
+		        statistics: Record<string, any>;
 		    };
 		    events: Array<{
 		        MOVE: string;
@@ -101,9 +99,7 @@ interface PlaybackStreamServiceProxy {
 		        initiatingPlayerId: string;
 		        targetPlayerId: string;
 		        status: string;
-		        summary: {
-		            total: number;
-		        };
+		        summary: Record<string, any>;
 		        expiryTime: any | null;
 		        createdAt: number;
 		        updatedAt: number;
@@ -128,9 +124,7 @@ interface PlaybackStreamServiceProxy {
 		        initiatingPlayerId: string;
 		        targetPlayerId: string;
 		        status: string;
-		        summary: {
-		            total: number;
-		        };
+		        summary: Record<string, any>;
 		        expiryTime: any | null;
 		        createdAt: number;
 		        updatedAt: number;
@@ -173,8 +167,7 @@ interface PlaybackStreamServiceProxy {
 		    };
 		    initialSharedData: {
 		        entities: Array<any>;
-		        statistics: {
-		        };
+		        statistics: Record<string, any>;
 		    };
 		    events: Array<any>;
 		    createdAt: number;
@@ -200,8 +193,7 @@ interface PlaybackStreamServiceProxy {
 		    };
 		    initialSharedData: {
 		        entities: Array<any>;
-		        statistics: {
-		        };
+		        statistics: Record<string, any>;
 		    };
 		    events: Array<{
 		        value: number;

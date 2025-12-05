@@ -18,8 +18,7 @@ interface OnewayMatchServiceProxy {
 		    };
 		    initialSharedData: {
 		        entities: Array<any>;
-		        statistics: {
-		        };
+		        statistics: Record<string, any>;
 		    };
 		    events: Array<any>;
 		    expiryTime: number;

@@ -9,8 +9,8 @@ interface DataStreamServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	customTrackEvent(eventName: string, eventProperties: Object): {
-		status: number;
 		data: any | null;
+		status: number;
 	};
 
 
@@ -22,8 +22,8 @@ interface DataStreamServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	customPageEvent(eventName: string, eventProperties: Object): {
-		status: number;
 		data: any | null;
+		status: number;
 	};
 
 
@@ -35,8 +35,8 @@ interface DataStreamServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	customScreenEvent(eventName: string, eventProperties: Object): {
-		status: number;
 		data: any | null;
+		status: number;
 	};
 
 

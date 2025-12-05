@@ -17,8 +17,7 @@ interface UserItemsServiceProxy {
 		        usesLeft: any | null;
 		        coolDownStart: number;
 		        recoveryStart: number;
-		        itemData: {
-		        };
+		        itemData: Record<string, any>;
 		        giftedTo: any | null;
 		        giftedFrom: any | null;
 		        blockId: any | null;
@@ -28,36 +27,7 @@ interface UserItemsServiceProxy {
 		        maxUses: any | null;
 		        coolDownUntil: number;
 		        recoveryUntil: number;
-		        itemDef: {
-		            defId: string;
-		            name: string;
-		            desc: string;
-		            type: string;
-		            category: string;
-		            tags: Array<string>;
-		            buyPrice: {
-		            };
-		            sellPrice: {
-		            };
-		            image: any | null;
-		            resourceGroup: any | null;
-		            resourceTag: any | null;
-		            meta: {
-		            };
-		            pState: string;
-		            publishedAt: number;
-		            stackable: number;
-		            consumable: number;
-		            uses: any | null;
-		            coolDownSecs: number;
-		            recoverySecs: number;
-		            activatable: number;
-		            statusName: any | null;
-		            activeSecs: any | null;
-		            tradable: number;
-		            blockchain: number;
-		            blockchainDefId: any | null;
-		        };
+		        itemDef: Record<string, any>;
 		    };
 		};
 		status: number;
@@ -77,55 +47,7 @@ interface UserItemsServiceProxy {
 		    results: {
 		        count: number;
 		        page: number;
-		        items: Array<{
-		            itemId: string;
-		            defId: string;
-		            quantity: number;
-		            usesLeft: any | null;
-		            coolDownStart: number;
-		            recoveryStart: number;
-		            itemData: {
-		            };
-		            giftedTo: any | null;
-		            giftedFrom: any | null;
-		            blockId: any | null;
-		            createdAt: number;
-		            updatedAt: number;
-		            version: number;
-		            maxUses: any | null;
-		            coolDownUntil: number;
-		            recoveryUntil: number;
-		            itemDef: {
-		                defId: string;
-		                name: string;
-		                desc: string;
-		                type: string;
-		                category: string;
-		                tags: Array<string>;
-		                buyPrice: {
-		                };
-		                sellPrice: {
-		                };
-		                image: any | null;
-		                resourceGroup: any | null;
-		                resourceTag: any | null;
-		                meta: {
-		                };
-		                pState: string;
-		                publishedAt: number;
-		                stackable: number;
-		                consumable: number;
-		                uses: any | null;
-		                coolDownSecs: number;
-		                recoverySecs: number;
-		                activatable: number;
-		                statusName: any | null;
-		                activeSecs: any | null;
-		                tradable: number;
-		                blockchain: number;
-		                blockchainDefId: any | null;
-		            };
-		        }>;
+		        items: Array<Record<string, any>>;
 		        moreAfter: number;
 		        moreBefore: number;
 		    };
@@ -168,59 +90,7 @@ interface UserItemsServiceProxy {
 	awardUserItem(defId: string, quantity: number, includeDef: boolean): {
 		data: {
 		    items: {
-		        d01c70b8b1a1457eba14dd52909ffc4a: {
-		            itemId: string;
-		            defId: string;
-		            quantity: number;
-		            usesLeft: any | null;
-		            coolDownStart: number;
-		            recoveryStart: number;
-		            itemData: {
-		                exp: number;
-		            };
-		            giftedTo: any | null;
-		            giftedFrom: any | null;
-		            blockId: any | null;
-		            createdAt: number;
-		            updatedAt: number;
-		            version: number;
-		            maxUses: any | null;
-		            coolDownUntil: number;
-		            recoveryUntil: number;
-		            itemDef: {
-		                defId: string;
-		                name: string;
-		                desc: string;
-		                type: string;
-		                category: string;
-		                tags: Array<string>;
-		                buyPrice: {
-		                    coins: number;
-		                };
-		                sellPrice: {
-		                    coins: number;
-		                };
-		                image: string;
-		                resourceGroup: any | null;
-		                resourceTag: any | null;
-		                meta: {
-		                    level: string;
-		                };
-		                pState: string;
-		                publishedAt: number;
-		                stackable: number;
-		                consumable: number;
-		                uses: any | null;
-		                coolDownSecs: number;
-		                recoverySecs: number;
-		                activatable: number;
-		                statusName: any | null;
-		                activeSecs: any | null;
-		                tradable: number;
-		                blockchain: number;
-		                blockchainDefId: any | null;
-		            };
-		        };
+		        d01c70b8b1a1457eba14dd52909ffc4a: Record<string, any>;
 		    };
 		};
 		status: number;
@@ -239,59 +109,7 @@ interface UserItemsServiceProxy {
 	awardUserItemWithOptions(defId: string, quantity: number, includeDef: boolean, optionsJson: Object): {
 		data: {
 		    items: {
-		        3f980b72e9b0421ca23b09f4a297432f: {
-		            itemId: string;
-		            defId: string;
-		            type: string;
-		            quantity: number;
-		            itemData: {
-		            };
-		            giftedTo: any | null;
-		            giftedFrom: any | null;
-		            createdAt: number;
-		            updatedAt: number;
-		            version: number;
-		            usesLeft: any | null;
-		            coolDownStart: number;
-		            recoveryStart: number;
-		            maxUses: any | null;
-		            coolDownUntil: number;
-		            recoveryUntil: number;
-		            itemDef: {
-		                defId: string;
-		                name: string;
-		                desc: string;
-		                type: string;
-		                category: string;
-		                tags: Array<string>;
-		                buyPriceDisabled: number;
-		                buyPrice: {
-		                    coins: number;
-		                };
-		                sellPrice: {
-		                    coins: number;
-		                };
-		                image: any | null;
-		                resourceGroup: string;
-		                resourceTag: string;
-		                meta: any | null;
-		                pState: string;
-		                publishedAt: number;
-		                stackable: number;
-		                maxStackable: any | null;
-		                tradable: number;
-		                blockchain: number;
-		                consumable: number;
-		                uses: any | null;
-		                coolDownSecs: number;
-		                recoverySecs: number;
-		                activatable: number;
-		                statusName: any | null;
-		                activeSecs: any | null;
-		                maxActiveSecs: any | null;
-		                statusBehaviour: any | null;
-		            };
-		        };
+		        3f980b72e9b0421ca23b09f4a297432f: Record<string, any>;
 		    };
 		};
 		status: number;
@@ -311,58 +129,7 @@ interface UserItemsServiceProxy {
 		data: {
 		    quantity: number;
 		    items: {
-		        5e3d9c33174c48269b52d911d56c7671: {
-		            itemId: string;
-		            defId: string;
-		            type: string;
-		            quantity: number;
-		            itemData: {
-		            };
-		            giftedTo: any | null;
-		            giftedFrom: any | null;
-		            createdAt: number;
-		            updatedAt: number;
-		            version: number;
-		            usesLeft: any | null;
-		            coolDownStart: number;
-		            recoveryStart: number;
-		            maxUses: any | null;
-		            coolDownUntil: number;
-		            recoveryUntil: number;
-		            itemDef: {
-		                defId: string;
-		                name: string;
-		                desc: any | null;
-		                type: string;
-		                category: string;
-		                tags: any | null;
-		                buyPriceDisabled: number;
-		                buyPrice: {
-		                };
-		                sellPrice: {
-		                };
-		                image: string;
-		                resourceGroup: any | null;
-		                resourceTag: any | null;
-		                meta: {
-		                };
-		                pState: string;
-		                publishedAt: number;
-		                stackable: number;
-		                maxStackable: any | null;
-		                tradable: number;
-		                blockchain: number;
-		                consumable: number;
-		                uses: any | null;
-		                coolDownSecs: number;
-		                recoverySecs: number;
-		                activatable: number;
-		                statusName: any | null;
-		                activeSecs: any | null;
-		                maxActiveSecs: any | null;
-		                statusBehaviour: any | null;
-		            };
-		        };
+		        5e3d9c33174c48269b52d911d56c7671: Record<string, any>;
 		    };
 		};
 		status: number;
@@ -383,58 +150,7 @@ interface UserItemsServiceProxy {
 		data: {
 		    quantity: number;
 		    items: {
-		        ad2a0f811efc4c76a8f4608c6efb488d: {
-		            itemId: string;
-		            defId: string;
-		            type: string;
-		            quantity: number;
-		            itemData: {
-		            };
-		            giftedTo: any | null;
-		            giftedFrom: any | null;
-		            createdAt: number;
-		            updatedAt: number;
-		            version: number;
-		            usesLeft: any | null;
-		            coolDownStart: number;
-		            recoveryStart: number;
-		            maxUses: any | null;
-		            coolDownUntil: number;
-		            recoveryUntil: number;
-		            itemDef: {
-		                defId: string;
-		                name: string;
-		                desc: any | null;
-		                type: string;
-		                category: string;
-		                tags: any | null;
-		                buyPriceDisabled: number;
-		                buyPrice: {
-		                };
-		                sellPrice: {
-		                };
-		                image: string;
-		                resourceGroup: any | null;
-		                resourceTag: any | null;
-		                meta: {
-		                };
-		                pState: string;
-		                publishedAt: number;
-		                stackable: number;
-		                maxStackable: any | null;
-		                tradable: number;
-		                blockchain: number;
-		                consumable: number;
-		                uses: any | null;
-		                coolDownSecs: number;
-		                recoverySecs: number;
-		                activatable: number;
-		                statusName: any | null;
-		                activeSecs: any | null;
-		                maxActiveSecs: any | null;
-		                statusBehaviour: any | null;
-		            };
-		        };
+		        ad2a0f811efc4c76a8f4608c6efb488d: Record<string, any>;
 		    };
 		};
 		status: number;
@@ -470,70 +186,14 @@ interface UserItemsServiceProxy {
 	purchaseUserItem(defId: string, quantity: number, shopId: string, includeDef: boolean): {
 		data: {
 		    items: {
-		        8e12e9073f544971b84ab685ce50b684: {
-		            itemId: string;
-		            defId: string;
-		            quantity: number;
-		            usesLeft: any | null;
-		            coolDownStart: number;
-		            recoveryStart: number;
-		            itemData: {
-		            };
-		            giftedTo: any | null;
-		            giftedFrom: any | null;
-		            blockId: any | null;
-		            createdAt: number;
-		            updatedAt: number;
-		            version: number;
-		            maxUses: any | null;
-		            coolDownUntil: number;
-		            recoveryUntil: number;
-		            itemDef: {
-		                defId: string;
-		                name: string;
-		                desc: string;
-		                type: string;
-		                category: string;
-		                tags: any | null;
-		                buyPrice: {
-		                    coins: number;
-		                };
-		                sellPrice: {
-		                };
-		                image: any | null;
-		                resourceGroup: any | null;
-		                resourceTag: any | null;
-		                meta: {
-		                };
-		                pState: string;
-		                publishedAt: number;
-		                stackable: number;
-		                consumable: number;
-		                uses: any | null;
-		                coolDownSecs: number;
-		                recoverySecs: number;
-		                activatable: number;
-		                statusName: string;
-		                activeSecs: number;
-		                tradable: number;
-		                blockchain: number;
-		                blockchainDefId: any | null;
-		            };
-		        };
+		        8e12e9073f544971b84ab685ce50b684: Record<string, any>;
 		    };
 		    currencySpent: {
 		        coins: number;
 		    };
 		    currencyBalances: {
 		        createdAt: number;
-		        currencyMap: {
-		            coins: {
-		                consumed: number;
-		                balance: number;
-		                purchased: number;
-		                awarded: number;
-		            };
-		        };
+		        currencyMap: Record<string, any>;
 		        playerId: string;
 		        updatedAt: number;
 		    };
@@ -574,14 +234,7 @@ interface UserItemsServiceProxy {
 		    };
 		    currencyBalances: {
 		        createdAt: number;
-		        currencyMap: {
-		            coins: {
-		                consumed: number;
-		                balance: number;
-		                purchased: number;
-		                awarded: number;
-		            };
-		        };
+		        currencyMap: Record<string, any>;
 		        playerId: string;
 		        updatedAt: number;
 		    };
@@ -609,8 +262,7 @@ interface UserItemsServiceProxy {
 		        usesLeft: any | null;
 		        coolDownStart: number;
 		        recoveryStart: number;
-		        itemData: {
-		        };
+		        itemData: Record<string, any>;
 		        giftedTo: string;
 		        giftedFrom: string;
 		        blockId: any | null;
@@ -620,8 +272,7 @@ interface UserItemsServiceProxy {
 		        maxUses: any | null;
 		        coolDownUntil: number;
 		        recoveryUntil: number;
-		        itemDef: {
-		        };
+		        itemDef: Record<string, any>;
 		    };
 		    giftItemId: string;
 		};
@@ -645,8 +296,7 @@ interface UserItemsServiceProxy {
 		        usesLeft: any | null;
 		        coolDownStart: number;
 		        recoveryStart: number;
-		        itemData: {
-		        };
+		        itemData: Record<string, any>;
 		        giftedTo: any | null;
 		        giftedFrom: any | null;
 		        blockId: any | null;
@@ -656,8 +306,7 @@ interface UserItemsServiceProxy {
 		        maxUses: any | null;
 		        coolDownUntil: number;
 		        recoveryUntil: number;
-		        itemDef: {
-		        };
+		        itemDef: Record<string, any>;
 		    };
 		};
 		status: number;
@@ -681,10 +330,7 @@ interface UserItemsServiceProxy {
 		        usesLeft: any | null;
 		        coolDownStart: number;
 		        recoveryStart: number;
-		        itemData: {
-		            condition: number;
-		            bonus: number;
-		        };
+		        itemData: Record<string, any>;
 		        giftedTo: any | null;
 		        giftedFrom: any | null;
 		        blockId: any | null;
@@ -694,8 +340,7 @@ interface UserItemsServiceProxy {
 		        maxUses: any | null;
 		        coolDownUntil: number;
 		        recoveryUntil: number;
-		        itemDef: {
-		        };
+		        itemDef: Record<string, any>;
 		    };
 		};
 		status: number;
@@ -717,8 +362,7 @@ interface UserItemsServiceProxy {
 		    statusEffects: {
 		        activeStart: number;
 		        statusName: string;
-		        details: {
-		        };
+		        details: Record<string, any>;
 		        activeUntil: number;
 		    };
 		    item: {
@@ -728,10 +372,7 @@ interface UserItemsServiceProxy {
 		        usesLeft: any | null;
 		        coolDownStart: number;
 		        recoveryStart: number;
-		        itemData: {
-		            condition: number;
-		            bonus: number;
-		        };
+		        itemData: Record<string, any>;
 		        giftedTo: any | null;
 		        giftedFrom: any | null;
 		        blockId: any | null;
@@ -741,38 +382,7 @@ interface UserItemsServiceProxy {
 		        maxUses: any | null;
 		        coolDownUntil: number;
 		        recoveryUntil: number;
-		        itemDef: {
-		            defId: string;
-		            name: string;
-		            desc: string;
-		            type: string;
-		            category: string;
-		            tags: any | null;
-		            buyPrice: {
-		                coins: number;
-		            };
-		            sellPrice: {
-		                coins: number;
-		            };
-		            image: any | null;
-		            resourceGroup: any | null;
-		            resourceTag: any | null;
-		            meta: {
-		            };
-		            pState: string;
-		            publishedAt: number;
-		            stackable: number;
-		            consumable: number;
-		            uses: any | null;
-		            coolDownSecs: number;
-		            recoverySecs: number;
-		            activatable: number;
-		            statusName: string;
-		            activeSecs: number;
-		            tradable: number;
-		            blockchain: number;
-		            blockchainDefId: any | null;
-		        };
+		        itemDef: Record<string, any>;
 		    };
 		};
 		status: number;
@@ -804,10 +414,8 @@ interface UserItemsServiceProxy {
 		        category: string;
 		        tags: Array<string>;
 		        buyPriceDisabled: number;
-		        buyPrice: {
-		        };
-		        sellPrice: {
-		        };
+		        buyPrice: Record<string, any>;
+		        sellPrice: Record<string, any>;
 		        image: any | null;
 		        resourceGroup: any | null;
 		        resourceTag: any | null;
@@ -819,16 +427,7 @@ interface UserItemsServiceProxy {
 		        tradable: number;
 		        blockchain: number;
 		        autoOpen: number;
-		        items: {
-		            s001: {
-		                defId: string;
-		                quantity: number;
-		            };
-		            sword001: {
-		                defId: string;
-		                quantity: number;
-		            };
-		        };
+		        items: Record<string, any>;
 		    };
 		    items: {
 		    };
@@ -892,80 +491,16 @@ interface UserItemsServiceProxy {
 		data: {
 		    items: Array<{
 		        defId: string;
-		        itemDef: {
-		            resourceGroup: any | null;
-		            sellPrice: {
-		            };
-		            type: string;
-		            coolDownSecs: number;
-		            recoverySecs: number;
-		            statusName: any | null;
-		            buyPrice: {
-		                bar: number;
-		            };
-		            image: any | null;
-		            stackable: number;
-		            publishedAt: number;
-		            pState: string;
-		            activatable: number;
-		            tags: any | null;
-		            defId: string;
-		            maxStackable: number;
-		            blockchain: number;
-		            meta: any | null;
-		            consumable: number;
-		            name: {
-		                en: string;
-		            };
-		            tradable: number;
-		            resourceTag: any | null;
-		            uses: any | null;
-		            _id: {
-		                timestamp: number;
-		                date: number;
-		            };
-		            activeSecs: any | null;
-		            category: string;
-		            desc: {
-		                en: string;
-		            };
-		        };
+		        itemDef: Record<string, any>;
 		        winningPromotionId: number;
-		        promotionPrices: Array<{
-		            promotionPrice: {
-		                bar: number;
-		            };
-		            name: string;
-		            type: string;
-		            promotionId: number;
-		        }>;
+		        promotionPrices: Array<Record<string, any>>;
 		    }>;
 		    promotionDetails: Array<{
 		        promotionId: number;
 		        type: string;
 		        name: string;
 		        duration: number;
-		        customJson: {
-		            priority: number;
-		            itemIds: {
-		                barBundle1Imp: {
-		                    currency: {
-		                        bars: number;
-		                    };
-		                    extra: {
-		                        specialItemReward: string;
-		                    };
-		                };
-		                gemcollection: {
-		                    currency: {
-		                        gems: number;
-		                    };
-		                    extra: {
-		                        specialItemReward: string;
-		                    };
-		                };
-		            };
-		        };
+		        customJson: Record<string, any>;
 		        isRetriggerable: number;
 		        maxRetriggers: any | null;
 		        maxPurchases: any | null;

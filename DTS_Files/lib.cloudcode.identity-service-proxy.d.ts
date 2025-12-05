@@ -202,8 +202,7 @@ interface IdentityServiceProxy {
 		    id: string;
 		    amountSpent: number;
 		    parentCurrency: {
-		        Parent: {
-		        };
+		        Parent: Record<string, any>;
 		    };
 		    previousLogin: number;
 		    playerName: string;
@@ -218,12 +217,9 @@ interface IdentityServiceProxy {
 		    newUser: number;
 		    sent_events: Array<any>;
 		    rewards: {
-		        rewardDetails: {
-		        };
-		        currency: {
-		        };
-		        rewards: {
-		        };
+		        rewardDetails: Record<string, any>;
+		        currency: Record<string, any>;
+		        rewards: Record<string, any>;
 		    };
 		    switchToAppId: string;
 		    statistics: {
@@ -544,11 +540,7 @@ interface IdentityServiceProxy {
 	getIdentityStatus(authenticationType: string, externalAuthName: string): {
 		data: {
 		    identities: {
-		        Facebook: {
-		            tokenExpired: number;
-		            externalId: string;
-		            loginAuthType: string;
-		        };
+		        Facebook: Record<string, any>;
 		    };
 		};
 		status: number;
@@ -565,12 +557,7 @@ interface IdentityServiceProxy {
 	getIdentityStatusAndData(authenticationType: string, externalAuthName: string): {
 		data: {
 		    identities: {
-		        Facebook: {
-		            tokenExpired: number;
-		            externalId: string;
-		            loginAuthType: string;
-		            identityData: any | null;
-		        };
+		        Facebook: Record<string, any>;
 		    };
 		};
 		status: number;

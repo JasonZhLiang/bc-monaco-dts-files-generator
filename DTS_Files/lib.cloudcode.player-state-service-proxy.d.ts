@@ -8,8 +8,8 @@ interface PlayerStateServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	clearUserStatus(statusName: string): {
-		status: number;
 		data: any | null;
+		status: number;
 	};
 
 
@@ -19,7 +19,6 @@ interface PlayerStateServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	readUserState(): {
-		status: number;
 		data: {
 		    vcPurchased: number;
 		    experiencePoints: number;
@@ -27,12 +26,7 @@ interface PlayerStateServiceProxy {
 		    server_time: number;
 		    experienceLevel: number;
 		    currency: {
-		        credits: {
-		            purchased: number;
-		            balance: number;
-		            consumed: number;
-		            awarded: number;
-		        };
+		        credits: Record<string, any>;
 		    };
 		    statistics: {
 		        TestStat: number;
@@ -53,27 +47,19 @@ interface PlayerStateServiceProxy {
 		    loginCount: number;
 		    emailAddress: string;
 		    peerProfileIds: {
-		        peerapp: {
-		            profileId: string;
-		        };
+		        peerapp: Record<string, any>;
 		    };
 		    previousLogin: number;
 		    incoming_events: Array<any>;
 		    peerCurrency: {
-		        peerapp: {
-		            gold: {
-		                purchased: number;
-		                balance: number;
-		                consumed: number;
-		                awarded: number;
-		            };
-		        };
+		        peerapp: Record<string, any>;
 		    };
 		    lastLogin: number;
 		    languageCode: string;
 		    pictureUrl: any | null;
 		    amountSpent: number;
 		};
+		status: number;
 	};
 
 
@@ -83,8 +69,8 @@ interface PlayerStateServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	deleteUser(): {
-		status: number;
 		data: any | null;
+		status: number;
 	};
 
 
@@ -94,8 +80,8 @@ interface PlayerStateServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	resetUser(): {
-		status: number;
 		data: any | null;
+		status: number;
 	};
 
 
@@ -106,10 +92,10 @@ interface PlayerStateServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	updateUserName(userName: string): {
-		status: number;
 		data: {
 		    playerName: string;
 		};
+		status: number;
 	};
 
 
@@ -134,10 +120,10 @@ interface PlayerStateServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	updateContactEmail(contactEmail: string): {
-		status: number;
 		data: {
 		    contactEmail: string;
 		};
+		status: number;
 	};
 
 
@@ -148,8 +134,8 @@ interface PlayerStateServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	updateSummaryFriendData(summaryFriendData: Object): {
-		status: number;
 		data: any | null;
+		status: number;
 	};
 
 
@@ -179,8 +165,8 @@ interface PlayerStateServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	updateAttributes(attributes: Object, wipeExisting: boolean): {
-		status: number;
 		data: any | null;
+		status: number;
 	};
 
 
@@ -191,8 +177,8 @@ interface PlayerStateServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	removeAttributes(attributes: Array<any>): {
-		status: number;
 		data: any | null;
+		status: number;
 	};
 
 
@@ -203,10 +189,10 @@ interface PlayerStateServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	updateIsTester(isTester: boolean): {
-		status: number;
 		data: {
 		    isTester: number;
 		};
+		status: number;
 	};
 
 
@@ -227,8 +213,8 @@ interface PlayerStateServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	logout(): {
-		status: number;
 		data: any | null;
+		status: number;
 	};
 
 
@@ -245,8 +231,7 @@ interface PlayerStateServiceProxy {
 		    rapidFire: {
 		        activeStart: number;
 		        statusName: string;
-		        details: {
-		        };
+		        details: Record<string, any>;
 		        activeUntil: number;
 		    };
 		};
@@ -297,8 +282,7 @@ interface PlayerStateServiceProxy {
 		    rapidFire: {
 		        activeStart: number;
 		        statusName: string;
-		        details: {
-		        };
+		        details: Record<string, any>;
 		        activeUntil: number;
 		    };
 		};
@@ -327,10 +311,10 @@ interface PlayerStateServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	updateLanguageCode(languageCode: string): {
-		status: number;
 		data: {
 		    languageCode: string;
 		};
+		status: number;
 	};
 
 

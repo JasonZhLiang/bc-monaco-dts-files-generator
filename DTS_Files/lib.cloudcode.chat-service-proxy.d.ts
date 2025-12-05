@@ -9,10 +9,10 @@ interface ChatServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	getChannelId(channelType: string, channelSubId: string): {
-		status: number;
 		data: {
 		    channelId: string;
 		};
+		status: number;
 	};
 
 
@@ -30,9 +30,7 @@ interface ChatServiceProxy {
 		        code: string;
 		        name: string;
 		        desc: string;
-		        stats: {
-		            messageCount: number;
-		        };
+		        stats: Record<string, any>;
 		    }>;
 		};
 		status: number;
@@ -73,23 +71,9 @@ interface ChatServiceProxy {
 		        date: number;
 		        ver: number;
 		        msgId: string;
-		        from: {
-		            id: string;
-		            name: string;
-		            pic: any | null;
-		        };
+		        from: Record<string, any>;
 		        chId: string;
-		        content: {
-		            text: string;
-		            rich: {
-		                SELL_ITEM: {
-		                    ITEM_TYPE: string;
-		                    ITEM_ID: string;
-		                    PRICE: string;
-		                    CURRENCY: string;
-		                };
-		            };
-		        };
+		        content: Record<string, any>;
 		    }>;
 		};
 		status: number;
@@ -103,9 +87,9 @@ interface ChatServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	channelDisconnect(channelId: string): {
-		status: number;
 		data: {
 		};
+		status: number;
 	};
 
 
@@ -148,23 +132,9 @@ interface ChatServiceProxy {
 		        date: number;
 		        ver: number;
 		        msgId: string;
-		        from: {
-		            id: string;
-		            name: string;
-		            pic: any | null;
-		        };
+		        from: Record<string, any>;
 		        chId: string;
-		        content: {
-		            text: string;
-		            rich: {
-		                SELL_ITEM: {
-		                    ITEM_TYPE: string;
-		                    ITEM_ID: string;
-		                    PRICE: string;
-		                    CURRENCY: string;
-		                };
-		            };
-		        };
+		        content: Record<string, any>;
 		    }>;
 		};
 		status: number;
@@ -180,10 +150,10 @@ interface ChatServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	postChatMessage(channelId: string, content: Object, recordInHistory: boolean): {
-		status: number;
 		data: {
 		    msgId: string;
 		};
+		status: number;
 	};
 
 
@@ -196,10 +166,10 @@ interface ChatServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	postChatMessageSimple(channelId: string, text: string, recordInHistory: boolean): {
-		status: number;
 		data: {
 		    msgId: string;
 		};
+		status: number;
 	};
 
 
@@ -228,10 +198,10 @@ interface ChatServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	deleteChatMessage(channelId: string, msgId: string, version: number): {
-		status: number;
 		data: {
 		    deleted: number;
 		};
+		status: number;
 	};
 
 
@@ -266,7 +236,6 @@ interface ChatServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	sysGetChannelInfo(channelId: string): {
-		status: number;
 		data: {
 		    id: string;
 		    type: string;
@@ -277,6 +246,7 @@ interface ChatServiceProxy {
 		        messageCount: number;
 		    };
 		};
+		status: number;
 	};
 
 
@@ -288,23 +258,17 @@ interface ChatServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	sysGetRecentChatMessages(channelId: string, maxReturn: number): {
-		status: number;
 		data: {
 		    messages: Array<{
 		        date: number;
 		        ver: number;
 		        msgId: string;
-		        from: {
-		            id: string;
-		            name: string;
-		            pic: any | null;
-		        };
+		        from: Record<string, any>;
 		        chId: string;
-		        content: {
-		            text: string;
-		        };
+		        content: Record<string, any>;
 		    }>;
 		};
+		status: number;
 	};
 
 
@@ -316,7 +280,6 @@ interface ChatServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	sysGetChatMessage(channelId: string, msgId: string): {
-		status: number;
 		data: {
 		    date: number;
 		    ver: number;
@@ -329,11 +292,10 @@ interface ChatServiceProxy {
 		    chId: string;
 		    content: {
 		        text: string;
-		        rich: {
-		            somethingCustom: string;
-		        };
+		        rich: Record<string, any>;
 		    };
 		};
+		status: number;
 	};
 
 
@@ -347,10 +309,10 @@ interface ChatServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	sysPostChatMessage(channelId: string, content: Object, recordInHistory: boolean, from: Object): {
-		status: number;
 		data: {
 		    msgId: string;
 		};
+		status: number;
 	};
 
 
@@ -364,10 +326,10 @@ interface ChatServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	sysPostChatMessageSimple(channelId: string, text: string, recordInHistory: boolean, from: Object): {
-		status: number;
 		data: {
 		    msgId: string;
 		};
+		status: number;
 	};
 
 
@@ -381,9 +343,9 @@ interface ChatServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	sysUpdateChatMessage(channelId: string, msgId: string, version: number, content: Object): {
-		status: number;
 		data: {
 		};
+		status: number;
 	};
 
 
@@ -396,10 +358,10 @@ interface ChatServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	sysDeleteChatMessage(channelId: string, msgId: string, version: number): {
-		status: number;
 		data: {
 		    deleted: number;
 		};
+		status: number;
 	};
 
 }

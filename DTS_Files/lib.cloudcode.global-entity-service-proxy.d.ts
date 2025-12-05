@@ -387,21 +387,7 @@ interface GlobalEntityServiceProxy {
 	createSystemEntity(entityType: string, timeToLive: number, acl: Object, data: Object): {
 		data: {
 		    response: {
-		        data: {
-		            gameId: string;
-		            entityIndexedId: any | null;
-		            timeToLive: number;
-		            createdAt: number;
-		            entityType: string;
-		            entityId: string;
-		            acl: {
-		                other: number;
-		            };
-		            ownerId: any | null;
-		            version: number;
-		            expiresAt: number;
-		            updatedAt: number;
-		        };
+		        data: Record<string, any>;
 		        status: number;
 		    };
 		    success: number;
@@ -458,12 +444,8 @@ interface GlobalEntityServiceProxy {
 		        entityType: string;
 		        entityIndexedId: any | null;
 		        version: number;
-		        data: {
-		            globalTestName: string;
-		        };
-		        acl: {
-		            other: number;
-		        };
+		        data: Record<string, any>;
+		        acl: Record<string, any>;
 		        expiresAt: number;
 		        timeToLive: number;
 		        createdAt: number;
@@ -494,12 +476,8 @@ interface GlobalEntityServiceProxy {
 		        entityType: string;
 		        entityIndexedId: any | null;
 		        version: number;
-		        data: {
-		            globalTestName: string;
-		        };
-		        acl: {
-		            other: number;
-		        };
+		        data: Record<string, any>;
+		        acl: Record<string, any>;
 		        expiresAt: number;
 		        timeToLive: number;
 		        createdAt: number;
@@ -529,12 +507,8 @@ interface GlobalEntityServiceProxy {
 		        entityType: string;
 		        entityIndexedId: any | null;
 		        version: number;
-		        data: {
-		            globalTestName: string;
-		        };
-		        acl: {
-		            other: number;
-		        };
+		        data: Record<string, any>;
+		        acl: Record<string, any>;
 		        expiresAt: number;
 		        timeToLive: number;
 		        createdAt: number;
@@ -565,12 +539,8 @@ interface GlobalEntityServiceProxy {
 		        entityType: string;
 		        entityIndexedId: any | null;
 		        version: number;
-		        data: {
-		            globalTestName: string;
-		        };
-		        acl: {
-		            other: number;
-		        };
+		        data: Record<string, any>;
+		        acl: Record<string, any>;
 		        expiresAt: number;
 		        timeToLive: number;
 		        createdAt: number;
@@ -599,12 +569,8 @@ interface GlobalEntityServiceProxy {
 		        entityType: string;
 		        entityIndexedId: string;
 		        version: number;
-		        data: {
-		            globalTestName: string;
-		        };
-		        acl: {
-		            other: number;
-		        };
+		        data: Record<string, any>;
+		        acl: Record<string, any>;
 		        expiresAt: number;
 		        timeToLive: number;
 		        createdAt: number;
@@ -687,24 +653,7 @@ interface GlobalEntityServiceProxy {
 		    results: {
 		        moreBefore: number;
 		        count: number;
-		        items: Array<{
-		            gameId: string;
-		            entityId: string;
-		            ownerId: string;
-		            entityType: string;
-		            entityIndexedId: string;
-		            version: number;
-		            data: {
-		                testData: number;
-		            };
-		            acl: {
-		                other: number;
-		            };
-		            expiresAt: number;
-		            timeToLive: number;
-		            createdAt: number;
-		            updatedAt: number;
-		        }>;
+		        items: Array<Record<string, any>>;
 		        page: number;
 		        moreAfter: number;
 		    };
@@ -726,37 +675,7 @@ interface GlobalEntityServiceProxy {
 		    results: {
 		        count: number;
 		        page: number;
-		        items: Array<{
-		            gameId: string;
-		            entityId: string;
-		            entityType: string;
-		            entityIndexedId: string;
-		            version: number;
-		            data: {
-		                Rock5: {
-		                    isSpell: number;
-		                    Name: string;
-		                    Art: string;
-		                    Description: string;
-		                    Suit: string;
-		                    SleepOnStartTurns: number;
-		                    OnSpawn: string;
-		                    DivineShield: number;
-		                    Taunt: number;
-		                    Freezing: number;
-		                    Cost: number;
-		                    HP: number;
-		                    Attack: number;
-		                    DeathRattle: string;
-		                };
-		            };
-		            acl: {
-		                other: number;
-		            };
-		            expiresAt: number;
-		            createdAt: number;
-		            updatedAt: number;
-		        }>;
+		        items: Array<Record<string, any>>;
 		        moreAfter: number;
 		        moreBefore: number;
 		    };
@@ -779,24 +698,7 @@ interface GlobalEntityServiceProxy {
 		    results: {
 		        moreBefore: number;
 		        count: number;
-		        items: Array<{
-		            gameId: string;
-		            entityId: string;
-		            ownerId: string;
-		            entityType: string;
-		            entityIndexedId: string;
-		            version: number;
-		            data: {
-		                testData: number;
-		            };
-		            acl: {
-		                other: number;
-		            };
-		            expiresAt: number;
-		            timeToLive: number;
-		            createdAt: number;
-		            updatedAt: number;
-		        }>;
+		        items: Array<Record<string, any>>;
 		        page: number;
 		        moreAfter: number;
 		    };
@@ -819,24 +721,7 @@ interface GlobalEntityServiceProxy {
 		    results: {
 		        moreBefore: number;
 		        count: number;
-		        items: Array<{
-		            gameId: string;
-		            entityId: string;
-		            ownerId: string;
-		            entityType: string;
-		            entityIndexedId: string;
-		            version: number;
-		            data: {
-		                testData: number;
-		            };
-		            acl: {
-		                other: number;
-		            };
-		            expiresAt: number;
-		            timeToLive: number;
-		            createdAt: number;
-		            updatedAt: number;
-		        }>;
+		        items: Array<Record<string, any>>;
 		        page: number;
 		        moreAfter: number;
 		    };
@@ -891,12 +776,8 @@ interface GlobalEntityServiceProxy {
 		        entityType: string;
 		        entityIndexedId: any | null;
 		        version: number;
-		        data: {
-		            street: string;
-		        };
-		        acl: {
-		            other: number;
-		        };
+		        data: Record<string, any>;
+		        acl: Record<string, any>;
 		        expiresAt: number;
 		        timeToLive: any | null;
 		        createdAt: number;
@@ -927,12 +808,8 @@ interface GlobalEntityServiceProxy {
 		        entityType: string;
 		        entityIndexedId: any | null;
 		        version: number;
-		        data: {
-		            globalTestName: string;
-		        };
-		        acl: {
-		            other: number;
-		        };
+		        data: Record<string, any>;
+		        acl: Record<string, any>;
 		        expiresAt: number;
 		        timeToLive: number;
 		        createdAt: number;

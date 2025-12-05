@@ -9,7 +9,6 @@ interface FriendServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	readFriendEntity(friendId: string, entityId: string): {
-		status: number;
 		data: {
 		    entityId: string;
 		    entityType: string;
@@ -25,6 +24,7 @@ interface FriendServiceProxy {
 		    createdAt: number;
 		    updatedAt: number;
 		};
+		status: number;
 	};
 
 
@@ -35,27 +35,13 @@ interface FriendServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	readFriendsEntities(entityType: string): {
-		status: number;
 		data: {
 		    results: Array<{
 		        userId: string;
-		        entities: Array<{
-		            entityId: string;
-		            entityType: string;
-		            version: number;
-		            data: {
-		                ACCOUNT_CREATION_TIME: number;
-		                ALL_TIME_SCORE: number;
-		                FIRST_PLAY_TIME: number;
-		            };
-		            acl: {
-		                other: number;
-		            };
-		            createdAt: number;
-		            updatedAt: number;
-		        }>;
+		        entities: Array<Record<string, any>>;
 		    }>;
 		};
+		status: number;
 	};
 
 
@@ -66,7 +52,6 @@ interface FriendServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	readFriendUserState(friendId: string): {
-		status: number;
 		data: {
 		    vcPurchased: number;
 		    xpCapped: number;
@@ -82,22 +67,13 @@ interface FriendServiceProxy {
 		        entityId: string;
 		        entityType: string;
 		        version: number;
-		        data: {
-		            ALL_TIME_SCORE: number;
-		        };
-		        acl: {
-		            other: number;
-		        };
+		        data: Record<string, any>;
+		        acl: Record<string, any>;
 		        createdAt: number;
 		        updatedAt: number;
 		    }>;
 		    currency: {
-		        coin: {
-		            purchased: number;
-		            balance: number;
-		            consumed: number;
-		            awarded: number;
-		        };
+		        coin: Record<string, any>;
 		    };
 		    statistics: {
 		        SCORE_STREAK_COUNT: number;
@@ -106,6 +82,7 @@ interface FriendServiceProxy {
 		    id: string;
 		    profileId: string;
 		};
+		status: number;
 	};
 
 
@@ -117,10 +94,10 @@ interface FriendServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	getExternalIdForProfileId(profileId: string, authenticationType: string): {
-		status: number;
 		data: {
 		    externalId: string;
 		};
+		status: number;
 	};
 
 
@@ -131,7 +108,6 @@ interface FriendServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	getSummaryDataForProfileId(profileId: string): {
-		status: number;
 		data: {
 		    pictureUrl: string;
 		    email: any | null;
@@ -141,6 +117,7 @@ interface FriendServiceProxy {
 		    };
 		    profileName: string;
 		};
+		status: number;
 	};
 
 
@@ -152,7 +129,6 @@ interface FriendServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	getProfileInfoForCredential(externalId: string, authenticationType: string): {
-		status: number;
 		data: {
 		    playerName: string;
 		    email: any | null;
@@ -161,6 +137,7 @@ interface FriendServiceProxy {
 		        LEVEL: number;
 		    };
 		};
+		status: number;
 	};
 
 
@@ -172,9 +149,9 @@ interface FriendServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	getProfileInfoForCredentialIfExists(externalId: string, authenticationType: string): {
-		status: number;
 		data: {
 		};
+		status: number;
 	};
 
 
@@ -186,7 +163,6 @@ interface FriendServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	getProfileInfoForExternalAuthId(externalId: string, externalAuthType: string): {
-		status: number;
 		data: {
 		    playerName: string;
 		    email: any | null;
@@ -195,6 +171,7 @@ interface FriendServiceProxy {
 		        LEVEL: number;
 		    };
 		};
+		status: number;
 	};
 
 
@@ -206,9 +183,9 @@ interface FriendServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	getProfileInfoForExternalAuthIdIfExists(externalId: string, externalAuthType: string): {
-		status: number;
 		data: {
 		};
+		status: number;
 	};
 
 
@@ -220,7 +197,6 @@ interface FriendServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	findUsersByExactName(searchText: string, maxResults: number): {
-		status: number;
 		data: {
 		    matches: Array<{
 		        profileId: string;
@@ -230,6 +206,7 @@ interface FriendServiceProxy {
 		    }>;
 		    matchedCount: number;
 		};
+		status: number;
 	};
 
 
@@ -241,7 +218,6 @@ interface FriendServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	findUsersByNameStartingWith(searchText: string, maxResults: number): {
-		status: number;
 		data: {
 		    matchedCount: number;
 		    message: string;
@@ -252,6 +228,7 @@ interface FriendServiceProxy {
 		        pictureUrl: any | null;
 		    }>;
 		};
+		status: number;
 	};
 
 
@@ -263,7 +240,6 @@ interface FriendServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	findUsersBySubstrName(searchText: string, maxResults: number): {
-		status: number;
 		data: {
 		    matches: Array<{
 		        profileId: string;
@@ -273,6 +249,7 @@ interface FriendServiceProxy {
 		    }>;
 		    matchedCount: number;
 		};
+		status: number;
 	};
 
 
@@ -284,7 +261,6 @@ interface FriendServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	findUsersByUserSummary(where: string, maxResults: number): {
-		status: number;
 		data: {
 		    matches: Array<{
 		        profileId: string;
@@ -294,6 +270,7 @@ interface FriendServiceProxy {
 		    }>;
 		    matchedCount: number;
 		};
+		status: number;
 	};
 
 
@@ -304,7 +281,6 @@ interface FriendServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	findUserByExactUniversalId(searchText: string): {
-		status: number;
 		data: {
 		    matchedCount: number;
 		    matches: Array<{
@@ -314,6 +290,7 @@ interface FriendServiceProxy {
 		        pictureUrl: any | null;
 		    }>;
 		};
+		status: number;
 	};
 
 
@@ -325,7 +302,6 @@ interface FriendServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	findUserByUniversalId(searchText: string, maxResults: number): {
-		status: number;
 		data: {
 		    matchedCount: number;
 		    matches: Array<{
@@ -335,6 +311,7 @@ interface FriendServiceProxy {
 		        pictureUrl: any | null;
 		    }>;
 		};
+		status: number;
 	};
 
 
@@ -346,7 +323,6 @@ interface FriendServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	findUsersByUniversalIdStartingWith(searchText: string, maxResults: number): {
-		status: number;
 		data: {
 		    matchedCount: number;
 		    message: string;
@@ -357,6 +333,7 @@ interface FriendServiceProxy {
 		        pictureUrl: any | null;
 		    }>;
 		};
+		status: number;
 	};
 
 
@@ -370,21 +347,11 @@ interface FriendServiceProxy {
 	listFriends(friendPlatform: "brainCloud" | "Facebook" | "All", includeSummaryData: boolean): {
 		data: {
 		    friends: Array<{
-		        externalData: {
-		            Facebook: {
-		                pictureUrl: string;
-		                name: string;
-		                externalId: string;
-		            };
-		            databrandingproductName: {
-		            };
-		        };
+		        externalData: Record<string, any>;
 		        friendPlatforms: Array<string>;
 		        playerId: string;
 		        name: string;
-		        summaryFriendData: {
-		            LEVEL: number;
-		        };
+		        summaryFriendData: Record<string, any>;
 		        pictureUrl: string;
 		    }>;
 		    server_time: number;
@@ -407,11 +374,7 @@ interface FriendServiceProxy {
 		    pictureUrl: string;
 		    summaryFriendData: any | null;
 		    externalData: {
-		        Facebook: {
-		            pictureUrl: string;
-		            name: string;
-		            externalId: string;
-		        };
+		        Facebook: Record<string, any>;
 		    };
 		    server_time: number;
 		};
@@ -426,8 +389,8 @@ interface FriendServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	addFriends(profileIds: Array<any>): {
-		status: number;
 		data: any | null;
+		status: number;
 	};
 
 
@@ -459,8 +422,8 @@ interface FriendServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	removeFriends(profileIds: Array<any>): {
-		status: number;
 		data: any | null;
+		status: number;
 	};
 
 
@@ -471,7 +434,6 @@ interface FriendServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	getUsersOnlineStatus(profileIds: Array<any>): {
-		status: number;
 		data: {
 		    onlineStatus: Array<{
 		        isOnline: number;
@@ -479,6 +441,7 @@ interface FriendServiceProxy {
 		        userValid: number;
 		    }>;
 		};
+		status: number;
 	};
 
 }

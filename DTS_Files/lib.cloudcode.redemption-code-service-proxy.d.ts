@@ -74,15 +74,7 @@ interface RedemptionCodeServiceProxy {
 		        scriptId: string;
 		        scriptVersion: number;
 		        attemptState: string;
-		        response: {
-		            success: number;
-		            complete: number;
-		            customRedemptionInfo: {
-		                transaction_id: string;
-		            };
-		            errorCode: any | null;
-		            errorMsg: any | null;
-		        };
+		        response: Record<string, any>;
 		    };
 		};
 		status: number;
@@ -104,10 +96,8 @@ interface RedemptionCodeServiceProxy {
 		        codeType: string;
 		        version: number;
 		        codeState: string;
-		        customCodeInfo: {
-		        };
-		        customRedemptionInfo: {
-		        };
+		        customCodeInfo: Record<string, any>;
+		        customRedemptionInfo: Record<string, any>;
 		        redeemedByProfileId: string;
 		        redeemedByProfileName: string;
 		        invalidationReason: any | null;
@@ -339,24 +329,7 @@ interface RedemptionCodeServiceProxy {
 		    results: {
 		        count: number;
 		        page: number;
-		        items: Array<{
-		            gameId: string;
-		            codeType: string;
-		            description: string;
-		            version: number;
-		            createdAt: number;
-		            updatedAt: number;
-		            async: number;
-		            maxRetries: number;
-		            isDisabled: number;
-		            customCodeInfo: {
-		            };
-		            validStart: number;
-		            validEnd: number;
-		            codeUseType: string;
-		            scanCode: string;
-		            maxRedemptions: number;
-		        }>;
+		        items: Array<Record<string, any>>;
 		        moreAfter: number;
 		        moreBefore: number;
 		    };
@@ -379,24 +352,7 @@ interface RedemptionCodeServiceProxy {
 		    results: {
 		        count: number;
 		        page: number;
-		        items: Array<{
-		            gameId: string;
-		            codeType: string;
-		            description: string;
-		            version: number;
-		            createdAt: number;
-		            updatedAt: number;
-		            async: number;
-		            maxRetries: number;
-		            isDisabled: number;
-		            customCodeInfo: {
-		            };
-		            validStart: number;
-		            validEnd: number;
-		            codeUseType: string;
-		            scanCode: string;
-		            maxRedemptions: number;
-		        }>;
+		        items: Array<Record<string, any>>;
 		        moreAfter: number;
 		        moreBefore: number;
 		    };

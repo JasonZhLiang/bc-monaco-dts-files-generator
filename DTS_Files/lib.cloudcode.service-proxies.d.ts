@@ -16,13 +16,6 @@ interface ServiceProxies {
 	getAsyncMatchServiceProxy(session?: string): AsyncMatchServiceProxy;
 
 	/**
-	 * Retrieves a AuthenticateService proxy object.
-	 * 
-	 * @param session A optional parameter for when a script is executed without a session.
-	 */ 
-	getAuthenticateServiceProxy(session?: string): AuthenticateServiceProxy;
-
-	/**
 	 * Retrieves a BlockchainService proxy object.
 	 * 
 	 * @param session A optional parameter for when a script is executed without a session.
@@ -49,13 +42,6 @@ interface ServiceProxies {
 	 * @param session A optional parameter for when a script is executed without a session.
 	 */ 
 	getDataStreamServiceProxy(session?: string): DataStreamServiceProxy;
-
-	/**
-	 * Retrieves a DispatcherService proxy object.
-	 * 
-	 * @param session A optional parameter for when a script is executed without a session.
-	 */ 
-	getDispatcherServiceProxy(session?: string): DispatcherServiceProxy;
 
 	/**
 	 * Retrieves a EmailAuthService proxy object.

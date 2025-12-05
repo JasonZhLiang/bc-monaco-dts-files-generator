@@ -11,19 +11,10 @@ interface PresenceServiceProxy {
 	getPresenceOfFriends(friendPlatform: string, includeOffline: boolean): {
 		data: {
 		    presence: Array<{
-		        user: {
-		            id: string;
-		            name: string;
-		            pic: any | null;
-		            cxs: Array<string>;
-		        };
+		        user: Record<string, any>;
 		        online: number;
-		        summaryFriendData: {
-		        };
-		        activity: {
-		            LOCATION: string;
-		            STATUS: string;
-		        };
+		        summaryFriendData: Record<string, any>;
+		        activity: Record<string, any>;
 		    }>;
 		};
 		status: number;
@@ -40,17 +31,10 @@ interface PresenceServiceProxy {
 	getPresenceOfGroup(groupId: string, includeOffline: boolean): {
 		data: {
 		    presence: Array<{
-		        user: {
-		            id: string;
-		            name: string;
-		            pic: any | null;
-		            cxs: Array<string>;
-		        };
+		        user: Record<string, any>;
 		        online: number;
-		        summaryFriendData: {
-		        };
-		        activity: {
-		        };
+		        summaryFriendData: Record<string, any>;
+		        activity: Record<string, any>;
 		    }>;
 		};
 		status: number;
@@ -67,19 +51,10 @@ interface PresenceServiceProxy {
 	getPresenceOfUsers(profileIds: Array<any>, includeOffline: boolean): {
 		data: {
 		    presence: Array<{
-		        user: {
-		            id: string;
-		            name: string;
-		            pic: any | null;
-		            cxs: Array<string>;
-		        };
+		        user: Record<string, any>;
 		        online: number;
-		        summaryFriendData: {
-		        };
-		        activity: {
-		            LOCATION: string;
-		            STATUS: string;
-		        };
+		        summaryFriendData: Record<string, any>;
+		        activity: Record<string, any>;
 		    }>;
 		};
 		status: number;
@@ -120,19 +95,10 @@ interface PresenceServiceProxy {
 	registerListenersForFriends(friendPlatform: string, bidirectional: boolean): {
 		data: {
 		    presence: Array<{
-		        user: {
-		            id: string;
-		            name: string;
-		            pic: any | null;
-		            cxs: Array<string>;
-		        };
+		        user: Record<string, any>;
 		        online: number;
-		        summaryFriendData: {
-		        };
-		        activity: {
-		            LOCATION: string;
-		            STATUS: string;
-		        };
+		        summaryFriendData: Record<string, any>;
+		        activity: Record<string, any>;
 		    }>;
 		};
 		status: number;
@@ -149,19 +115,10 @@ interface PresenceServiceProxy {
 	registerListenersForGroup(groupId: string, bidirectional: boolean): {
 		data: {
 		    presence: Array<{
-		        user: {
-		            id: string;
-		            name: string;
-		            pic: any | null;
-		            cxs: Array<string>;
-		        };
+		        user: Record<string, any>;
 		        online: number;
-		        summaryFriendData: {
-		        };
-		        activity: {
-		            LOCATION: string;
-		            STATUS: string;
-		        };
+		        summaryFriendData: Record<string, any>;
+		        activity: Record<string, any>;
 		    }>;
 		};
 		status: number;
@@ -178,19 +135,10 @@ interface PresenceServiceProxy {
 	registerListenersForProfiles(profileIds: Array<any>, bidirectional: boolean): {
 		data: {
 		    presence: Array<{
-		        user: {
-		            id: string;
-		            name: string;
-		            pic: any | null;
-		            cxs: Array<string>;
-		        };
+		        user: Record<string, any>;
 		        online: number;
-		        summaryFriendData: {
-		        };
-		        activity: {
-		            LOCATION: string;
-		            STATUS: string;
-		        };
+		        summaryFriendData: Record<string, any>;
+		        activity: Record<string, any>;
 		    }>;
 		};
 		status: number;

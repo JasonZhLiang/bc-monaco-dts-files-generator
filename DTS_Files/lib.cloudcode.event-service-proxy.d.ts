@@ -10,10 +10,10 @@ interface EventServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	sendEvent(toId: string, eventType: string, eventData: Object): {
-		status: number;
 		data: {
 		    evId: string;
 		};
+		status: number;
 	};
 
 
@@ -26,12 +26,12 @@ interface EventServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	sendEventToProfiles(toIds: Array<any>, eventType: string, eventData: Object): {
-		status: number;
 		data: {
 		    errorProfiles: Array<any>;
 		    errorCount: number;
 		    sentCount: number;
 		};
+		status: number;
 	};
 
 
@@ -45,12 +45,12 @@ interface EventServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	sysSendEventToProfiles(toIds: Array<any>, eventType: string, eventData: Object, fromProfileId: string): {
-		status: number;
 		data: {
 		    errorProfiles: Array<any>;
 		    errorCount: number;
 		    sentCount: number;
 		};
+		status: number;
 	};
 
 
@@ -78,8 +78,8 @@ interface EventServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	updateIncomingEventData(evId: string, eventData: Object): {
-		status: number;
 		data: any | null;
+		status: number;
 	};
 
 
@@ -91,8 +91,8 @@ interface EventServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	updateIncomingEventDataIfExists(evId: string, eventData: Object): {
-		status: number;
 		data: any | null;
+		status: number;
 	};
 
 
@@ -103,8 +103,8 @@ interface EventServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	deleteIncomingEvent(evId: string): {
-		status: number;
 		data: any | null;
+		status: number;
 	};
 
 
@@ -162,9 +162,7 @@ interface EventServiceProxy {
 	getEvents(): {
 		data: {
 		    incoming_events: Array<{
-		        eventData: {
-		            someMapAttribute: string;
-		        };
+		        eventData: Record<string, any>;
 		        createdAt: number;
 		        fromPlayerId: string;
 		        toPlayerId: string;

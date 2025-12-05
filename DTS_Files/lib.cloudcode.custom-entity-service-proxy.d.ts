@@ -12,7 +12,6 @@ interface CustomEntityServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	createEntity(entityType: string, dataJson: Object, acl: Object, timeToLive: number, isOwned: boolean): {
-		status: number;
 		data: {
 		    entityId: string;
 		    version: number;
@@ -25,6 +24,7 @@ interface CustomEntityServiceProxy {
 		    createdAt: number;
 		    updatedAt: number;
 		};
+		status: number;
 	};
 
 
@@ -39,7 +39,6 @@ interface CustomEntityServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	sysCreateEntity(entityType: string, dataJson: Object, acl: Object, timeToLive: number, ownerId: string): {
-		status: number;
 		data: {
 		    entityId: string;
 		    version: number;
@@ -52,6 +51,7 @@ interface CustomEntityServiceProxy {
 		    createdAt: number;
 		    updatedAt: number;
 		};
+		status: number;
 	};
 
 
@@ -63,7 +63,6 @@ interface CustomEntityServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	readEntity(entityType: string, entityId: string): {
-		status: number;
 		data: {
 		    entityId: string;
 		    version: number;
@@ -85,6 +84,7 @@ interface CustomEntityServiceProxy {
 		    };
 		    _serverTime: number;
 		};
+		status: number;
 	};
 
 
@@ -96,7 +96,6 @@ interface CustomEntityServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	sysReadEntity(entityType: string, entityId: string): {
-		status: number;
 		data: {
 		    entityId: string;
 		    version: number;
@@ -118,6 +117,7 @@ interface CustomEntityServiceProxy {
 		    };
 		    _serverTime: number;
 		};
+		status: number;
 	};
 
 
@@ -133,7 +133,6 @@ interface CustomEntityServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	updateEntity(entityType: string, entityId: string, version: number, dataJson: Object, acl: Object, timeToLive: number): {
-		status: number;
 		data: {
 		    entityId: string;
 		    version: number;
@@ -146,6 +145,7 @@ interface CustomEntityServiceProxy {
 		    createdAt: number;
 		    updatedAt: number;
 		};
+		status: number;
 	};
 
 
@@ -161,7 +161,6 @@ interface CustomEntityServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	sysUpdateEntity(entityType: string, entityId: string, version: number, dataJson: Object, acl: Object, timeToLive: number): {
-		status: number;
 		data: {
 		    entityId: string;
 		    version: number;
@@ -174,6 +173,7 @@ interface CustomEntityServiceProxy {
 		    createdAt: number;
 		    updatedAt: number;
 		};
+		status: number;
 	};
 
 
@@ -187,7 +187,6 @@ interface CustomEntityServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	updateEntityFields(entityType: string, entityId: string, version: number, fieldsJson: Object): {
-		status: number;
 		data: {
 		    entityId: string;
 		    version: number;
@@ -200,6 +199,7 @@ interface CustomEntityServiceProxy {
 		    createdAt: number;
 		    updatedAt: number;
 		};
+		status: number;
 	};
 
 
@@ -213,7 +213,6 @@ interface CustomEntityServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	sysUpdateEntityFields(entityType: string, entityId: string, version: number, fieldsJson: Object): {
-		status: number;
 		data: {
 		    entityId: string;
 		    version: number;
@@ -226,6 +225,7 @@ interface CustomEntityServiceProxy {
 		    createdAt: number;
 		    updatedAt: number;
 		};
+		status: number;
 	};
 
 
@@ -442,36 +442,18 @@ interface CustomEntityServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	getEntityPage(entityType: string, context: Object): {
-		status: number;
 		data: {
 		    _serverTime: number;
 		    context: string;
 		    results: {
 		        count: number;
 		        page: number;
-		        items: Array<{
-		            entityId: string;
-		            version: number;
-		            acl: {
-		                other: number;
-		            };
-		            ownerId: any | null;
-		            expiresAt: any | null;
-		            timeToLive: any | null;
-		            createdAt: number;
-		            updatedAt: number;
-		            data: {
-		                firstName: string;
-		                surName: string;
-		                position: string;
-		                goals: number;
-		                assists: number;
-		            };
-		        }>;
+		        items: Array<Record<string, any>>;
 		        moreAfter: number;
 		        moreBefore: number;
 		    };
 		};
+		status: number;
 	};
 
 
@@ -483,36 +465,18 @@ interface CustomEntityServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	sysGetEntityPage(entityType: string, context: Object): {
-		status: number;
 		data: {
 		    _serverTime: number;
 		    context: string;
 		    results: {
 		        count: number;
 		        page: number;
-		        items: Array<{
-		            entityId: string;
-		            version: number;
-		            acl: {
-		                other: number;
-		            };
-		            ownerId: any | null;
-		            expiresAt: any | null;
-		            timeToLive: any | null;
-		            createdAt: number;
-		            updatedAt: number;
-		            data: {
-		                firstName: string;
-		                surName: string;
-		                position: string;
-		                goals: number;
-		                assists: number;
-		            };
-		        }>;
+		        items: Array<Record<string, any>>;
 		        moreAfter: number;
 		        moreBefore: number;
 		    };
 		};
+		status: number;
 	};
 
 
@@ -525,30 +489,15 @@ interface CustomEntityServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	getEntityPageOffset(entityType: string, context: Object, pageOffset: number): {
-		status: number;
 		data: {
 		    _serverTime: number;
 		    context: string;
 		    results: {
 		        page: number;
-		        items: Array<{
-		            entityId: string;
-		            version: number;
-		            acl: {
-		                other: number;
-		            };
-		            ownerId: string;
-		            expiresAt: any | null;
-		            timeToLive: any | null;
-		            createdAt: number;
-		            updatedAt: number;
-		            data: {
-		                level1: string;
-		                level2: string;
-		            };
-		        }>;
+		        items: Array<Record<string, any>>;
 		    };
 		};
+		status: number;
 	};
 
 
@@ -561,30 +510,15 @@ interface CustomEntityServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	sysGetEntityPageOffset(entityType: string, context: Object, pageOffset: number): {
-		status: number;
 		data: {
 		    _serverTime: number;
 		    context: string;
 		    results: {
 		        page: number;
-		        items: Array<{
-		            entityId: string;
-		            version: number;
-		            acl: {
-		                other: number;
-		            };
-		            ownerId: string;
-		            expiresAt: any | null;
-		            timeToLive: any | null;
-		            createdAt: number;
-		            updatedAt: number;
-		            data: {
-		                level1: string;
-		                level2: string;
-		            };
-		        }>;
+		        items: Array<Record<string, any>>;
 		    };
 		};
+		status: number;
 	};
 
 
@@ -627,8 +561,8 @@ interface CustomEntityServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	deleteEntity(entityType: string, entityId: string, version: number): {
-		status: number;
 		data: any | null;
+		status: number;
 	};
 
 
@@ -641,8 +575,8 @@ interface CustomEntityServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	sysDeleteEntity(entityType: string, entityId: string, version: number): {
-		status: number;
 		data: any | null;
+		status: number;
 	};
 
 
@@ -802,22 +736,14 @@ interface CustomEntityServiceProxy {
 		    entityList: Array<{
 		        entityId: string;
 		        version: number;
-		        acl: {
-		            other: number;
-		        };
+		        acl: Record<string, any>;
 		        ownerId: any | null;
 		        expiresAt: any | null;
 		        timeToLive: any | null;
 		        createdAt: number;
 		        updatedAt: number;
 		        entityType: string;
-		        data: {
-		            firstName: string;
-		            surName: string;
-		            position: string;
-		            goals: number;
-		            assists: number;
-		        };
+		        data: Record<string, any>;
 		    }>;
 		    _serverTime: number;
 		    entityListCount: number;
@@ -847,21 +773,9 @@ interface CustomEntityServiceProxy {
 	sysCreateCollection(entityType: string, collectionOptsJson: Object): {
 		data: {
 		    collection: {
-		        options: {
-		            isOwned: number;
-		            migrate: number;
-		            identifier: string;
-		            dataTemplateJson: {
-		                playerName: string;
-		                playerId: number;
-		                teamName: string;
-		                jerseyNum: number;
-		            };
-		            dataTemplateText: string;
-		        };
+		        options: Record<string, any>;
 		        name: string;
-		        customIndexes: {
-		        };
+		        customIndexes: Record<string, any>;
 		    };
 		};
 		status: number;
@@ -874,13 +788,7 @@ interface CustomEntityServiceProxy {
 	 * @param  {string} entityType The type of custom entity collection to be dropped.
 	 * @returns ServiceProxyResponse
 	 */ 
-	sysDropCollection(entityType: string): {
-		data: {
-		    collection: {
-		    };
-		};
-		status: number;
-	};
+	sysDropCollection(entityType: string): ServiceProxyResponse;
 
 
 	/**
@@ -917,43 +825,14 @@ interface CustomEntityServiceProxy {
 		        isOwned: number;
 		        migrate: number;
 		        identifier: string;
-		        dataTemplateJson: {
-		            playerName: string;
-		            playerId: number;
-		            teamName: string;
-		            jerseyNum: number;
-		        };
+		        dataTemplateJson: Record<string, any>;
 		        dataTemplateText: string;
 		    };
 		    name: string;
 		    customIndexes: {
-		        jerseyNum: {
-		            name: string;
-		            keysJson: string;
-		            optionsJson: string;
-		            options: {
-		                name: string;
-		                background: number;
-		            };
-		        };
-		        playerName: {
-		            name: string;
-		            keysJson: string;
-		            optionsJson: string;
-		            options: {
-		                name: string;
-		                background: number;
-		            };
-		        };
-		        playernameindex: {
-		            name: string;
-		            keysJson: string;
-		            optionsJson: string;
-		            options: {
-		                name: string;
-		                background: number;
-		            };
-		        };
+		        jerseyNum: Record<string, any>;
+		        playerName: Record<string, any>;
+		        playernameindex: Record<string, any>;
 		    };
 		};
 		status: number;
@@ -997,8 +876,8 @@ interface CustomEntityServiceProxy {
 	 * @returns ServiceProxyResponse
 	 */ 
 	sysDropIndex(entityType: string, indexKeysJson: Object): {
-		status: number;
 		data: any | null;
+		status: number;
 	};
 
 

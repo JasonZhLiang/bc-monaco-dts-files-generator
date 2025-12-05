@@ -13,45 +13,7 @@ interface ItemCatalogServiceProxy {
 		    results: {
 		        count: number;
 		        page: number;
-		        items: Array<{
-		            defId: string;
-		            name: string;
-		            desc: string;
-		            type: string;
-		            category: string;
-		            tags: Array<string>;
-		            buyPrice: {
-		                coins: number;
-		            };
-		            sellPrice: {
-		                coins: number;
-		            };
-		            image: string;
-		            resourceGroup: any | null;
-		            resourceTag: any | null;
-		            meta: {
-		                level: string;
-		            };
-		            initData: {
-		                exp: number;
-		            };
-		            pState: string;
-		            publishedAt: number;
-		            createdAt: number;
-		            updatedAt: number;
-		            version: number;
-		            stackable: number;
-		            consumable: number;
-		            uses: any | null;
-		            coolDownSecs: number;
-		            recoverySecs: number;
-		            activatable: number;
-		            statusName: any | null;
-		            activeSecs: any | null;
-		            tradable: number;
-		            blockchain: number;
-		            blockchainDefId: any | null;
-		        }>;
+		        items: Array<Record<string, any>>;
 		        moreAfter: number;
 		        moreBefore: number;
 		    };
@@ -72,45 +34,7 @@ interface ItemCatalogServiceProxy {
 		    results: {
 		        count: number;
 		        page: number;
-		        items: Array<{
-		            defId: string;
-		            name: string;
-		            desc: string;
-		            type: string;
-		            category: string;
-		            tags: Array<string>;
-		            buyPrice: {
-		                coins: number;
-		            };
-		            sellPrice: {
-		                coins: number;
-		            };
-		            image: string;
-		            resourceGroup: any | null;
-		            resourceTag: any | null;
-		            meta: {
-		                level: string;
-		            };
-		            initData: {
-		                exp: number;
-		            };
-		            pState: string;
-		            publishedAt: number;
-		            createdAt: number;
-		            updatedAt: number;
-		            version: number;
-		            stackable: number;
-		            consumable: number;
-		            uses: any | null;
-		            coolDownSecs: number;
-		            recoverySecs: number;
-		            activatable: number;
-		            statusName: any | null;
-		            activeSecs: any | null;
-		            tradable: number;
-		            blockchain: number;
-		            blockchainDefId: any | null;
-		        }>;
+		        items: Array<Record<string, any>>;
 		        moreAfter: number;
 		        moreBefore: number;
 		    };
@@ -132,46 +56,7 @@ interface ItemCatalogServiceProxy {
 		    results: {
 		        count: number;
 		        page: number;
-		        items: Array<{
-		            gameId: string;
-		            defId: string;
-		            name: {
-		                en: string;
-		            };
-		            desc: {
-		                en: string;
-		            };
-		            type: string;
-		            category: string;
-		            tags: Array<string>;
-		            buyPrice: {
-		            };
-		            sellPrice: {
-		            };
-		            image: any | null;
-		            resourceGroup: any | null;
-		            resourceTag: any | null;
-		            meta: {
-		            };
-		            initData: {
-		            };
-		            pState: string;
-		            publishedAt: number;
-		            createdAt: number;
-		            updatedAt: number;
-		            version: number;
-		            stackable: number;
-		            consumable: number;
-		            uses: any | null;
-		            coolDownSecs: number;
-		            recoverySecs: number;
-		            activatable: number;
-		            statusName: any | null;
-		            activeSecs: any | null;
-		            tradable: number;
-		            blockchain: number;
-		            blockchainDefId: any | null;
-		        }>;
+		        items: Array<Record<string, any>>;
 		        moreAfter: number;
 		        moreBefore: number;
 		    };
@@ -193,46 +78,7 @@ interface ItemCatalogServiceProxy {
 		    results: {
 		        count: number;
 		        page: number;
-		        items: Array<{
-		            gameId: string;
-		            defId: string;
-		            name: {
-		                en: string;
-		            };
-		            desc: {
-		                en: string;
-		            };
-		            type: string;
-		            category: string;
-		            tags: Array<string>;
-		            buyPrice: {
-		            };
-		            sellPrice: {
-		            };
-		            image: any | null;
-		            resourceGroup: any | null;
-		            resourceTag: any | null;
-		            meta: {
-		            };
-		            initData: {
-		            };
-		            pState: string;
-		            publishedAt: number;
-		            createdAt: number;
-		            updatedAt: number;
-		            version: number;
-		            stackable: number;
-		            consumable: number;
-		            uses: any | null;
-		            coolDownSecs: number;
-		            recoverySecs: number;
-		            activatable: number;
-		            statusName: any | null;
-		            activeSecs: any | null;
-		            tradable: number;
-		            blockchain: number;
-		            blockchainDefId: any | null;
-		        }>;
+		        items: Array<Record<string, any>>;
 		        moreAfter: number;
 		        moreBefore: number;
 		    };

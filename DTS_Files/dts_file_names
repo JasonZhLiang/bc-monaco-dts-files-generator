@@ -1,11 +1,9 @@
 lib.cloudcode.app-store-service-proxy.d.ts
 lib.cloudcode.async-match-service-proxy.d.ts
-lib.cloudcode.authenticate-service-proxy.d.ts
 lib.cloudcode.blockchain-service-proxy.d.ts
 lib.cloudcode.chat-service-proxy.d.ts
 lib.cloudcode.custom-entity-service-proxy.d.ts
 lib.cloudcode.data-stream-service-proxy.d.ts
-lib.cloudcode.dispatcher-service-proxy.d.ts
 lib.cloudcode.email-auth-service-proxy.d.ts
 lib.cloudcode.entity-service-proxy.d.ts
 lib.cloudcode.event-service-proxy.d.ts
