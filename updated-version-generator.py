@@ -1,23 +1,65 @@
 import json
 import re
 import os
-import requests # Import the requests library
+# import requests # Import the requests library
+import urllib.request
+import urllib.error
+import ssl
 
 GITHUB_BASE_URL = "https://raw.githubusercontent.com/getbraincloud/braincloud-docs/develop/docs/api/2_capi/"
 
 MAX_DEPTH_FOR_TYPE_GENERATION = 3 # Define the maximum depth for type generation in data json
 
+EXCLUDED_METHODS = {
+    # "Identity": ["attach", "merge", "detach"],
+    # "VirtualCurrency": ["resetCurrencyState"]
+    "AppStore": ["awardProductHook"]
+}
+
+EXCLUDED_SERVICES = ["Script", "Authenticate", "Dispatcher"]
+
+# def fetch_md_content(service_name, method_name):
+#     url = f"{GITHUB_BASE_URL}{service_name}/{method_name}.md"
+#     try:
+#         headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'}
+#         response = requests.get(url, headers=headers, timeout=10) # Removed verify=False again
+#         response.raise_for_status()  # Raise an exception for HTTP errors
+#         return response.text
+#     except requests.exceptions.RequestException as e:
+#         # print(f"Error fetching {url}: {e}")
+#         return None
+
 def fetch_md_content(service_name, method_name):
     url = f"{GITHUB_BASE_URL}{service_name}/{method_name}.md"
+    
     try:
+        # Create request with headers
         headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'}
-        response = requests.get(url, headers=headers, timeout=10) # Removed verify=False again
-        response.raise_for_status()  # Raise an exception for HTTP errors
-        return response.text
-    except requests.exceptions.RequestException as e:
-        # print(f"Error fetching {url}: {e}")
+        req = urllib.request.Request(url, headers=headers)
+        
+        # Open the URL with timeout
+        response = urllib.request.urlopen(req, timeout=10, context=ssl._create_unverified_context())
+        
+        # Read and decode the response
+        content = response.read().decode('utf-8')
+        
+        return content
+        
+    # except urllib.error.HTTPError as e:
+    #     # HTTP error (404, 500, etc.)
+    #     print(f"HTTP Error fetching {url}: {e.code} {e.reason}")
+    #     return None
+    # except urllib.error.URLError as e:
+    #     # URL/connection error
+    #     print(f"URL Error fetching {url}: {e.reason}")
+    #     return None
+    # except TimeoutError:
+    #     print(f"Timeout fetching {url}")
+    #     return None
+    except Exception as e:
+        # Other exceptions
+        print(f"Error fetching {url}: {e}")
         return None
-
 
 def sanitizeMethodName(sourceMethodName):
     sanitizedMethodName = sourceMethodName.lstrip().rstrip()
@@ -169,7 +211,7 @@ proxy_name_array = []
 file_name_array = []
 
 for file in os.scandir(source_path):
-    if file.name.endswith(".json") and file.name != "Script.json" and file.name != "Authenticate.json" and file.name != "Dispatcher.json":
+    if file.name.endswith(".json") and file.name[:-5] not in EXCLUDED_SERVICES:
         proxy_name_array.append(file.name[:-5])
 
 proxy_name_array.sort()
@@ -230,6 +272,10 @@ for proxy in proxy_name_array:
 
                 # If the method name for the operation is an empty string, ignore it.
                 if len(method_name.lstrip().rstrip()) == 0:
+                    continue
+
+                # Check if the method is excluded for this service
+                if service_name in EXCLUDED_METHODS and method_name in EXCLUDED_METHODS[service_name]:
                     continue
 
                 # Determine if we've already processed this operation.
